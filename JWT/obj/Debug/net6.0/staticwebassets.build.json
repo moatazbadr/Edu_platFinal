@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SltGe5BExQOOSAtM04mOlDK5cu7qkYFFvaxlrdMPLnI=",
+  "Hash": "pRCafy8j8bM1lCUJ4Bm398vsU7mPoym69/3XFgPTiTc=",
   "Source": "Edu_plat",
   "BasePath": "_content/Edu_plat",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Edu_plat\\wwwroot",
       "Source": "Edu_plat",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\materials.zip",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\materials.zip",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "materials.zip",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\materials.zip"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\TempFiles\\materials.zip",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\TempFiles\\materials.zip",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "TempFiles/materials.zip",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\TempFiles\\materials.zip"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\Comp201\\Agenda - DS-1.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\Comp201\\Agenda - DS-1.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/Comp201/Agenda - DS-1.pdf",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Comp201\\Agenda - DS-1.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\Comp201\\Buggy Snippets.docx",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\Comp201\\Buggy Snippets.docx",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/Comp201/Buggy Snippets.docx",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Comp201\\Buggy Snippets.docx"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\Comp201\\SALEH SHERIF SALEH ABD ALFATAH_1.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\Comp201\\SALEH SHERIF SALEH ABD ALFATAH_1.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/Comp201/SALEH SHERIF SALEH ABD ALFATAH_1.pdf",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Comp201\\SALEH SHERIF SALEH ABD ALFATAH_1.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\Comp206\\cvv_2.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\Comp206\\cvv_2.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/Comp206/cvv_2.pdf",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Comp206\\cvv_2.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\Comp206\\SALEH SHERIF SALEH ABD ALFATAH.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\Comp206\\SALEH SHERIF SALEH ABD ALFATAH.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/Comp206/SALEH SHERIF SALEH ABD ALFATAH.pdf",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Comp206\\SALEH SHERIF SALEH ABD ALFATAH.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\Comp206\\SALEH SHERIF SALEH ABD ALFATAH_2.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\Comp206\\SALEH SHERIF SALEH ABD ALFATAH_2.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/Comp206/SALEH SHERIF SALEH ABD ALFATAH_2.pdf",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Comp206\\SALEH SHERIF SALEH ABD ALFATAH_2.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\Comp206\\Saleh_3.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\Comp206\\Saleh_3.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/Comp206/Saleh_3.pdf",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Comp206\\Saleh_3.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\Comp206\\Saleh_4.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\Comp206\\Saleh_4.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/Comp206/Saleh_4.pdf",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Comp206\\Saleh_4.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\Comp206\\Saleh_5.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\Comp206\\Saleh_5.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/Comp206/Saleh_5.pdf",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Comp206\\Saleh_5.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\Comp206\\Test (1)_2.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\Comp206\\Test (1)_2.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/Comp206/Test (1)_2.pdf",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Comp206\\Test (1)_2.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\Comp206\\Test (1)_3.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\Comp206\\Test (1)_3.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/Comp206/Test (1)_3.pdf",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Comp206\\Test (1)_3.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\Comp206\\Test (1)_4.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\Comp206\\Test (1)_4.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/Comp206/Test (1)_4.pdf",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Comp206\\Test (1)_4.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\Comp206\\Test (1)_5.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\Comp206\\Test (1)_5.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/Comp206/Test (1)_5.pdf",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Comp206\\Test (1)_5.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\Comp206\\Untitled (4).pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\Comp206\\Untitled (4).pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/Comp206/Untitled (4).pdf",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Comp206\\Untitled (4).pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\Comp206\\Untitled (4)_2.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\Comp206\\Untitled (4)_2.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/Comp206/Untitled (4)_2.pdf",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Comp206\\Untitled (4)_2.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\Comp206\\Untitled (4)_3.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\Comp206\\Untitled (4)_3.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/Comp206/Untitled (4)_3.pdf",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Comp206\\Untitled (4)_3.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\Comp206\\Untitled (4)_4.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\Comp206\\Untitled (4)_4.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/Comp206/Untitled (4)_4.pdf",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Comp206\\Untitled (4)_4.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\Comp403\\Saleh_1.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\Comp403\\Saleh_1.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/Comp403/Saleh_1.pdf",
       "AssetKind": "All",
@@ -397,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Comp403\\Saleh_1.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Uploads\\CV",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Uploads\\CV",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/CV",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\CV"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Videos\\Comp201\\File.mp4",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Videos\\Comp201\\File.mp4",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Videos/Comp201/File.mp4",
       "AssetKind": "All",
@@ -435,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\Videos\\Comp201\\File.mp4"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Videos\\Comp201\\Name.mp4",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Videos\\Comp201\\Name.mp4",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Videos/Comp201/Name.mp4",
       "AssetKind": "All",
@@ -454,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\Videos\\Comp201\\Name.mp4"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Videos\\Comp201\\Part 03 LINQ Execution Ways.mp4",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Videos\\Comp201\\Part 03 LINQ Execution Ways.mp4",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Videos/Comp201/Part 03 LINQ Execution Ways.mp4",
       "AssetKind": "All",
@@ -473,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\Videos\\Comp201\\Part 03 LINQ Execution Ways.mp4"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Videos\\Comp403\\Part 02 Pre Dot Net.mp4",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Videos\\Comp403\\Part 02 Pre Dot Net.mp4",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Videos/Comp403/Part 02 Pre Dot Net.mp4",
       "AssetKind": "All",
@@ -492,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\Videos\\Comp403\\Part 02 Pre Dot Net.mp4"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Videos\\Comp403\\Part 04 Dot Net Core.mp4",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Videos\\Comp403\\Part 04 Dot Net Core.mp4",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Videos/Comp403/Part 04 Dot Net Core.mp4",
       "AssetKind": "All",
@@ -511,10 +511,10 @@
       "OriginalItemSpec": "wwwroot\\Videos\\Comp403\\Part 04 Dot Net Core.mp4"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Videos\\Comp403\\Part 05 Dote Net And C# Versions.mp4",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Videos\\Comp403\\Part 05 Dote Net And C# Versions.mp4",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Videos/Comp403/Part 05 Dote Net And C# Versions.mp4",
       "AssetKind": "All",
@@ -530,10 +530,10 @@
       "OriginalItemSpec": "wwwroot\\Videos\\Comp403\\Part 05 Dote Net And C# Versions.mp4"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\Videos\\Comp403\\Part 08 Comments - Region.mp4",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\Videos\\Comp403\\Part 08 Comments - Region.mp4",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz2\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Videos/Comp403/Part 08 Comments - Region.mp4",
       "AssetKind": "All",
