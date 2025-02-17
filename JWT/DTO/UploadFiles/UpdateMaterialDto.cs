@@ -15,6 +15,6 @@ namespace Edu_plat.DTO.UploadFiles
 
 		[Required(ErrorMessage = "Type is required.")]
 		[RegularExpression("^(Material|Labs|Exams)$", ErrorMessage = "Type must be either 'Material', 'Labs', 'Exams'.")]
-		public string Type { get; set; } // File type (PDF, DOCX, etc.)
+		public string Type { get; set; } 
 	}
 }

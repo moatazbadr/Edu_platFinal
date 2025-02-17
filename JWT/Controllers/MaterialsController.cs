@@ -41,20 +41,17 @@ namespace Edu_plat.Controllers
 			{
 				return Ok(new { success = false, message = "Invalid data provided." });
 			}
-
 			// Check if the file is provided (not empty)
 			if (uploadMaterialDto.File == null || uploadMaterialDto.File.Length == 0)
 			{
 				return Ok(new { success = false, message = "No file uploaded." });
 			}
-
 			// Set maximum file size (10 MB)
 			var maxFileSize = 10 * 1024 * 1024; // 10 MB
 			if (uploadMaterialDto.File.Length > maxFileSize)
 			{
 				return Ok(new { success = false, message = "File size exceeds the maximum limit (10 MB)." });
 			}
-
 			// Allowed MIME types (ContentTypes) for PDF, Word, and PowerPoint files
 			var contentType = uploadMaterialDto.File.ContentType.ToLower();
 			var fileExtension = Path.GetExtension(uploadMaterialDto.File.FileName).ToLower();
@@ -109,7 +106,6 @@ namespace Edu_plat.Controllers
 				.Where(cd => cd.CourseId == course.Id && cd.Doctor.UserId == userId)
 				.FirstOrDefaultAsync();
 
-
 			// Define upload directory inside wwwroot/Uploads/{CourseCode}
 			var uploadsDirectory = Path.Combine(_hostingEnvironment.WebRootPath, "Uploads", course.CourseCode);
 
@@ -149,8 +145,6 @@ namespace Edu_plat.Controllers
 				long fileSizeBytes = new FileInfo(filePath).Length;
 				fileSize = (fileSizeBytes / (1024.0 * 1024.0)).ToString("F2") + " MB"; // Convert to MB
 			}
-
-
 			var material = new Material
 			{
 				CourseId = course.Id,  // Use the course ID from CourseCode
@@ -169,7 +163,6 @@ namespace Edu_plat.Controllers
 			await _context.SaveChangesAsync();
 
 			double fileSizeInMB = uploadMaterialDto.File.Length / (1024.0 * 1024.0);
-			;
 			Console.WriteLine(fileSizeInMB);
 			return Ok(new
 			{
@@ -1688,11 +1681,8 @@ namespace Edu_plat.Controllers
 
 		#endregion
 
-
-		
-		
-		
 		// For Student
+
 		#region GetDoctorMaterialsForCourse
 
 		[HttpGet("getDoctorMaterials/{courseCode}/{userId}")]
