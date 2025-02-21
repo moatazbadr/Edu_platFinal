@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\moataz\\desktop\\gradproject\\edu_plat_secondterm\\edu_platfinal\\jwt\\dto\\uploadfiles\\updatematerialdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\dto\\uploadfiles\\updatematerialdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\moataz\\desktop\\gradproject\\edu_plat_secondterm\\edu_platfinal\\jwt\\controllers\\studentcoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\controllers\\studentcoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\moataz\\desktop\\gradproject\\edu_plat_secondterm\\edu_platfinal\\jwt\\dto\\uploadfiles\\uploadmatarieldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\dto\\uploadfiles\\uploadmatarieldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\moataz\\desktop\\gradproject\\edu_plat_secondterm\\edu_platfinal\\jwt\\controllers\\materialscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\controllers\\materialscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\moataz\\desktop\\gradproject\\edu_plat_secondterm\\edu_platfinal\\jwt\\services\\mailingservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\services\\mailingservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\moataz\\desktop\\gradproject\\edu_plat_secondterm\\edu_platfinal\\jwt\\dto\\course_registration\\viewcoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\dto\\course_registration\\viewcoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,54 +42,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MailingServices.cs",
-              "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Services\\MailingServices.cs",
-              "RelativeDocumentMoniker": "JWT\\Services\\MailingServices.cs",
-              "ToolTip": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Services\\MailingServices.cs",
-              "RelativeToolTip": "JWT\\Services\\MailingServices.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T13:20:07.218Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MaterialsController.cs",
-              "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Controllers\\MaterialsController.cs",
-              "RelativeDocumentMoniker": "JWT\\Controllers\\MaterialsController.cs",
-              "ToolTip": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Controllers\\MaterialsController.cs*",
-              "RelativeToolTip": "JWT\\Controllers\\MaterialsController.cs*",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAWwCEAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T12:38:42.928Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UploadMatarielDto.cs",
-              "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\DTO\\UploadFiles\\UploadMatarielDto.cs",
-              "RelativeDocumentMoniker": "JWT\\DTO\\UploadFiles\\UploadMatarielDto.cs",
-              "ToolTip": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\DTO\\UploadFiles\\UploadMatarielDto.cs",
-              "RelativeToolTip": "JWT\\DTO\\UploadFiles\\UploadMatarielDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAfAAAAAAAAAA==",
+              "Title": "ViewCourseDto.cs",
+              "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\DTO\\Course_Registration\\ViewCourseDto.cs",
+              "RelativeDocumentMoniker": "JWT\\DTO\\Course_Registration\\ViewCourseDto.cs",
+              "ToolTip": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\DTO\\Course_Registration\\ViewCourseDto.cs",
+              "RelativeToolTip": "JWT\\DTO\\Course_Registration\\ViewCourseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T12:38:20.803Z",
+              "WhenOpened": "2025-02-21T07:52:25.078Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UpdateMaterialDto.cs",
-              "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\DTO\\UploadFiles\\UpdateMaterialDto.cs",
-              "RelativeDocumentMoniker": "JWT\\DTO\\UploadFiles\\UpdateMaterialDto.cs",
-              "ToolTip": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\DTO\\UploadFiles\\UpdateMaterialDto.cs",
-              "RelativeToolTip": "JWT\\DTO\\UploadFiles\\UpdateMaterialDto.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
+              "Title": "StudentCourseController.cs",
+              "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Controllers\\StudentCourseController.cs",
+              "RelativeDocumentMoniker": "JWT\\Controllers\\StudentCourseController.cs",
+              "ToolTip": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Controllers\\StudentCourseController.cs*",
+              "RelativeToolTip": "JWT\\Controllers\\StudentCourseController.cs*",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAuwHoAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T12:38:17.861Z",
+              "WhenOpened": "2025-02-19T14:40:06.241Z",
               "EditorCaption": ""
             }
           ]

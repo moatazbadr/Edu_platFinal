@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hdVoxfmGJtUY3m9S1R4NZYzKu9UlHK2yQlLRW42Z0Gw=",
+  "Hash": "eVAOwj5xnbaHNL72tR0ngFKiKgP+u5e2ro9K3YIgCfE=",
   "Source": "Edu_plat",
   "BasePath": "_content/Edu_plat",
   "Mode": "Default",
@@ -34,6 +34,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\materials.zip"
+    },
+    {
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions.pdf",
+      "SourceId": "Edu_plat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\",
+      "BasePath": "_content/Edu_plat",
+      "RelativePath": "Uploads/COMP201/Lecture 1Introduction&RegularExpressions.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions.pdf"
     }
   ]
 }

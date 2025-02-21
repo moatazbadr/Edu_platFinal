@@ -54,6 +54,8 @@ namespace JWT.DATA
 				.WithMany(c => c.Materials)
 				.HasForeignKey(m => m.CourseId)
 				.OnDelete(DeleteBehavior.Cascade);
+			
+
 
 
 			base.OnModelCreating(modelBuilder); 

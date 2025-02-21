@@ -275,6 +275,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Edu_plat.Controllers.CourseController",
+    "Method": "RemoveCourse",
+    "RelativePath": "api/Course/remove-course",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Edu_plat.DTO.Course_Registration.CourseRegistrationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Edu_plat.Controllers.GPAController",
     "Method": "CalculateGPA",
     "RelativePath": "api/GPA/calculateGPA",
@@ -400,6 +416,22 @@
   },
   {
     "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "DownloadMaterialbYpATH",
+    "RelativePath": "api/Materials/Download-path",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filePath",
+        "Type": "Edu_plat.DTO.FileRequester.FilePathDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
     "Method": "DownloadFile",
     "RelativePath": "api/Materials/DownloadFile/{courseCode}/{materialId}",
     "HttpMethod": "GET",
@@ -431,22 +463,6 @@
         "Name": "materialId",
         "Type": "System.Int32",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Edu_plat.Controllers.MaterialsController",
-    "Method": "DownloadMaterialbYpATH",
-    "RelativePath": "api/Materials/DownloadFileByPathFile",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "filePath",
-        "Type": "System.String",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -616,11 +632,6 @@
         "IsRequired": false
       },
       {
-        "Name": "Description",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "CourseCode",
         "Type": "System.String",
         "IsRequired": false
@@ -713,8 +724,18 @@
   },
   {
     "ContainingType": "Edu_plat.Controllers.StudentCourseController",
+    "Method": "MyCourses",
+    "RelativePath": "api/StudentCourse/MyCourses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.StudentCourseController",
     "Method": "Register",
-    "RelativePath": "api/StudentCourse/Registers",
+    "RelativePath": "api/StudentCourse/Register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

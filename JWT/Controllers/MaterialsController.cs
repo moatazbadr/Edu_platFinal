@@ -1,4 +1,5 @@
-﻿using Edu_plat.DTO.UploadFiles;
+﻿using Edu_plat.DTO.FileRequester;
+using Edu_plat.DTO.UploadFiles;
 using Edu_plat.Model;
 using Edu_plat.Model.Course_registeration;
 using JWT;
@@ -98,7 +99,7 @@ namespace Edu_plat.Controllers
 
 			if (!isDoctorEnrolled)
 			{
-				return StatusCode(403, new { success = false, message = "Doctor is not enrolled in the course, so file upload is forbidden." });
+				return Ok( new { success = false, message = "Doctor is not enrolled in the course, so file upload is forbidden." });
 			}
 
 			// Get the doctor details from CourseDoctors table
@@ -145,6 +146,8 @@ namespace Edu_plat.Controllers
 				long fileSizeBytes = new FileInfo(filePath).Length;
 				fileSize = (fileSizeBytes / (1024.0 * 1024.0)).ToString("F2") + " MB"; // Convert to MB
 			}
+			//var materialExtension=
+
 			var material = new Material
 			{
 				CourseId = course.Id,  // Use the course ID from CourseCode
@@ -152,7 +155,7 @@ namespace Edu_plat.Controllers
 				DoctorId = doctor.DoctorId,   // Use the DoctorId from the CourseDoctors table
 				FilePath = $"/Uploads/{course.CourseCode}/{uniqueFileName}",  // Final file path
 				FileName = uniqueFileName,
-				Description = uploadMaterialDto.Description,
+				Description = string.Empty,
 				UploadDate = DateTime.Now,
 				TypeFile = uploadMaterialDto.Type,
 				Size = fileSize
@@ -164,166 +167,37 @@ namespace Edu_plat.Controllers
 
 			double fileSizeInMB = uploadMaterialDto.File.Length / (1024.0 * 1024.0);
 			Console.WriteLine(fileSizeInMB);
+
+			//file Details Dto 
+
+
+			//"File details ":{
+			// id :
+			// path :
+			// etxenstion :
+			// date :
+			// type :
+			// courseCode :
+			//}
+
+
 			return Ok(new
 			{
 				success = true,
 				message = "File uploaded successfully.",
-				materialId = material.Id, // Send the material ID in the response
-	        });
+				FileDetails = new
+				{
+					Id = material.Id, // Send the material ID in the response
+					Path = material.FilePath,
+					Size = fileSize,
+					Eextension = fileExtension,
+					Type = uploadMaterialDto.Type,
+					CoourseCode= course.CourseCode,
+                }
+
+			});
 		}
 		#endregion
-
-		// Not Used
-		#region UploadFile Comment
-		//[HttpPost("UploadFile/Doctors")]
-		//[Authorize(Roles = "Doctor")]
-		//public async Task<IActionResult> UploadMaterial([FromForm] UploadMatarielDto uploadMaterialDto)
-		//{
-		//	// Validate the input data
-		//	if (!ModelState.IsValid)
-		//	{
-		//		return Ok(new { success = false, message = "Invalid data provided." });
-		//	}
-
-		//	// Check if the file is provided (not interst )
-		//	if (uploadMaterialDto.File == null || uploadMaterialDto.File.Length == 0)
-		//	{
-		//		return Ok(new { success = false, message = "No file uploaded." });
-		//	}
-
-		//	// Set maximum file size (10 MB)
-		//	var maxFileSize = 10 * 1024 * 1024; // 10 MB
-		//	if (uploadMaterialDto.File.Length > maxFileSize)
-		//	{
-		//		return Ok(new { success = false, message = "File size exceeds the maximum limit (10 MB)." });
-		//	}
-		//	//// Allowed file extensions (PDF, Word, and PowerPoint)
-		//	//var allowedExtensions = new[] { ".pdf", ".docx", ".pptx" };
-		//	//var fileExtension = Path.GetExtension(uploadMaterialDto.File.FileName).ToLower();
-		//	//if (!allowedExtensions.Contains(fileExtension))
-		//	//{
-		//	//	return Ok(new { success = false, message = "Only PDF, Word, and PowerPoint files are allowed." });
-		//	//}
-
-		//	// Allowed MIME types (ContentTypes) for PDF, Word, and PowerPoint files
-		//	//var allowedContentTypes = new[] { "application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.openxmlformats-officedocument.presentationml.presentation" };
-		//	var contentType = uploadMaterialDto.File.ContentType.ToLower();
-		//	var fileExtension = Path.GetExtension(uploadMaterialDto.File.FileName).ToLower();
-
-		//	var allowedContentTypes = new Dictionary<string, string>
-		//          {
-		//           	{ ".pdf", "application/pdf" },
-		//           { ".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document" },
-		//           { ".pptx", "application/vnd.openxmlformats-officedocument.presentationml.presentation" }
-		//          };
-
-		//	// Check Extension of File
-		//	if (!allowedContentTypes.ContainsKey(fileExtension))
-		//	{
-		//		return BadRequest(new { success = false, message = "Only PDF, Word, and PowerPoint files are allowed." });
-		//	}
-		//	// check content Type to more secure 
-		//	if (allowedContentTypes[fileExtension] != uploadMaterialDto.File.ContentType.ToLower())
-		//	{
-		//		return BadRequest(new { success = false, message = "File type does not match its extension." });
-		//	}
-
-
-		//       // Check if the course exists
-		//	var course = await _context.Courses
-		//		.Where(c => c.CourseCode == uploadMaterialDto.CourseCode)
-		//		.FirstOrDefaultAsync();
-
-		//	if (course == null)
-		//	{
-		//		return Ok(new { success = false, message = "Course not found." });
-		//	}
-
-		//// Get UserId from token
-		//	var userId = User.FindFirstValue("AppicationUserId"); 
-		//	var user = await _userManager.FindByIdAsync(userId);
-		//	if (user == null)
-		//	{
-		//		return Ok(new { success = false, message = "User not found." });
-		//	}
-
-		//	// Check if the user (Doctor) has enrolled in this course
-		//	bool isDoctorEnrolled = await _context.CourseDoctors
-		//		.AnyAsync(cd => cd.Doctor.UserId == userId && cd.CourseId == course.Id);
-
-		//	// Get the doctor details from CourseDoctors table
-		//	var doctor = await _context.CourseDoctors
-		//		.Where(cd => cd.CourseId == course.Id && cd.Doctor.UserId == userId)
-		//		.FirstOrDefaultAsync();
-
-		//	if (!isDoctorEnrolled)
-		//	{
-		//		return StatusCode(403, new { success = false, message = "Doctor is not enrolled in the course, so file upload is forbidden." });
-		//	}
-
-
-		//	// Define upload directory inside wwwroot/Uploads/{CourseCode}
-		//	var uploadsDirectory = Path.Combine(_hostingEnvironment.WebRootPath, "Uploads", course.CourseCode);
-
-		//	// Create the directory if it does not exist
-		//	if (!Directory.Exists(uploadsDirectory))
-		//	{
-		//		Directory.CreateDirectory(uploadsDirectory);
-		//	}
-
-		//	var fileName = string.IsNullOrWhiteSpace(uploadMaterialDto.FileName)
-		//		? Path.GetFileName(uploadMaterialDto.File.FileName) // Get the full filename with extension
-		//		: uploadMaterialDto.FileName + Path.GetExtension(uploadMaterialDto.File.FileName); // Ensure extension is added if custom filename is provided
-
-
-		//	// Define the final file path
-		//	var filePath = Path.Combine(uploadsDirectory, fileName);
-
-		//	// Save the file to the specified path
-		//	using (var stream = new FileStream(filePath, FileMode.Create))
-		//	{
-		//		await uploadMaterialDto.File.CopyToAsync(stream);
-		//	}
-
-
-
-		//	// Get the base file name (without extension)
-		//	var fileBaseName = Path.GetFileNameWithoutExtension(uploadMaterialDto.File.FileName);
-		//	var existingFiles = Directory.GetFiles(uploadsDirectory, $"{fileBaseName}*").Length;
-
-		//	// Add a serial number to the file name to avoid conflicts
-		//	var uniqueFileName = $"{fileBaseName}_{existingFiles + 1}{fileExtension}";
-
-		//	// Define the final file path
-		//	var filePath1 = Path.Combine(uploadsDirectory, uniqueFileName);
-
-
-
-		//	// Save file details in the database
-		//	var material = new Material
-		//	{
-		//		CourseId = course.Id,  // Use the course ID from CourseCode
-		//		CourseCode = course.CourseCode,
-		//		DoctorId = doctor.DoctorId,   // Use the DoctorId from the CourseDoctors table
-		//		FilePath = $"/Uploads/{course.CourseCode}/{fileName}",  // Final file path
-		//		FileName = fileName,
-		//		Description = uploadMaterialDto.Description,
-		//		UploadDate = DateTime.Now,
-		//		TypeFile = uploadMaterialDto.Type
-		//	};
-
-		//	_context.Materials.Add(material);
-		//	await _context.SaveChangesAsync();
-
-		//	return Ok(new
-		//	{
-		//		success = true,
-		//		message = "File uploaded successfully.",
-		//		materialId = material.Id, // Send the material ID in the response
-		//		filePath = material.FilePath // Send the file path in the response
-		//	});
-		//}
-		#endregion   //
 
 		#region RetriveAllFiles 
 		[HttpGet("AllFiles")]
@@ -465,17 +339,17 @@ namespace Edu_plat.Controllers
 
         #region DownloadBypath
 
-		[HttpGet("DownloadFileByPathFile")]
-		public async Task<IActionResult> DownloadMaterialbYpATH([FromQuery] string filePath)
+		[HttpGet("Download-path")]
+		public async Task<IActionResult> DownloadMaterialbYpATH([FromBody] FilePathDto filePath)
 		{
 			// Ensure file path is provided
-			if (string.IsNullOrEmpty(filePath))
+			if (string.IsNullOrEmpty(filePath.Path))
 			{
 				return BadRequest(new { success = false, message = "File path is required." });
 			}
 
 			// Build the full file path on the server
-			var fullFilePath = Path.Combine(_hostingEnvironment.WebRootPath, filePath.TrimStart('/'));
+			var fullFilePath = Path.Combine(_hostingEnvironment.WebRootPath, filePath.Path.TrimStart('/'));
 
 			// Check if the file exists at the given location
 			if (!System.IO.File.Exists(fullFilePath))
@@ -488,7 +362,7 @@ namespace Edu_plat.Controllers
 
 			// Get file name and extension
 			var fileName = Path.GetFileName(fullFilePath);
-			var fileExtension = Path.GetExtension(filePath).ToLower();
+			var fileExtension = Path.GetExtension(filePath.Path).ToLower();
 
 			// Define MIME types help to known type of file to open easy 
 			var mimeTypes = new Dictionary<string, string>
@@ -596,7 +470,6 @@ namespace Edu_plat.Controllers
 					m.FileName,
 					m.FilePath,
 					m.CourseCode,
-					m.Description,
 					m.UploadDate,
 					m.TypeFile
 				})
@@ -789,7 +662,7 @@ namespace Edu_plat.Controllers
 					m.FileName,
 					m.FilePath,
 					m.CourseCode,
-					m.Description,
+					
 					UploadDateFormatted = m.UploadDate.ToString("yyyy-MM-dd HH:mm:ss"), // 2025-02-16 11:56:01m.TypeFile,
 					FileExtension = Path.GetExtension(m.FileName),
 					m.Size
@@ -1241,8 +1114,7 @@ namespace Edu_plat.Controllers
 		#endregion
 
 
-
-		//--------------------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 		#region DeleteAllFilesOfCertainDoctor

@@ -8,8 +8,8 @@ namespace Edu_plat.DTO.UploadFiles
 		public IFormFile File { get; set; }
 
 		[StringLength(500, ErrorMessage = "Description cannot exceed 500 characters.")]
-		[Required(ErrorMessage = "Description is required.")]
-		public string Description { get; set; } 
+	//	[Required(ErrorMessage = "Description is required.")]
+	//	public string Description { get; set; } 
 
 		[Required(ErrorMessage = "CourseCode is required.")]
 		public string CourseCode { get; set; }

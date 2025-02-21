@@ -32,6 +32,7 @@ namespace Edu_plat.Controllers
 
         [HttpPost("Add-course")]
         [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> AddCourse([FromBody] CourseRegisteration courseFromBody)
         {
             if (!ModelState.IsValid)
@@ -64,7 +65,14 @@ namespace Edu_plat.Controllers
         public async Task<IActionResult> GetAllCourses()
         {
             var AllCourses = await _context.Courses.ToListAsync();
-            return Ok(AllCourses);
+            List<string> CoursesCodes = new List<string>();
+            foreach (var code in AllCourses)
+            {
+                CoursesCodes.Add(code.CourseCode);
+            }
+
+
+            return Ok(CoursesCodes);
         }
 
         #endregion
@@ -313,5 +321,36 @@ namespace Edu_plat.Controllers
 
         }
         #endregion
+
+        #region Removing a Course From Database 
+
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("remove-course")]
+        public async Task<IActionResult> RemoveCourse(CourseRegistrationDto dto)
+        {
+            if (!ModelState.IsValid) { return BadRequest(); }
+            List<Course> courseFailedToBeDeleted = new List<Course>();
+           if (dto.CoursesCodes != null)
+            {
+                foreach (string CourseCode in dto.CoursesCodes)
+                {
+                    var course = await _context.Courses.FirstOrDefaultAsync(x => x.CourseCode == CourseCode);
+                    if (course !=null)
+                    _context.Courses.Remove(course);
+                    await _context.SaveChangesAsync();
+
+                }
+
+            }
+           return Ok(new { success = true,  message ="Course deleted Successfully from the database " });
+
+
+
+        }
+
+
+        #endregion
+
+
     }
 }

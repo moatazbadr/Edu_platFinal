@@ -5,16 +5,16 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using OpenAI_API.Moderation;
 using System.Text;
 
 namespace JWT
 {
-    //comment 
-    // again comment
-    // moataz comment
+
     public class Program
     {
         public static async Task Main(string[] args)
@@ -233,9 +233,28 @@ namespace JWT
                         await userManager.AddToRoleAsync(adminUser, "SuperAdmin");
                     }
                 }
-            } 
+                string adminEmail2 = "zezo@gmail.com";
+                var admin2= await userManager.FindByEmailAsync(adminEmail2);
+                if (admin2 == null)
+                {
+                    var adminUser2 = new ApplicationUser()
+                    {
+                        UserName = adminEmail2.Split('@')[0],
+                        Email = adminEmail2
+                    };
+                    var result2 = await userManager.CreateAsync(adminUser2, "AMDTOP2001@s1");
+                    if (result2.Succeeded)
+                    {
+                        await userManager.AddToRoleAsync(adminUser2, "Admin");
+                    }
+
+                }
+
+
+            }
             #endregion
-         
+
+            
 
 
             // Configure the HTTP request pipeline.
