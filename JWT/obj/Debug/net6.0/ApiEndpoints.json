@@ -317,6 +317,32 @@
     ]
   },
   {
+    "ContainingType": "Edu_plat.Controllers.GPAController",
+    "Method": "GetGPA",
+    "RelativePath": "api/GPA/GetGPA",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.GPAController",
+    "Method": "UpdateGPA",
+    "RelativePath": "api/GPA/UpdateGPA",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gpa",
+        "Type": "System.Double",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Edu_plat.Controllers.MaterialsController",
     "Method": "GetAllFiles",
     "RelativePath": "api/Materials/AllFiles",
