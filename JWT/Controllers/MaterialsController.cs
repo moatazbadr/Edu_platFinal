@@ -2,6 +2,7 @@
 using Edu_plat.DTO.UploadFiles;
 using Edu_plat.Model;
 using Edu_plat.Model.Course_registeration;
+using Edu_plat.Requests;
 using JWT;
 using JWT.DATA;
 using JWT.Migrations;
@@ -214,7 +215,7 @@ namespace Edu_plat.Controllers
 		}
 		#endregion
 
-		#region Method Pass MaterialId Return FileName
+		#region Method Pass MaterialId Return FileName [Gets The Axe]
 		private string GetFileNameByMaterialId(int materialId)
 		{
 
@@ -227,7 +228,9 @@ namespace Edu_plat.Controllers
 		}
 		#endregion
 
-		#region DownloadFile/{courseCode}/{materialId}
+		#region DownloadFile/{courseCode}/{materialId} [Gets The Axe]
+		
+
 		[HttpGet("DownloadFile/{courseCode}/{materialId}")]
 		public async Task<IActionResult> DownloadFile(string courseCode, int materialId)
 		{
@@ -285,8 +288,8 @@ namespace Edu_plat.Controllers
 			return File(fileBytes, contentType, fileName);
 		}
 		#endregion
-
-    	#region DownloadFile/{materialId}
+		 
+    	#region DownloadFile/{materialId} [Gets The Axe]
 		[HttpGet("DownloadFile/{materialId}")]
 		public async Task<IActionResult> DownloadFile(int materialId)
 		{
@@ -337,50 +340,50 @@ namespace Edu_plat.Controllers
 		}
 		#endregion
 
-        #region DownloadBypath
+        #region DownloadBypath [Gets the Axe ]
 
-		[HttpGet("Download-path")]
-		public async Task<IActionResult> DownloadMaterialbYpATH([FromBody] FilePathDto filePath)
-		{
-			// Ensure file path is provided
-			if (string.IsNullOrEmpty(filePath.Path))
-			{
-				return BadRequest(new { success = false, message = "File path is required." });
-			}
+		//[HttpGet("Download-path")]
+		//public async Task<IActionResult> DownloadMaterialbYpATH([FromQuery] FilePathDto filePath)
+		//{
+		//	// Ensure file path is provided
+		//	if (string.IsNullOrEmpty(filePath.Path))
+		//	{
+		//		return BadRequest(new { success = false, message = "File path is required." });
+		//	}
 
-			// Build the full file path on the server
-			var fullFilePath = Path.Combine(_hostingEnvironment.WebRootPath, filePath.Path.TrimStart('/'));
+		//	// Build the full file path on the server
+		//	var fullFilePath = Path.Combine(_hostingEnvironment.WebRootPath, filePath.Path.TrimStart('/'));
 
-			// Check if the file exists at the given location
-			if (!System.IO.File.Exists(fullFilePath))
-			{
-				return NotFound(new { success = false, message = "File not found." });
-			}
+		//	// Check if the file exists at the given location
+		//	if (!System.IO.File.Exists(fullFilePath))
+		//	{
+		//		return NotFound(new { success = false, message = "File not found." });
+		//	}
 
-			// Read file content
-			var fileBytes = await System.IO.File.ReadAllBytesAsync(fullFilePath);
+		//	// Read file content
+		//	var fileBytes = await System.IO.File.ReadAllBytesAsync(fullFilePath);
 
-			// Get file name and extension
-			var fileName = Path.GetFileName(fullFilePath);
-			var fileExtension = Path.GetExtension(filePath.Path).ToLower();
+		//	// Get file name and extension
+		//	var fileName = Path.GetFileName(fullFilePath);
+		//	var fileExtension = Path.GetExtension(filePath.Path).ToLower();
 
-			// Define MIME types help to known type of file to open easy 
-			var mimeTypes = new Dictionary<string, string>
-			{
-			   { ".pdf", "application/pdf" },
-			   { ".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document" },
-			   { ".pptx", "application/vnd.openxmlformats-officedocument.presentationml.presentation" }
-			};
+		//	// Define MIME types help to known type of file to open easy 
+		//	var mimeTypes = new Dictionary<string, string>
+		//	{
+		//	   { ".pdf", "application/pdf" },
+		//	   { ".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document" },
+		//	   { ".pptx", "application/vnd.openxmlformats-officedocument.presentationml.presentation" }
+		//	};
 
-			// Determine correct content type
-			var contentType = mimeTypes.ContainsKey(fileExtension) ? mimeTypes[fileExtension] : "application/octet-stream";
+		//	// Determine correct content type
+		//	var contentType = mimeTypes.ContainsKey(fileExtension) ? mimeTypes[fileExtension] : "application/octet-stream";
 
-			return File(fileBytes, contentType, fileName);
-		}
+		//	return File(fileBytes, contentType, fileName);
+		//}
 
-		#endregion
+		#endregion 
 
-		#region DownloadFiles/{materialIds}
+		#region DownloadFiles/{materialIds} [Gets The Axe]
 		[HttpGet("DownloadFiles")]
 		public async Task<IActionResult> DownloadFiles([FromQuery] List<int> materialIds)
 		{
@@ -445,9 +448,9 @@ namespace Edu_plat.Controllers
 
 		//--------------------------------------------------------------------------------------------------------------------------------------------------
 
-	  
-	    #region GetDoctorMaterials
-		[HttpGet("GetDoctorMaterials/Doctor")]
+
+		#region GetDoctorMaterials [Gets The Axe]
+		[HttpGet("Get-Doctor-Materials")]
 		[Authorize(Roles = "Doctor")]
 		public async Task<IActionResult> GetDoctorMaterials()
 		{
@@ -484,142 +487,142 @@ namespace Edu_plat.Controllers
 			// 🔹 Return the materials in JSON format
 			return Ok(new { success = true, materials = doctorMaterials });
 		}
-		#endregion
+        #endregion
 
-		// Not Used
-		#region GetDoctorsLectures
-		//[HttpGet("GetDoctorLectures/Doctor")]
-		//[Authorize(Roles = "Doctor")]
-		//public async Task<IActionResult> GetDoctorLectures()
-		//{
-		//	//  Get the UserId from the token
-		//	var userId = User.FindFirstValue("AppicationUserId");
+        // Not Used
+        #region GetDoctorsLectures [Gets The Axe]
+        //[HttpGet("GetDoctorLectures/Doctor")]
+        //[Authorize(Roles = "Doctor")]
+        //public async Task<IActionResult> GetDoctorLectures()
+        //{
+        //	//  Get the UserId from the token
+        //	var userId = User.FindFirstValue("AppicationUserId");
 
-		//	//  Check if the user exists
-		//	var user = await _userManager.FindByIdAsync(userId);
-		//	if (user == null)
-		//	{
-		//		return Unauthorized(new { success = false, message = "User not found." });
-		//	}
+        //	//  Check if the user exists
+        //	var user = await _userManager.FindByIdAsync(userId);
+        //	if (user == null)
+        //	{
+        //		return Unauthorized(new { success = false, message = "User not found." });
+        //	}
 
-		//	// Retrieve only materials where TypeFile is "lec"
-		//	var doctorLectures = await _context.Materials
-		//		.Where(m => m.Doctor.UserId == userId && m.TypeFile.ToLower() == "Material")
-		//		.Select(m => new
-		//		{
-		//			m.Id,
-		//			m.FileName,
-		//			m.FilePath,
-		//			m.CourseCode,
-		//			m.Description,
-		//			m.UploadDate,
-		//			m.TypeFile
-		//		})
-		//		.ToListAsync();
+        //	// Retrieve only materials where TypeFile is "lec"
+        //	var doctorLectures = await _context.Materials
+        //		.Where(m => m.Doctor.UserId == userId && m.TypeFile.ToLower() == "Material")
+        //		.Select(m => new
+        //		{
+        //			m.Id,
+        //			m.FileName,
+        //			m.FilePath,
+        //			m.CourseCode,
+        //			m.Description,
+        //			m.UploadDate,
+        //			m.TypeFile
+        //		})
+        //		.ToListAsync();
 
-		//	//  Check if there are any lecture materials
-		//	if (!doctorLectures.Any())
-		//	{
-		//		return Ok(new { success = true, message = "No lecture materials found for this doctor.", materials = new List<object>() });
-		//	}
+        //	//  Check if there are any lecture materials
+        //	if (!doctorLectures.Any())
+        //	{
+        //		return Ok(new { success = true, message = "No lecture materials found for this doctor.", materials = new List<object>() });
+        //	}
 
-		//	//  Return the lectures in JSON format
-		//	return Ok(new { success = true, materials = doctorLectures });
-		//}
-		#endregion
+        //	//  Return the lectures in JSON format
+        //	return Ok(new { success = true, materials = doctorLectures });
+        //}
+        #endregion
 
-		// Not Used
-		#region GetDoctorLabs
+        // Not Used
+        #region GetDoctorLabs [Gets The Axe]
 
-		//[HttpGet("GetDoctorLabs/Doctor")]
-		//[Authorize(Roles = "Doctor")]
-		//public async Task<IActionResult> GetDoctorLabs()
-		//{
-		//	// 🔹 Get the UserId from the token
-		//	var userId = User.FindFirstValue("AppicationUserId");
+        //[HttpGet("GetDoctorLabs/Doctor")]
+        //[Authorize(Roles = "Doctor")]
+        //public async Task<IActionResult> GetDoctorLabs()
+        //{
+        //	// 🔹 Get the UserId from the token
+        //	var userId = User.FindFirstValue("AppicationUserId");
 
-		//	// 🔹 Check if the user exists
-		//	var user = await _userManager.FindByIdAsync(userId);
-		//	if (user == null)
-		//	{
-		//		return Unauthorized(new { success = false, message = "User not found." });
-		//	}
+        //	// 🔹 Check if the user exists
+        //	var user = await _userManager.FindByIdAsync(userId);
+        //	if (user == null)
+        //	{
+        //		return Unauthorized(new { success = false, message = "User not found." });
+        //	}
 
-		//	// 🔹 Retrieve only materials where TypeFile is "lec"
-		//	var doctorLectures = await _context.Materials
-		//		.Where(m => m.Doctor.UserId == userId && m.TypeFile.ToLower() == "Labs")
-		//		.Select(m => new
-		//		{
-		//			m.Id,
-		//			m.FileName,
-		//			m.FilePath,
-		//			m.CourseCode,
-		//			m.Description,
-		//			m.UploadDate,
-		//			m.TypeFile
-		//		})
-		//		.ToListAsync();
+        //	// 🔹 Retrieve only materials where TypeFile is "lec"
+        //	var doctorLectures = await _context.Materials
+        //		.Where(m => m.Doctor.UserId == userId && m.TypeFile.ToLower() == "Labs")
+        //		.Select(m => new
+        //		{
+        //			m.Id,
+        //			m.FileName,
+        //			m.FilePath,
+        //			m.CourseCode,
+        //			m.Description,
+        //			m.UploadDate,
+        //			m.TypeFile
+        //		})
+        //		.ToListAsync();
 
-		//	// 🔹 Check if there are any lecture materials
-		//	if (!doctorLectures.Any())
-		//	{
-		//		return Ok(new { success = true, message = "No labs materials found for this doctor.", materials = new List<object>() });
-		//	}
+        //	// 🔹 Check if there are any lecture materials
+        //	if (!doctorLectures.Any())
+        //	{
+        //		return Ok(new { success = true, message = "No labs materials found for this doctor.", materials = new List<object>() });
+        //	}
 
-		//	// 🔹 Return the lectures in JSON format
-		//	return Ok(new { success = true, materials = doctorLectures });
-		//}
-		#endregion
+        //	// 🔹 Return the lectures in JSON format
+        //	return Ok(new { success = true, materials = doctorLectures });
+        //}
+        #endregion
 
-		// Not Used
-		#region GetDoctorExam
+        // Not Used
+        #region GetDoctorExam [Gets The Axe]
 
-		//[HttpGet("GetDoctorExamss/Doctor")]
-		//[Authorize(Roles = "Doctor")]
-		//public async Task<IActionResult> GetDoctorExams()
-		//{
-		//	// 🔹 Get the UserId from the token
-		//	var userId = User.FindFirstValue("AppicationUserId");
+        //[HttpGet("GetDoctorExamss/Doctor")]
+        //[Authorize(Roles = "Doctor")]
+        //public async Task<IActionResult> GetDoctorExams()
+        //{
+        //	// 🔹 Get the UserId from the token
+        //	var userId = User.FindFirstValue("AppicationUserId");
 
-		//	// 🔹 Check if the user exists
-		//	var user = await _userManager.FindByIdAsync(userId);
-		//	if (user == null)
-		//	{
-		//		return Unauthorized(new { success = false, message = "User not found." });
-		//	}
+        //	// 🔹 Check if the user exists
+        //	var user = await _userManager.FindByIdAsync(userId);
+        //	if (user == null)
+        //	{
+        //		return Unauthorized(new { success = false, message = "User not found." });
+        //	}
 
-		//	// 🔹 Retrieve only materials where TypeFile is "lec"
-		//	var doctorLectures = await _context.Materials
-		//		.Where(m => m.Doctor.UserId == userId && m.TypeFile.ToLower() == "Exams")
-		//		.Select(m => new
-		//		{
-		//			m.Id,
-		//			m.FileName,
-		//			m.FilePath,
-		//			m.CourseCode,
-		//			m.Description,
-		//			m.UploadDate,
-		//			m.TypeFile
-		//		})
-		//		.ToListAsync();
+        //	// 🔹 Retrieve only materials where TypeFile is "lec"
+        //	var doctorLectures = await _context.Materials
+        //		.Where(m => m.Doctor.UserId == userId && m.TypeFile.ToLower() == "Exams")
+        //		.Select(m => new
+        //		{
+        //			m.Id,
+        //			m.FileName,
+        //			m.FilePath,
+        //			m.CourseCode,
+        //			m.Description,
+        //			m.UploadDate,
+        //			m.TypeFile
+        //		})
+        //		.ToListAsync();
 
-		//	// 🔹 Check if there are any lecture materials
-		//	if (!doctorLectures.Any())
-		//	{
-		//		return Ok(new { success = true, message = "No exam materials found for this doctor.", materials = new List<object>() });
-		//	}
+        //	// 🔹 Check if there are any lecture materials
+        //	if (!doctorLectures.Any())
+        //	{
+        //		return Ok(new { success = true, message = "No exam materials found for this doctor.", materials = new List<object>() });
+        //	}
 
-		//	// 🔹 Return the lectures in JSON format
-		//	return Ok(new { success = true, materials = doctorLectures });
-		//}
-		#endregion
+        //	// 🔹 Return the lectures in JSON format
+        //	return Ok(new { success = true, materials = doctorLectures });
+        //}
+        #endregion
 
 
-		#region GetDoctorMaterialsByTypeAndCourse
+        #region Get Doctor Material by type
 
-		[HttpGet("GetDoctorMaterialsByTypeAndCourse")]
+        [HttpGet("Get-Material-ByType/courseCode/typeFile")]
 		[Authorize(Roles = "Doctor")]
-		public async Task<IActionResult> GetDoctorMaterialsByTypeAndCourse([FromQuery] string typeFile, [FromQuery] string courseCode)
+		public async Task<IActionResult> GetDoctorMaterialsByTypeAndCourse(string courseCode,string typeFile)
 		{
 			// Get the UserId from the token
 			var userId = User.FindFirstValue("AppicationUserId");
@@ -628,26 +631,26 @@ namespace Edu_plat.Controllers
 			var user = await _userManager.FindByIdAsync(userId);
 			if (user == null)
 			{
-				return Unauthorized(new { success = false, message = "User not found." });
+				return Ok(new { success = true, message = "User not found." });
 			}
 
 			// Validate that the typeFile and courseCode are provided
 			if (string.IsNullOrEmpty(typeFile) || string.IsNullOrEmpty(courseCode))
 			{
-				return BadRequest(new { success = false, message = "TypeFile and CourseCode are required." });
+				return Ok(new { success = true, message = "TypeFile and CourseCode are required." });
 			}
 
 			var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == courseCode);
 			if (course == null)
 			{
-				return NotFound(new { success = false, message = "Course not found." });
+				return Ok(new { success = true, message = "Course not found." });
 			}
 			bool isDoctorEnrolled = await _context.CourseDoctors
 				.AnyAsync(cd => cd.Doctor.UserId == userId && cd.CourseId == course.Id);
 
 			if (!isDoctorEnrolled)
 			{
-				return StatusCode(403, new { success = false, message = "Doctor is not enrolled in this course." });
+				return Ok( new { success = true, message = "Doctor is not enrolled in this course." });
 			}
 
 		
@@ -662,11 +665,11 @@ namespace Edu_plat.Controllers
 					m.FileName,
 					m.FilePath,
 					m.CourseCode,
-					
 					UploadDateFormatted = m.UploadDate.ToString("yyyy-MM-dd HH:mm:ss"), // 2025-02-16 11:56:01m.TypeFile,
 					FileExtension = Path.GetExtension(m.FileName),
-					m.Size
-
+					m.Size,
+					m.TypeFile
+					
 				})
 				.ToListAsync();
 		
@@ -676,252 +679,251 @@ namespace Edu_plat.Controllers
 				return Ok(new { success = true, message = $"No {typeFile}  found for this doctor in course {courseCode}.", materials = new List<object>() });
 			}
 
-			// Return the materials in JSON format
-			return Ok(new { success = true, materials = doctorMaterials });
+			return Ok(new { success = true,message="Fetching Material Completed", materials = doctorMaterials });
 		
 			
 		}
-		#endregion
+        #endregion
 
 
-		// -------------------------------------------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------------------------------------------
 
-		#region GetCourseMaterials/{courseCode} comment
-		//[HttpGet("GetCourseMaterials/{courseCode}")]
-		//[Authorize(Roles = "Doctor")]
-		//public async Task<IActionResult> GetCourseMaterials(string courseCode)
-		//{
-		//	// 🔹 Get the UserId from the token
-		//	var userId = User.FindFirstValue("AppicationUserId");
+        #region GetCourseMaterials/{courseCode} comment [Gets The Axe]
+        //[HttpGet("GetCourseMaterials/{courseCode}")]
+        //[Authorize(Roles = "Doctor")]
+        //public async Task<IActionResult> GetCourseMaterials(string courseCode)
+        //{
+        //	// 🔹 Get the UserId from the token
+        //	var userId = User.FindFirstValue("AppicationUserId");
 
-		//	// 🔹 Check if the user exists
-		//	var user = await _userManager.FindByIdAsync(userId);
-		//	if (user == null)
-		//	{
-		//		return Ok(new { success = false, message = "User not found." });
-		//	}
-
-
-		//	// 🔹 Check if the course exists
-		//	var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == courseCode);
-		//	if (course == null)
-		//	{
-		//		return NotFound(new { success = false, message = "Course not found." });
-		//	}
-
-		//	// 🔹 Check if the doctor is enrolled in this course
-		//	bool isDoctorEnrolled = await _context.CourseDoctors
-		//		.AnyAsync(cd => cd.Doctor.UserId == userId && cd.CourseId == course.Id);
-
-		//	if (!isDoctorEnrolled)
-		//	{
-		//		return StatusCode(403, new { success = false, message = "Doctor is not enrolled in this course." });
-		//	}
-
-		//	// 🔹 Retrieve all materials for the given course
-		//	var courseMaterials = await _context.Materials
-		//		.Where(m => m.CourseCode == courseCode && m.Doctor.UserId == userId)
-		//		.Select(m => new
-		//		{
-		//			m.Id,
-		//			m.FileName,
-		//			m.FilePath,
-		//			m.CourseCode,
-		//			m.Description,
-		//			m.UploadDate,
-		//			m.TypeFile
-		//		})
-		//		.ToListAsync();
-
-		//	// 🔹 Check if there are any materials for the course
-		//	if (!courseMaterials.Any())
-		//	{
-		//		return Ok(new { success = true, message = "No materials found for this course.", materials = new List<object>() });
-		//	}
-
-		//	// 🔹 Return the materials in JSON format
-		//	return Ok(new { success = true, materials = courseMaterials });
-		//}
-		#endregion
-
-		#region GetCourseMaterials/{courseCode}LecOnlycomment
-		//[HttpGet("GetCourseLectures/Doctor/{courseCode}")]
-		//[Authorize(Roles = "Doctor")]
-		//public async Task<IActionResult> GetCourseLectures(string courseCode)
-		//{
-		//	// 🔹 Get the UserId from the token
-		//	var userId = User.FindFirstValue("AppicationUserId");
-
-		//	// 🔹 Check if the user exists
-		//	var user = await _userManager.FindByIdAsync(userId);
-		//	if (user == null)
-		//	{
-		//		return Unauthorized(new { success = false, message = "User not found." });
-		//	}
-
-		//	// 🔹 Check if the course exists
-		//	var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == courseCode);
-		//	if (course == null)
-		//	{
-		//		return NotFound(new { success = false, message = "Course not found." });
-		//	}
-
-		//	// 🔹 Check if the doctor is enrolled in this course
-		//	bool isDoctorEnrolled = await _context.CourseDoctors
-		//		.AnyAsync(cd => cd.Doctor.UserId == userId && cd.CourseId == course.Id);
-
-		//	if (!isDoctorEnrolled)
-		//	{
-		//		return StatusCode(403, new { success = false, message = "Doctor is not enrolled in this course." });
-		//	}
-
-		//	// 🔹 Retrieve all lecture materials for the given course
-		//	var lectureMaterials = await _context.Materials
-		//		.Where(m => m.CourseCode == courseCode && m.Doctor.UserId == userId && m.TypeFile == "lec")
-		//		.Select(m => new
-		//		{
-		//			m.Id,
-		//			m.FileName,
-		//			m.FilePath,
-		//			m.CourseCode,
-		//			m.Description,
-		//			m.UploadDate,
-		//			m.TypeFile
-		//		})
-		//		.ToListAsync();
-
-		//	// 🔹 Check if there are any lectures for the course
-		//	if (!lectureMaterials.Any())
-		//	{
-		//		return Ok(new { success = true, message = "No lecture materials found for this course.", materials = new List<object>() });
-		//	}
-
-		//	// 🔹 Return the lectures in JSON format
-		//	return Ok(new { success = true, materials = lectureMaterials });
-		//}
-		#endregion
+        //	// 🔹 Check if the user exists
+        //	var user = await _userManager.FindByIdAsync(userId);
+        //	if (user == null)
+        //	{
+        //		return Ok(new { success = false, message = "User not found." });
+        //	}
 
 
-		#region GetCourseMaterials/{courseCode}LabOnly comment
+        //	// 🔹 Check if the course exists
+        //	var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == courseCode);
+        //	if (course == null)
+        //	{
+        //		return NotFound(new { success = false, message = "Course not found." });
+        //	}
 
-		//[HttpGet("GetCourseLabs/{courseCode}")]
-		//[Authorize(Roles = "Doctor")]
-		//public async Task<IActionResult> GetCourseLabs(string courseCode)
-		//{
-		//	// 🔹 Get the UserId from the token
-		//	var userId = User.FindFirstValue("AppicationUserId");
+        //	// 🔹 Check if the doctor is enrolled in this course
+        //	bool isDoctorEnrolled = await _context.CourseDoctors
+        //		.AnyAsync(cd => cd.Doctor.UserId == userId && cd.CourseId == course.Id);
 
-		//	// 🔹 Check if the user exists
-		//	var user = await _userManager.FindByIdAsync(userId);
-		//	if (user == null)
-		//	{
-		//		return Unauthorized(new { success = false, message = "User not found." });
-		//	}
+        //	if (!isDoctorEnrolled)
+        //	{
+        //		return StatusCode(403, new { success = false, message = "Doctor is not enrolled in this course." });
+        //	}
 
-		//	// 🔹 Check if the course exists
-		//	var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == courseCode);
-		//	if (course == null)
-		//	{
-		//		return NotFound(new { success = false, message = "Course not found." });
-		//	}
+        //	// 🔹 Retrieve all materials for the given course
+        //	var courseMaterials = await _context.Materials
+        //		.Where(m => m.CourseCode == courseCode && m.Doctor.UserId == userId)
+        //		.Select(m => new
+        //		{
+        //			m.Id,
+        //			m.FileName,
+        //			m.FilePath,
+        //			m.CourseCode,
+        //			m.Description,
+        //			m.UploadDate,
+        //			m.TypeFile
+        //		})
+        //		.ToListAsync();
 
-		//	// 🔹 Check if the doctor is enrolled in this course
-		//	bool isDoctorEnrolled = await _context.CourseDoctors
-		//		.AnyAsync(cd => cd.Doctor.UserId == userId && cd.CourseId == course.Id);
+        //	// 🔹 Check if there are any materials for the course
+        //	if (!courseMaterials.Any())
+        //	{
+        //		return Ok(new { success = true, message = "No materials found for this course.", materials = new List<object>() });
+        //	}
 
-		//	if (!isDoctorEnrolled)
-		//	{
-		//		return StatusCode(403, new { success = false, message = "Doctor is not enrolled in this course." });
-		//	}
+        //	// 🔹 Return the materials in JSON format
+        //	return Ok(new { success = true, materials = courseMaterials });
+        //}
+        #endregion
 
-		//	// 🔹 Retrieve all lecture materials for the given course
-		//	var lectureMaterials = await _context.Materials
-		//		.Where(m => m.CourseCode == courseCode && m.Doctor.UserId == userId && m.TypeFile == "lab")
-		//		.Select(m => new
-		//		{
-		//			m.Id,
-		//			m.FileName,
-		//			m.FilePath,
-		//			m.CourseCode,
-		//			m.Description,
-		//			m.UploadDate,
-		//			m.TypeFile
-		//		})
-		//		.ToListAsync();
+        #region GetCourseMaterials/{courseCode}LecOnlycomment [Gets The Axe]
+        //[HttpGet("GetCourseLectures/Doctor/{courseCode}")]
+        //[Authorize(Roles = "Doctor")]
+        //public async Task<IActionResult> GetCourseLectures(string courseCode)
+        //{
+        //	// 🔹 Get the UserId from the token
+        //	var userId = User.FindFirstValue("AppicationUserId");
 
-		//	// 🔹 Check if there are any lectures for the course
-		//	if (!lectureMaterials.Any())
-		//	{
-		//		return Ok(new { success = true, message = "No labs materials found for this course.", materials = new List<object>() });
-		//	}
+        //	// 🔹 Check if the user exists
+        //	var user = await _userManager.FindByIdAsync(userId);
+        //	if (user == null)
+        //	{
+        //		return Unauthorized(new { success = false, message = "User not found." });
+        //	}
 
-		//	// 🔹 Return the lectures in JSON format
-		//	return Ok(new { success = true, materials = lectureMaterials });
-		//}
-		#endregion
+        //	// 🔹 Check if the course exists
+        //	var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == courseCode);
+        //	if (course == null)
+        //	{
+        //		return NotFound(new { success = false, message = "Course not found." });
+        //	}
+
+        //	// 🔹 Check if the doctor is enrolled in this course
+        //	bool isDoctorEnrolled = await _context.CourseDoctors
+        //		.AnyAsync(cd => cd.Doctor.UserId == userId && cd.CourseId == course.Id);
+
+        //	if (!isDoctorEnrolled)
+        //	{
+        //		return StatusCode(403, new { success = false, message = "Doctor is not enrolled in this course." });
+        //	}
+
+        //	// 🔹 Retrieve all lecture materials for the given course
+        //	var lectureMaterials = await _context.Materials
+        //		.Where(m => m.CourseCode == courseCode && m.Doctor.UserId == userId && m.TypeFile == "lec")
+        //		.Select(m => new
+        //		{
+        //			m.Id,
+        //			m.FileName,
+        //			m.FilePath,
+        //			m.CourseCode,
+        //			m.Description,
+        //			m.UploadDate,
+        //			m.TypeFile
+        //		})
+        //		.ToListAsync();
+
+        //	// 🔹 Check if there are any lectures for the course
+        //	if (!lectureMaterials.Any())
+        //	{
+        //		return Ok(new { success = true, message = "No lecture materials found for this course.", materials = new List<object>() });
+        //	}
+
+        //	// 🔹 Return the lectures in JSON format
+        //	return Ok(new { success = true, materials = lectureMaterials });
+        //}
+        #endregion
 
 
-		#region GetCourseMaterials/{courseCode}LabOnlycomment
+        #region GetCourseMaterials/{courseCode}LabOnly comment [Gets The Axe]
 
-		//[HttpGet("GetCourseExams/{courseCode}")]
-		//[Authorize(Roles = "Doctor")]
-		//public async Task<IActionResult> GetCourseExams(string courseCode)
-		//{
-		//	// 🔹 Get the UserId from the token
-		//	var userId = User.FindFirstValue("AppicationUserId");
+        //[HttpGet("GetCourseLabs/{courseCode}")]
+        //[Authorize(Roles = "Doctor")]
+        //public async Task<IActionResult> GetCourseLabs(string courseCode)
+        //{
+        //	// 🔹 Get the UserId from the token
+        //	var userId = User.FindFirstValue("AppicationUserId");
 
-		//	// 🔹 Check if the user exists
-		//	var user = await _userManager.FindByIdAsync(userId);
-		//	if (user == null)
-		//	{
-		//		return Unauthorized(new { success = false, message = "User not found." });
-		//	}
+        //	// 🔹 Check if the user exists
+        //	var user = await _userManager.FindByIdAsync(userId);
+        //	if (user == null)
+        //	{
+        //		return Unauthorized(new { success = false, message = "User not found." });
+        //	}
 
-		//	// 🔹 Check if the course exists
-		//	var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == courseCode);
-		//	if (course == null)
-		//	{
-		//		return NotFound(new { success = false, message = "Course not found." });
-		//	}
+        //	// 🔹 Check if the course exists
+        //	var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == courseCode);
+        //	if (course == null)
+        //	{
+        //		return NotFound(new { success = false, message = "Course not found." });
+        //	}
 
-		//	// 🔹 Check if the doctor is enrolled in this course
-		//	bool isDoctorEnrolled = await _context.CourseDoctors
-		//		.AnyAsync(cd => cd.Doctor.UserId == userId && cd.CourseId == course.Id);
+        //	// 🔹 Check if the doctor is enrolled in this course
+        //	bool isDoctorEnrolled = await _context.CourseDoctors
+        //		.AnyAsync(cd => cd.Doctor.UserId == userId && cd.CourseId == course.Id);
 
-		//	if (!isDoctorEnrolled)
-		//	{
-		//		return StatusCode(403, new { success = false, message = "Doctor is not enrolled in this course." });
-		//	}
+        //	if (!isDoctorEnrolled)
+        //	{
+        //		return StatusCode(403, new { success = false, message = "Doctor is not enrolled in this course." });
+        //	}
 
-		//	// 🔹 Retrieve all lecture materials for the given course
-		//	var lectureMaterials = await _context.Materials
-		//		.Where(m => m.CourseCode == courseCode && m.Doctor.UserId == userId && m.TypeFile == "exam")
-		//		.Select(m => new
-		//		{
-		//			m.Id,
-		//			m.FileName,
-		//			m.FilePath,
-		//			m.CourseCode,
-		//			m.Description,
-		//			m.UploadDate,
-		//			m.TypeFile
-		//		})
-		//		.ToListAsync();
+        //	// 🔹 Retrieve all lecture materials for the given course
+        //	var lectureMaterials = await _context.Materials
+        //		.Where(m => m.CourseCode == courseCode && m.Doctor.UserId == userId && m.TypeFile == "lab")
+        //		.Select(m => new
+        //		{
+        //			m.Id,
+        //			m.FileName,
+        //			m.FilePath,
+        //			m.CourseCode,
+        //			m.Description,
+        //			m.UploadDate,
+        //			m.TypeFile
+        //		})
+        //		.ToListAsync();
 
-		//	// 🔹 Check if there are any lectures for the course
-		//	if (!lectureMaterials.Any())
-		//	{
-		//		return Ok(new { success = true, message = "No exams materials found for this course.", materials = new List<object>() });
-		//	}
+        //	// 🔹 Check if there are any lectures for the course
+        //	if (!lectureMaterials.Any())
+        //	{
+        //		return Ok(new { success = true, message = "No labs materials found for this course.", materials = new List<object>() });
+        //	}
 
-		//	// 🔹 Return the lectures in JSON format
-		//	return Ok(new { success = true, materials = lectureMaterials });
-		//}
-		#endregion
+        //	// 🔹 Return the lectures in JSON format
+        //	return Ok(new { success = true, materials = lectureMaterials });
+        //}
+        #endregion
 
-		
-		#region GetCourseMaterials/{courseCode}
-		[HttpGet("GetMaterialPassCourseTypeIdOfDoctor/{courseCode}")]
+
+        #region GetCourseMaterials/{courseCode}LabOnlycomment [Gets The Axe]
+
+        //[HttpGet("GetCourseExams/{courseCode}")]
+        //[Authorize(Roles = "Doctor")]
+        //public async Task<IActionResult> GetCourseExams(string courseCode)
+        //{
+        //	// 🔹 Get the UserId from the token
+        //	var userId = User.FindFirstValue("AppicationUserId");
+
+        //	// 🔹 Check if the user exists
+        //	var user = await _userManager.FindByIdAsync(userId);
+        //	if (user == null)
+        //	{
+        //		return Unauthorized(new { success = false, message = "User not found." });
+        //	}
+
+        //	// 🔹 Check if the course exists
+        //	var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == courseCode);
+        //	if (course == null)
+        //	{
+        //		return NotFound(new { success = false, message = "Course not found." });
+        //	}
+
+        //	// 🔹 Check if the doctor is enrolled in this course
+        //	bool isDoctorEnrolled = await _context.CourseDoctors
+        //		.AnyAsync(cd => cd.Doctor.UserId == userId && cd.CourseId == course.Id);
+
+        //	if (!isDoctorEnrolled)
+        //	{
+        //		return StatusCode(403, new { success = false, message = "Doctor is not enrolled in this course." });
+        //	}
+
+        //	// 🔹 Retrieve all lecture materials for the given course
+        //	var lectureMaterials = await _context.Materials
+        //		.Where(m => m.CourseCode == courseCode && m.Doctor.UserId == userId && m.TypeFile == "exam")
+        //		.Select(m => new
+        //		{
+        //			m.Id,
+        //			m.FileName,
+        //			m.FilePath,
+        //			m.CourseCode,
+        //			m.Description,
+        //			m.UploadDate,
+        //			m.TypeFile
+        //		})
+        //		.ToListAsync();
+
+        //	// 🔹 Check if there are any lectures for the course
+        //	if (!lectureMaterials.Any())
+        //	{
+        //		return Ok(new { success = true, message = "No exams materials found for this course.", materials = new List<object>() });
+        //	}
+
+        //	// 🔹 Return the lectures in JSON format
+        //	return Ok(new { success = true, materials = lectureMaterials });
+        //}
+        #endregion
+
+
+        #region GetCourseMaterials/{courseCode} [Gets The Axe]
+        [HttpGet("GetMaterialPassCourseTypeIdOfDoctor/{courseCode}")]
 		// 
 		public async Task<IActionResult> GetCourseMaterials(string courseCode, [FromQuery] string doctorId, [FromQuery] string typeFile)
 		{
@@ -974,11 +976,11 @@ namespace Edu_plat.Controllers
 			// 🔹 Return the materials in JSON format
 			return Ok(new { success = true, materials = courseMaterials });
 		}
-		#endregion
+        #endregion
 
 
-		#region Update Files
-		[HttpPut("updateFile")]
+        #region Update Files [Gets The Axe]
+        [HttpPut("updateFile")]
 		[Authorize(Roles = "Doctor")]
 		public async Task<IActionResult> UpdateMaterial([FromForm] UpdateMaterialDto updateMaterialDto)
 		{
@@ -1109,17 +1111,17 @@ namespace Edu_plat.Controllers
 				filePath = material.FilePath
 			});
 		}
-	
-
-		#endregion
 
 
-//--------------------------------------------------------------------------------------------------------------------------------------------------
+        #endregion
 
 
-		#region DeleteAllFilesOfCertainDoctor
+        //--------------------------------------------------------------------------------------------------------------------------------------------------
 
-		[HttpDelete("deleteAllMaterialsOfDoctor/Doctor")]
+
+        #region DeleteAllFilesOfCertainDoctor [Gets The Axe]
+
+        [HttpDelete("Delete-All-Doctor-Materials")]
 		[Authorize(Roles = "Doctor")]
 		public async Task<IActionResult> DeleteAllMaterials()
 		{

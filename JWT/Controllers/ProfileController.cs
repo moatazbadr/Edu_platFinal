@@ -24,7 +24,7 @@ namespace Edu_plat.Controllers
         #region Getting profile [student && Doctors]
         [HttpGet("Profile")]
 
-        [Authorize(Roles = "Doctor,Student")]
+        [Authorize(Roles = "Doctor,Student, SuperAdmin,Admin")]
         public async Task<IActionResult> GetProfile()
         {
             var userId = User.FindFirstValue("AppicationUserId");

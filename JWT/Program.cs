@@ -202,56 +202,56 @@ namespace JWT
 			app.UseStaticFiles();
 
 			// Seed Admin Role if not already seeded
-			using (var scope = app.Services.CreateScope())
-            {
-                var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-                var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-
-                var roles = new[] { "Admin", "Doctor", "Student" ,"SuperAdmin"};
-
-                foreach (var role in roles)
+			    using (var scope = app.Services.CreateScope())
                 {
-                    if (!await roleManager.RoleExistsAsync(role))
-                    {
-                        await roleManager.CreateAsync(new IdentityRole(role));
-                    }
-                }
+                    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+                    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
-                // Seed Admin User if not exists
-                string adminEmail = "Saleh@sci.asu.edu.eg";
-                var admin = await userManager.FindByEmailAsync(adminEmail);
-                if (admin == null)
-                {
-                    var adminUser = new ApplicationUser
+                    var roles = new[] { "Admin", "Doctor", "Student" ,"SuperAdmin"};
+
+                    foreach (var role in roles)
                     {
-                        UserName = adminEmail.Split('@')[0],
-                        Email = adminEmail
-                    };
-                    var result = await userManager.CreateAsync(adminUser, "Saleh@123!");
-                    if (result.Succeeded)
-                    {
-                        await userManager.AddToRoleAsync(adminUser, "SuperAdmin");
-                    }
-                }
-                string adminEmail2 = "zezo@gmail.com";
-                var admin2= await userManager.FindByEmailAsync(adminEmail2);
-                if (admin2 == null)
-                {
-                    var adminUser2 = new ApplicationUser()
-                    {
-                        UserName = adminEmail2.Split('@')[0],
-                        Email = adminEmail2
-                    };
-                    var result2 = await userManager.CreateAsync(adminUser2, "AMDTOP2001@s1");
-                    if (result2.Succeeded)
-                    {
-                        await userManager.AddToRoleAsync(adminUser2, "Admin");
+                        if (!await roleManager.RoleExistsAsync(role))
+                        {
+                            await roleManager.CreateAsync(new IdentityRole(role));
+                        }
                     }
 
+                    // Seed Admin User if not exists
+                    string adminEmail = "Saleh@sci.asu.edu.eg";
+                    var admin = await userManager.FindByEmailAsync(adminEmail);
+                    if (admin == null)
+                    {
+                        var adminUser = new ApplicationUser
+                        {
+                            UserName = adminEmail.Split('@')[0],
+                            Email = adminEmail
+                        };
+                        var result = await userManager.CreateAsync(adminUser, "Saleh@123!");
+                        if (result.Succeeded)
+                        {
+                            await userManager.AddToRoleAsync(adminUser, "SuperAdmin");
+                        }
+                    }
+                    string adminEmail2 = "zezo@gmail.com";
+                    var admin2= await userManager.FindByEmailAsync(adminEmail2);
+                    if (admin2 == null)
+                    {
+                        var adminUser2 = new ApplicationUser()
+                        {
+                            UserName = adminEmail2.Split('@')[0],
+                            Email = adminEmail2
+                        };
+                        var result2 = await userManager.CreateAsync(adminUser2, "AMDTOP2001@s1");
+                        if (result2.Succeeded)
+                        {
+                            await userManager.AddToRoleAsync(adminUser2, "Admin");
+                        }
+
+                    }
+
+
                 }
-
-
-            }
             #endregion
 
             

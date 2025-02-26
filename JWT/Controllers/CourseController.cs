@@ -10,6 +10,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Security.Claims;
 using Edu_plat.DTO.Course_Registration;
 using Edu_plat.Model;
+using Edu_plat.Responses;
 
 namespace Edu_plat.Controllers
 {
@@ -59,21 +60,26 @@ namespace Edu_plat.Controllers
         #endregion
 
         #region Getting-all-courses [Admin-only]
-
         [HttpGet("Get-all-courses")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllCourses()
         {
-            var AllCourses = await _context.Courses.ToListAsync();
-            List<string> CoursesCodes = new List<string>();
-            foreach (var code in AllCourses)
-            {
-                CoursesCodes.Add(code.CourseCode);
-            }
+            var courses = await _context.Courses
+                .Include(c => c.CourseDoctors)
+                .ThenInclude(cd => cd.Doctor)
+                .ThenInclude(d => d.applicationUser) // To get the username from ApplicationUser
+                .Select(c => new
+                {
+                    CourseCode = c.CourseCode,
+                    Doctors = c.CourseDoctors.Select(cd => cd.Doctor.applicationUser.UserName).ToList(),
+                    CourseDescription = c.CourseDescription,
+                    courseHours= c.Course_hours,
+                })
+                .ToListAsync();
 
-
-            return Ok(CoursesCodes);
+            return Ok(courses);
         }
+
 
         #endregion
 
