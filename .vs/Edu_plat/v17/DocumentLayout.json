@@ -3,44 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\eduplat_secondterm\\edu_platfinal\\jwt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\eduplat_secondterm\\edu_platfinal\\jwt\\edu_plat.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\edu_plat.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\eduplat_secondterm\\edu_platfinal\\jwt\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\eduplat_secondterm\\edu_platfinal\\jwt\\dto\\login\u0026registeration\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\dto\\login\u0026registeration\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\eduplat_secondterm\\edu_platfinal\\jwt\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\eduplat_secondterm\\edu_platfinal\\jwt\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\eduplat_secondterm\\edu_platfinal\\jwt\\controllers\\gpacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\controllers\\gpacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\eduplat_secondterm\\edu_platfinal\\jwt\\controllers\\materialscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\controllers\\materialscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\eduplat_secondterm\\edu_platfinal\\jwt\\controllers\\studentcoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\controllers\\studentcoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\eduplat_secondterm\\edu_platfinal\\jwt\\model\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\model\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\eduplat_secondterm\\edu_platfinal\\jwt\\controllers\\videos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\controllers\\videos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\eduplat_secondterm\\edu_platfinal\\jwt\\dto\\course_registration\\viewcoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\dto\\course_registration\\viewcoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\eduplat_secondterm\\edu_platfinal\\jwt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,130 +46,54 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "JWT\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Properties\\launchSettings.json",
+              "RelativeToolTip": "JWT\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-27T14:16:12.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Program.cs",
+              "RelativeDocumentMoniker": "JWT\\Program.cs",
+              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Program.cs",
+              "RelativeToolTip": "JWT\\Program.cs",
+              "ViewState": "AQIAAMMAAAAAAAAAAIAwwNcAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T12:53:45.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\appsettings.json",
               "RelativeDocumentMoniker": "JWT\\appsettings.json",
               "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\appsettings.json",
               "RelativeToolTip": "JWT\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABLAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-24T20:14:14.182Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RegisterUserDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\DTO\\Login\u0026Registeration\\RegisterUserDTO.cs",
-              "RelativeDocumentMoniker": "JWT\\DTO\\Login\u0026Registeration\\RegisterUserDTO.cs",
-              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\DTO\\Login\u0026Registeration\\RegisterUserDTO.cs",
-              "RelativeToolTip": "JWT\\DTO\\Login\u0026Registeration\\RegisterUserDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T20:10:48.598Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GPAController.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Controllers\\GPAController.cs",
-              "RelativeDocumentMoniker": "JWT\\Controllers\\GPAController.cs",
-              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Controllers\\GPAController.cs",
-              "RelativeToolTip": "JWT\\Controllers\\GPAController.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAIwHAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T20:01:53.459Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Student.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Model\\Student.cs",
-              "RelativeDocumentMoniker": "JWT\\Model\\Student.cs",
-              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Model\\Student.cs",
-              "RelativeToolTip": "JWT\\Model\\Student.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T19:49:47.212Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AccountsController.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Controllers\\AccountsController.cs",
-              "RelativeDocumentMoniker": "JWT\\Controllers\\AccountsController.cs",
-              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Controllers\\AccountsController.cs",
-              "RelativeToolTip": "JWT\\Controllers\\AccountsController.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAAwDYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T18:04:18.361Z",
+              "WhenOpened": "2025-02-27T12:49:22.733Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Program.cs",
-              "RelativeDocumentMoniker": "JWT\\Program.cs",
-              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Program.cs",
-              "RelativeToolTip": "JWT\\Program.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAIAwwNcAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-23T18:22:49.772Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MaterialsController.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Controllers\\MaterialsController.cs",
-              "RelativeDocumentMoniker": "JWT\\Controllers\\MaterialsController.cs",
-              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Controllers\\MaterialsController.cs",
-              "RelativeToolTip": "JWT\\Controllers\\MaterialsController.cs",
-              "ViewState": "AQIAAOgBAAAAAAAAAAAYwGYCAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-23T18:22:14.751Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Videos.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Controllers\\Videos.cs",
-              "RelativeDocumentMoniker": "JWT\\Controllers\\Videos.cs",
-              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Controllers\\Videos.cs",
-              "RelativeToolTip": "JWT\\Controllers\\Videos.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T08:07:11.409Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ViewCourseDto.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\DTO\\Course_Registration\\ViewCourseDto.cs",
-              "RelativeDocumentMoniker": "JWT\\DTO\\Course_Registration\\ViewCourseDto.cs",
-              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\DTO\\Course_Registration\\ViewCourseDto.cs",
-              "RelativeToolTip": "JWT\\DTO\\Course_Registration\\ViewCourseDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T07:52:25.078Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "StudentCourseController.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Controllers\\StudentCourseController.cs",
-              "RelativeDocumentMoniker": "JWT\\Controllers\\StudentCourseController.cs",
-              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Controllers\\StudentCourseController.cs",
-              "RelativeToolTip": "JWT\\Controllers\\StudentCourseController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T14:40:06.241Z",
+              "Title": "Edu_plat",
+              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Edu_plat.csproj",
+              "RelativeDocumentMoniker": "JWT\\Edu_plat.csproj",
+              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Edu_plat.csproj",
+              "RelativeToolTip": "JWT\\Edu_plat.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-27T12:38:33.552Z",
               "EditorCaption": ""
             }
           ]

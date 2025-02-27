@@ -291,106 +291,7 @@ namespace JWT.Controllers
         }
         #endregion
 
-        #region RegisterAdmin
-
-        //// Admin registration (for demo purposes)
-        [HttpPost("RegisterAdmin")]
-        [Authorize(Roles= "SuperAdmin")]
-        public async Task<IActionResult> RegisterAdmin([FromBody] RegisterUserDTO dto)
-        {
-            if (!ModelState.IsValid)
-            {
-                return Ok(new { success = false,message="Model state is invalid" });
-            }
-
-            var admin = new ApplicationUser
-            {
-                UserName = dto.UserName,
-                Email = dto.Email
-            };
-
-            var result = await _userManager.CreateAsync(admin, dto.Password);
-            if (result.Succeeded)
-            {
-                // Assign Admin role
-                var roleExist = await _roleManager.RoleExistsAsync("Admin");
-                if (!roleExist)
-                {
-                    await _roleManager.CreateAsync(new IdentityRole("Admin"));
-                }
-                await _userManager.AddToRoleAsync(admin, "Admin");
-                return Ok("Admin user created successfully.");
-            }
-
-            foreach (var error in result.Errors)
-            {
-                ModelState.AddModelError(string.Empty, error.Description);
-            }
-
-            return Ok(new { success=false ,message="model state is invalid"});
-        }
-        #endregion
-
-        #region RegisterDoctor 
-        // Register Doctor (Only Admin can use this endpoint)
-        [HttpPost("RegisterDoctor")]
-        [Authorize(Roles = "Admin,SuperAdmin")] // Only Admins can register Doctors
-        public async Task<IActionResult> RegisterDoctor([FromBody] RegisterDoctorDTO dto)
-        {
-            if (!ModelState.IsValid)
-            {
-                return Ok(new {success=false,message="Model state is invalid"});
-            }
-
-            var doctor = new ApplicationUser
-            {
-                UserName = dto.UserName,
-                Email = dto.Email
-            };
-            //var existingUser = await _userManager.Users.AnyAsync(u => u.Email == dto.Email);
-            //if (existingUser)
-            //    return BadRequest(new { success = false, message = "Password or Email is incorrect" });
-
-            var result = await _userManager.CreateAsync(doctor, dto.Password);
-            // Save the userId for later use
-            var userId = doctor.Id;
-            // Step 2: Create and Save a Doctor linked to the ApplicationUser
-            var DoctorObj = new Doctor
-            {
-                UserId = userId, // Foreign key linking to ApplicationUser
-                applicationUser = doctor
-                
-            };
-
-            //check if the doctor already exists
-         
-
-            _context.Set<Doctor>().Add(DoctorObj);
-            _context.SaveChanges();
-            if (result.Succeeded)
-            {
-                // Assign Doctor role
-                var roleResult = await _userManager.AddToRoleAsync(doctor, "Doctor");
-                if (!roleResult.Succeeded)
-                {
-                    return Ok(new { success = false, message = "Failed to assign Doctor role." });
-                }
-
-                return Ok(new {success=true , Message = "Doctor registered successfully." });
-            }
-
-            foreach (var error in result.Errors)
-            {
-                ModelState.AddModelError(string.Empty, error.Description);
-            }
-
-            return Ok(new { success=false ,message="failed"});
-        }
-
-
-        #endregion
-
-        #region SendEmail
+       #region SendEmail
         [HttpPost("SendEmail")]
         public async Task<IActionResult> sendMail([FromForm] MailRequsetDTO dto)
         {
@@ -509,6 +410,15 @@ namespace JWT.Controllers
 
             return Ok(new { success = true, message = "Password reset successful." });
         }
+		#endregion
+
+	
+
+		
+
     }
 }
-#endregion
+
+
+
+

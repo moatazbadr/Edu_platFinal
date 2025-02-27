@@ -12,7 +12,7 @@ namespace JWT
 	{
         public byte[]? profilePicture { get; set; }
 
-		
+		public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
 		public Student Student { get; set; }
 		public Doctor Doctor { get; set; }
 

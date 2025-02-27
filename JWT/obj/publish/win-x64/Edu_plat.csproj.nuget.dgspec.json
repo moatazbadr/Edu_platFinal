@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Edu_plat\\JWT\\JWT\\JWT\\Edu_plat.csproj": {}
+    "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Edu_plat.csproj": {}
   },
   "projects": {
-    "H:\\Edu_plat\\JWT\\JWT\\JWT\\Edu_plat.csproj": {
+    "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Edu_plat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Edu_plat\\JWT\\JWT\\JWT\\Edu_plat.csproj",
+        "projectUniqueName": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Edu_plat.csproj",
         "projectName": "Edu_plat",
-        "projectPath": "H:\\Edu_plat\\JWT\\JWT\\JWT\\Edu_plat.csproj",
+        "projectPath": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Edu_plat.csproj",
         "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "H:\\Edu_plat\\JWT\\JWT\\JWT\\obj\\publish\\win-x64\\",
+        "outputPath": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\obj\\publish\\win-x64\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -47,35 +47,43 @@
           "dependencies": {
             "MailKit": {
               "target": "Package",
-              "version": "[4.8.0, )"
+              "version": "[4.10.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[6.0.21, )"
+              "version": "[6.0.36, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.21, )"
+              "version": "[6.0.36, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.21, )"
+              "version": "[6.0.36, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.21, )"
+              "version": "[6.0.36, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.21, )"
+              "version": "[6.0.35, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.21, )"
+              "version": "[6.0.35, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "OpenAI": {
+              "target": "Package",
+              "version": "[1.6.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -93,24 +101,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[6.0.27, 6.0.27]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Crossgen2.win-x64",
-              "version": "[6.0.27, 6.0.27]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[6.0.27, 6.0.27]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[6.0.27, 6.0.27]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"

@@ -69,6 +69,7 @@ namespace JWT.DATA
         public DbSet<Student> Students { get; set; }
 		public DbSet<Material> Materials { get; set; }
 		public DbSet<CourseDoctor> CourseDoctors { get; set; }
+		public DbSet<Chat> Chats { get; set; }
 		#endregion
 
 	}

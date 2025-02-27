@@ -1,33 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\Edu_plat.csproj": {}
+    "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Edu_plat.csproj": {}
   },
   "projects": {
-    "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\Edu_plat.csproj": {
+    "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Edu_plat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\Edu_plat.csproj",
+        "projectUniqueName": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Edu_plat.csproj",
         "projectName": "Edu_plat",
-        "projectPath": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\Edu_plat.csproj",
-        "packagesPath": "C:\\Users\\moataz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\moataz\\Desktop\\GradProject\\Moataz\\GradProject\\JWT\\obj\\publish\\win-x86\\",
+        "projectPath": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\Edu_plat.csproj",
+        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\obj\\publish\\win-x86\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\moataz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -43,44 +42,48 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
-            "BCrypt.Net-Next": {
-              "target": "Package",
-              "version": "[4.0.3, )"
-            },
             "MailKit": {
               "target": "Package",
-              "version": "[4.8.0, )"
+              "version": "[4.10.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[6.0.21, )"
+              "version": "[8.0.2, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.21, )"
+              "version": "[8.0.2, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.21, )"
+              "version": "[8.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.21, )"
+              "version": "[8.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.21, )"
+              "version": "[8.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.21, )"
+              "version": "[8.0.2, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "OpenAI": {
+              "target": "Package",
+              "version": "[1.6.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -106,7 +109,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

@@ -66,3 +66,6 @@ H:\Edu_plat\JWT\JWT\JWT\obj\Release\net6.0\win-x64\refint\Edu_plat.dll
 H:\Edu_plat\JWT\JWT\JWT\obj\Release\net6.0\win-x64\Edu_plat.pdb
 H:\Edu_plat\JWT\JWT\JWT\obj\Release\net6.0\win-x64\Edu_plat.genruntimeconfig.cache
 H:\Edu_plat\JWT\JWT\JWT\obj\Release\net6.0\win-x64\ref\Edu_plat.dll
+C:\Users\Acer\OneDrive\Desktop\EduPlat_SecondTerm\Edu_platFinal\JWT\obj\Release\net6.0\win-x64\Edu_plat.dll
+C:\Users\Acer\OneDrive\Desktop\EduPlat_SecondTerm\Edu_platFinal\JWT\obj\Release\net6.0\win-x64\refint\Edu_plat.dll
+C:\Users\Acer\OneDrive\Desktop\EduPlat_SecondTerm\Edu_platFinal\JWT\obj\Release\net6.0\win-x64\Edu_plat.pdb

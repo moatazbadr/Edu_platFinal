@@ -49,38 +49,6 @@
   },
   {
     "ContainingType": "JWT.Controllers.AccountsController",
-    "Method": "RegisterAdmin",
-    "RelativePath": "api/Accounts/RegisterAdmin",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "JWT.DTO.RegisterUserDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JWT.Controllers.AccountsController",
-    "Method": "RegisterDoctor",
-    "RelativePath": "api/Accounts/RegisterDoctor",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "JWT.DTO.RegisterDoctorDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JWT.Controllers.AccountsController",
     "Method": "ResetPassword",
     "RelativePath": "api/Accounts/reset-password",
     "HttpMethod": "POST",
@@ -149,6 +117,144 @@
         "Name": "dto",
         "Type": "JWT.DTO.VerifyOtpDTO",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.AdminDashBoard",
+    "Method": "DeleteAdmin",
+    "RelativePath": "api/AdminDashBoard/DeleteAdmin",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.AdminDashBoard",
+    "Method": "DeleteDoctor",
+    "RelativePath": "api/AdminDashBoard/DeleteDoctor",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.AdminDashBoard",
+    "Method": "DeleteStudent",
+    "RelativePath": "api/AdminDashBoard/DeleteStudent",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.AdminDashBoard",
+    "Method": "GetUsersByType",
+    "RelativePath": "api/AdminDashBoard/GetUsersByType",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.AdminDashBoard",
+    "Method": "RegisterAdmin",
+    "RelativePath": "api/AdminDashBoard/RegisterAdmin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JWT.DTO.RegisterUserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.AdminDashBoard",
+    "Method": "RegisterDoctor",
+    "RelativePath": "api/AdminDashBoard/RegisterDoctor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JWT.DTO.RegisterDoctorDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.ChatController",
+    "Method": "CreateChat",
+    "RelativePath": "api/Chat/CreateChat",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "chatMessageDto",
+        "Type": "Edu_plat.Model.OTP.ChatMessageDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.ChatController",
+    "Method": "GetChatContacts",
+    "RelativePath": "api/Chat/GetChatContacts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

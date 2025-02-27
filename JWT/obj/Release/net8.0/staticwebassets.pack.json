@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\materials.zip",
+      "PackagePath": "staticwebassets\\materials.zip"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.Edu_plat.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.Edu_plat.props",
+      "PackagePath": "build\\Edu_plat.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Edu_plat.props",
+      "PackagePath": "buildMultiTargeting\\Edu_plat.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.Edu_plat.props",
+      "PackagePath": "buildTransitive\\Edu_plat.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
