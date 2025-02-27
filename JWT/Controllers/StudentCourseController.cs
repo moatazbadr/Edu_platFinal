@@ -130,9 +130,17 @@ namespace Edu_plat.Controllers
 
         #region Delete Courses For Student
 
-
+        [HttpDelete]
+        [Authorize(Roles ="Student")]
+        public async Task<IActionResult> DeleteCourses()
+        {
+            return null;
+        }
 
         #endregion
+
+
+
 
 
 

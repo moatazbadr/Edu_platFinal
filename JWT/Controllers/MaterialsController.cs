@@ -71,10 +71,10 @@ namespace Edu_plat.Controllers
 				return BadRequest(new { success = false, message = "Only PDF, Word, and PowerPoint files are allowed." });
 			}
 			// Check content type for better security
-			if (allowedContentTypes[fileExtension] != uploadMaterialDto.File.ContentType.ToLower())
-			{
-				return BadRequest(new { success = false, message = "File type does not match its extension." });
-			}
+			//if (allowedContentTypes[fileExtension] != uploadMaterialDto.File.ContentType.ToLower())
+			//{
+			//	return BadRequest(new { success = false, message = "File type does not match its extension." });
+			//}
 
 			// Check if the course exists
 			var course = await _context.Courses
@@ -182,21 +182,26 @@ namespace Edu_plat.Controllers
 			//}
 
 
-			return Ok(new
+			return Ok(
+			new
 			{
 				success = true,
 				message = "File uploaded successfully.",
 				FileDetails = new
 				{
-					Id = material.Id, // Send the material ID in the response
-					Path = material.FilePath,
-					Size = fileSize,
-					Eextension = fileExtension,
-					Type = uploadMaterialDto.Type,
-					CoourseCode= course.CourseCode,
+					Id = material.Id,
+                    FileName=material.FileName,
+                    FilePath = material.FilePath,
+                    CourseCode=material.CourseCode,
+                    UploadDateFormatted= material.UploadDate.ToString("yyyy-MM-dd HH:mm:ss"),
+                    Size = fileSize,
+                    FileExtension = fileExtension,
+                    TypeFile = uploadMaterialDto.Type,
+
                 }
 
-			});
+			}
+			);
 		}
 		#endregion
 
@@ -979,7 +984,7 @@ namespace Edu_plat.Controllers
         #endregion
 
 
-        #region Update Files [Gets The Axe]
+        #region Update Files 
         [HttpPut("updateFile")]
 		[Authorize(Roles = "Doctor")]
 		public async Task<IActionResult> UpdateMaterial([FromForm] UpdateMaterialDto updateMaterialDto)
@@ -1012,11 +1017,11 @@ namespace Edu_plat.Controllers
 		       { ".pptx", "application/vnd.openxmlformats-officedocument.presentationml.presentation" }
 	        };
 
-			if (!allowedContentTypes.ContainsKey(fileExtension) ||
-				allowedContentTypes[fileExtension] != updateMaterialDto.File.ContentType.ToLower())
-			{
-				return BadRequest(new { success = false, message = "Only PDF, Word, and PowerPoint files are allowed." });
-			}
+			//if (!allowedContentTypes.ContainsKey(fileExtension) ||
+			//	allowedContentTypes[fileExtension] != updateMaterialDto.File.ContentType.ToLower())
+			//{
+			//	return BadRequest(new { success = false, message = "Only PDF, Word, and PowerPoint files are allowed." });
+			//}
 
 			// Get UserId from the token
 			var userId = User.FindFirstValue("AppicationUserId");
@@ -1029,7 +1034,7 @@ namespace Edu_plat.Controllers
 			}
 
 			// Check if the material exists
-			var material = await _context.Materials.FindAsync(updateMaterialDto.MaterialId);
+			var material = await _context.Materials.FindAsync(updateMaterialDto.Material_Id);
 			if (material == null)
 			{
 				return NotFound(new { success = false, message = "Material not found." });
@@ -1097,19 +1102,33 @@ namespace Edu_plat.Controllers
 	    	// Update material data in the database
 			material.FileName = uniqueFileName;
 			material.FilePath = $"/Uploads/{course.CourseCode}/{uniqueFileName}";
-			material.Description = updateMaterialDto.Description;
+			//material.Description = updateMaterialDto.Description;
 			material.UploadDate = DateTime.Now;
 			material.TypeFile = updateMaterialDto.Type;
 			material.Size = (fileSizeBytes / (1024.0 * 1024.0)).ToString("F2") + " MB"; // Convert to MB as string
 			_context.Materials.Update(material);
 			await _context.SaveChangesAsync();
 
-			return Ok(new
+			return Ok(
+			new
 			{
 				success = true,
 				message = "File updated successfully.",
-				filePath = material.FilePath
-			});
+            FileDetails = new
+            {
+                Id = material.Id,
+                FileName = material.FileName,
+                FilePath = material.FilePath,
+                CourseCode = material.CourseCode,
+                UploadDateFormatted = material.UploadDate.ToString("yyyy-MM-dd HH:mm:ss"),
+                Size = material.Size,
+                FileExtension = fileExtension,
+                TypeFile = updateMaterialDto.Type,
+
+            }
+
+        }
+            );
 		}
 
 

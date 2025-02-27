@@ -1,0 +1,69 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions_2.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions_2.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_13.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP201\\dummy-pdf_2_13.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_14.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP201\\dummy-pdf_2_14.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_15.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP201\\dummy-pdf_2_15.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_17.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP201\\dummy-pdf_2_17.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_18.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP201\\dummy-pdf_2_18.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_5.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP201\\dummy-pdf_2_5.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_6.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP201\\dummy-pdf_2_6.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_8.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP201\\dummy-pdf_2_8.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_9.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP201\\dummy-pdf_2_9.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\materials.zip",
+      "PackagePath": "staticwebassets\\materials.zip"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\win-x86\\staticwebassets\\msbuild.Edu_plat.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\win-x86\\staticwebassets\\msbuild.build.Edu_plat.props",
+      "PackagePath": "build\\Edu_plat.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\win-x86\\staticwebassets\\msbuild.buildMultiTargeting.Edu_plat.props",
+      "PackagePath": "buildMultiTargeting\\Edu_plat.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\win-x86\\staticwebassets\\msbuild.buildTransitive.Edu_plat.props",
+      "PackagePath": "buildTransitive\\Edu_plat.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

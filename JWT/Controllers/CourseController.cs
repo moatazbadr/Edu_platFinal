@@ -61,7 +61,7 @@ namespace Edu_plat.Controllers
 
         #region Getting-all-courses [Admin-only]
         [HttpGet("Get-all-courses")]
-        [Authorize(Roles = "Admin")]
+       
         public async Task<IActionResult> GetAllCourses()
         {
             var courses = await _context.Courses

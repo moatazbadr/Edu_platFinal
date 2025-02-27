@@ -317,6 +317,32 @@
     ]
   },
   {
+    "ContainingType": "Edu_plat.Controllers.GPAController",
+    "Method": "GetGPA",
+    "RelativePath": "api/GPA/GetGPA",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.GPAController",
+    "Method": "UpdateGPA",
+    "RelativePath": "api/GPA/UpdateGPA",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gpa",
+        "Type": "System.Double",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Edu_plat.Controllers.MaterialsController",
     "Method": "GetAllFiles",
     "RelativePath": "api/Materials/AllFiles",
@@ -580,18 +606,13 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "MaterialId",
+        "Name": "Material_Id",
         "Type": "System.Int32",
         "IsRequired": false
       },
       {
         "Name": "File",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      },
-      {
-        "Name": "Description",
-        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -701,6 +722,16 @@
     "Method": "GetProfilePic",
     "RelativePath": "api/Profile/profile-pic",
     "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.StudentCourseController",
+    "Method": "DeleteCourses",
+    "RelativePath": "api/StudentCourse/DeleteCourses",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [],

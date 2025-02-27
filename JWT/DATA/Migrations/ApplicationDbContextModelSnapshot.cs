@@ -34,7 +34,7 @@ namespace JWT.Migrations
 
                     b.HasIndex("coursesId");
 
-                    b.ToTable("CourseStudent");
+                    b.ToTable("CourseStudent", (string)null);
                 });
 
             modelBuilder.Entity("Edu_plat.Model.Course_registeration.Course", b =>
@@ -73,7 +73,7 @@ namespace JWT.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Courses");
+                    b.ToTable("Courses", (string)null);
                 });
 
             modelBuilder.Entity("Edu_plat.Model.CourseDoctor", b =>
@@ -88,7 +88,7 @@ namespace JWT.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("CourseDoctors");
+                    b.ToTable("CourseDoctors", (string)null);
                 });
 
             modelBuilder.Entity("Edu_plat.Model.Doctor", b =>
@@ -108,7 +108,7 @@ namespace JWT.Migrations
                         .IsUnique()
                         .HasFilter("[UserId] IS NOT NULL");
 
-                    b.ToTable("Doctors");
+                    b.ToTable("Doctors", (string)null);
                 });
 
             modelBuilder.Entity("Edu_plat.Model.Material", b =>
@@ -158,7 +158,7 @@ namespace JWT.Migrations
 
                     b.HasIndex("DoctorId");
 
-                    b.ToTable("Materials");
+                    b.ToTable("Materials", (string)null);
                 });
 
             modelBuilder.Entity("Edu_plat.Model.OTP.OtpVerification", b =>
@@ -188,7 +188,7 @@ namespace JWT.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OtpVerification");
+                    b.ToTable("OtpVerification", (string)null);
                 });
 
             modelBuilder.Entity("Edu_plat.Model.OTP.TemporaryUser", b =>
@@ -216,7 +216,7 @@ namespace JWT.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TemporaryUsers");
+                    b.ToTable("TemporaryUsers", (string)null);
                 });
 
             modelBuilder.Entity("Edu_plat.Model.Student", b =>
@@ -239,7 +239,7 @@ namespace JWT.Migrations
                         .IsUnique()
                         .HasFilter("[UserId] IS NOT NULL");
 
-                    b.ToTable("Students");
+                    b.ToTable("Students", (string)null);
                 });
 
             modelBuilder.Entity("Edu_plat.Model.TodoItems", b =>
@@ -272,7 +272,7 @@ namespace JWT.Migrations
 
                     b.HasIndex("ApplicationUserId");
 
-                    b.ToTable("TodoItems");
+                    b.ToTable("TodoItems", (string)null);
                 });
 
             modelBuilder.Entity("JWT.ApplicationUser", b =>

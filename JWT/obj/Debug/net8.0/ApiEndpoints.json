@@ -1,0 +1,1059 @@
+[
+  {
+    "ContainingType": "JWT.Controllers.AccountsController",
+    "Method": "ForgotPassword",
+    "RelativePath": "api/Accounts/forgot-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "JWT.DTO.ForgotPasswordRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JWT.Controllers.AccountsController",
+    "Method": "Login",
+    "RelativePath": "api/Accounts/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JWT.DTO.LoginUserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JWT.Controllers.AccountsController",
+    "Method": "Register",
+    "RelativePath": "api/Accounts/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JWT.DTO.RegisterUserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JWT.Controllers.AccountsController",
+    "Method": "RegisterAdmin",
+    "RelativePath": "api/Accounts/RegisterAdmin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JWT.DTO.RegisterUserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JWT.Controllers.AccountsController",
+    "Method": "RegisterDoctor",
+    "RelativePath": "api/Accounts/RegisterDoctor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JWT.DTO.RegisterDoctorDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JWT.Controllers.AccountsController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/Accounts/reset-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "JWT.DTO.ResetPasswordRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JWT.Controllers.AccountsController",
+    "Method": "sendMail",
+    "RelativePath": "api/Accounts/SendEmail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ToEmail",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Subject",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Body",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JWT.Controllers.AccountsController",
+    "Method": "ValidateOtp",
+    "RelativePath": "api/Accounts/validate-otp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "JWT.DTO.VerifyOtpDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JWT.Controllers.AccountsController",
+    "Method": "VerifyEmail",
+    "RelativePath": "api/Accounts/VerifyEmail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JWT.DTO.VerifyOtpDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.CourseController",
+    "Method": "AddCourse",
+    "RelativePath": "api/Course/Add-course",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseFromBody",
+        "Type": "Edu_plat.DTO.Course_Registration.CourseRegisteration",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.CourseController",
+    "Method": "CouresRegister",
+    "RelativePath": "api/Course/Add-Doctor-Course",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseRegistrationDto",
+        "Type": "Edu_plat.DTO.Course_Registration.CourseRegistrationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.CourseController",
+    "Method": "CoursesByLevel",
+    "RelativePath": "api/Course/Courses-level/{level}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "level",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.CourseController",
+    "Method": "CoursesBySemLevel",
+    "RelativePath": "api/Course/Courses-level/{level}/{semester}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "level",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "semester",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.CourseController",
+    "Method": "CoursesBySemster",
+    "RelativePath": "api/Course/Courses-semster/{sem}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sem",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.CourseController",
+    "Method": "DeleteCourse",
+    "RelativePath": "api/Course/Delete-Course",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseDeletion",
+        "Type": "Edu_plat.DTO.Course_Registration.CourseDeletion",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.CourseController",
+    "Method": "GetAllCourses",
+    "RelativePath": "api/Course/Get-all-courses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.CourseController",
+    "Method": "GetMyCourses",
+    "RelativePath": "api/Course/Get-doctor-courses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.CourseController",
+    "Method": "RemoveCourse",
+    "RelativePath": "api/Course/remove-course",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Edu_plat.DTO.Course_Registration.CourseRegistrationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.GPAController",
+    "Method": "CalculateGPA",
+    "RelativePath": "api/GPA/calculateGPA",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "grades",
+        "Type": "System.Collections.Generic.List\u00601[[Edu_plat.DTO.GPA.GradeInputDto, Edu_plat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Double",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.GPAController",
+    "Method": "GetGPA",
+    "RelativePath": "api/GPA/GetGPA",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.GPAController",
+    "Method": "UpdateGPA",
+    "RelativePath": "api/GPA/UpdateGPA",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gpa",
+        "Type": "System.Double",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "GetAllFiles",
+    "RelativePath": "api/Materials/AllFiles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "DeleteAllMaterials",
+    "RelativePath": "api/Materials/Delete-All-Doctor-Materials",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "DeleteMaterial",
+    "RelativePath": "api/Materials/delete/{materialId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "materialId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "DeleteAllExamMaterialsOfDoctor",
+    "RelativePath": "api/Materials/deleteAllExam/Doctor",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "DeleteAllLabMaterialsOfDoctor",
+    "RelativePath": "api/Materials/deleteAllLab/Doctor",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "DeleteAllLecMaterialsOfDoctor",
+    "RelativePath": "api/Materials/deleteAllLec/Doctor",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "DeleteAllMaterialsOfTypeForDoctor",
+    "RelativePath": "api/Materials/deleteMaterialsByType/Doctor",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "typeFile",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "DeleteMultipleMaterials",
+    "RelativePath": "api/Materials/deleteMultipleMaterialOfSpeceficDoctor",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "materialIds",
+        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "DownloadFile",
+    "RelativePath": "api/Materials/DownloadFile/{courseCode}/{materialId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "materialId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "DownloadFile",
+    "RelativePath": "api/Materials/DownloadFile/{materialId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "materialId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "DownloadFiles",
+    "RelativePath": "api/Materials/DownloadFiles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "materialIds",
+        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "GetDoctorMaterials",
+    "RelativePath": "api/Materials/Get-Doctor-Materials",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "GetDoctorMaterialsByTypeAndCourse",
+    "RelativePath": "api/Materials/Get-Material-ByType/courseCode/typeFile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "typeFile",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "GetDoctorMaterialsForCourse",
+    "RelativePath": "api/Materials/getDoctorMaterials/{courseCode}/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "GetDoctorMaterialsForCourse",
+    "RelativePath": "api/Materials/getDoctorMaterials/{courseCode}/{userId}/{typeFile}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "typeFile",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "GetCourseMaterials",
+    "RelativePath": "api/Materials/GetMaterialPassCourseTypeIdOfDoctor/{courseCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "doctorId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "typeFile",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "UpdateMaterial",
+    "RelativePath": "api/Materials/updateFile",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Material_Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Type",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.MaterialsController",
+    "Method": "UploadMaterial",
+    "RelativePath": "api/Materials/UploadFile/Doctors",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "CourseCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Type",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.ProfileController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/Profile/changePassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "passwordDto",
+        "Type": "Edu_plat.DTO.ProfileDto.ChangepasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.ProfileController",
+    "Method": "ChangePhoneNumber",
+    "RelativePath": "api/Profile/changePhoneNumber",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "phoneNumberUpdateDto",
+        "Type": "Edu_plat.DTO.ProfileDto.PhoneNumberDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.ProfileController",
+    "Method": "GetPhoneNumber",
+    "RelativePath": "api/Profile/phone-number",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.ProfileController",
+    "Method": "GetProfile",
+    "RelativePath": "api/Profile/Profile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.ProfileController",
+    "Method": "UpdateProfilePic",
+    "RelativePath": "api/Profile/profile-pic",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profilePicturee",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.ProfileController",
+    "Method": "GetProfilePic",
+    "RelativePath": "api/Profile/profile-pic",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.StudentCourseController",
+    "Method": "DeleteCourses",
+    "RelativePath": "api/StudentCourse/DeleteCourses",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.StudentCourseController",
+    "Method": "MyCourses",
+    "RelativePath": "api/StudentCourse/MyCourses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.StudentCourseController",
+    "Method": "Register",
+    "RelativePath": "api/StudentCourse/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registrationDto",
+        "Type": "Edu_plat.DTO.Course_Registration.CourseRegistrationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.TodoController",
+    "Method": "AddItem",
+    "RelativePath": "api/Todo/Add-new-todo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "itemFromUser",
+        "Type": "Edu_plat.DTO.To_doDto.ToDoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.TodoController",
+    "Method": "DeleteItem",
+    "RelativePath": "api/Todo/Delete/{todoId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "todoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.TodoController",
+    "Method": "GetAllItems",
+    "RelativePath": "api/Todo/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.TodoController",
+    "Method": "SortedItems",
+    "RelativePath": "api/Todo/sort-by-date",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.TodoController",
+    "Method": "UpdateItem",
+    "RelativePath": "api/Todo/Update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "toDoConfirm",
+        "Type": "Edu_plat.DTO.To_doDto.ToDoConfirm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.Videos",
+    "Method": "DeleteAllDoctorVideos",
+    "RelativePath": "api/Videos/DeleteAllDoctorVideos",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.Videos",
+    "Method": "DeleteAllVideosInCourse",
+    "RelativePath": "api/Videos/DeleteAllVideosInCourse/{courseCode}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.Videos",
+    "Method": "DeleteMultipleVideos",
+    "RelativePath": "api/Videos/DeleteMultipleVideos",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "videoIds",
+        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.Videos",
+    "Method": "DeleteVideoById",
+    "RelativePath": "api/Videos/DeleteVideoById/{videoId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "videoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.Videos",
+    "Method": "DownloadById",
+    "RelativePath": "api/Videos/DownloadById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "videoId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "courseCode",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.Videos",
+    "Method": "DownloadByPath",
+    "RelativePath": "api/Videos/DownloadByPath",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pathVideo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.Videos",
+    "Method": "GetAllVideosOfCourse",
+    "RelativePath": "api/Videos/getAllVideosOfCourse/{courseCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.Videos",
+    "Method": "GetAllVideosOfSpecificDoctor",
+    "RelativePath": "api/Videos/getAllVideosOfDoctor/{courseCode}/{doctorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "doctorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.Videos",
+    "Method": "GetDoctorMaterialsForCourse",
+    "RelativePath": "api/Videos/getDoctorMaterials/{courseCode}/{userId}/{typeFile}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "typeFile",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.Videos",
+    "Method": "UpdateVideo",
+    "RelativePath": "api/Videos/UpdateVideo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "VideoId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Video",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TypeFile",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.Videos",
+    "Method": "UploadVideo",
+    "RelativePath": "api/Videos/UploadVideo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Video",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "CourseCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TypeFile",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

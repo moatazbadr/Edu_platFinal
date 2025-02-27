@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\moataz\\desktop\\gradproject\\edu_plat_secondterm\\edu_platfinal\\jwt\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\moataz\\desktop\\gradproject\\edu_plat_secondterm\\edu_platfinal\\jwt\\edu_plat.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\edu_plat.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\moataz\\desktop\\gradproject\\edu_plat_secondterm\\edu_platfinal\\jwt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\moataz\\desktop\\gradproject\\edu_plat_secondterm\\edu_platfinal\\jwt\\controllers\\materialscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\controllers\\materialscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\moataz\\desktop\\gradproject\\edu_plat_secondterm\\edu_platfinal\\jwt\\requests\\coursematerialrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\requests\\coursematerialrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\moataz\\desktop\\gradproject\\edu_plat_secondterm\\edu_platfinal\\jwt\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\moataz\\desktop\\gradproject\\edu_plat_secondterm\\edu_platfinal\\jwt\\dto\\uploadvideos\\uploadvideodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\dto\\uploadvideos\\uploadvideodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\moataz\\desktop\\gradproject\\edu_plat_secondterm\\edu_platfinal\\jwt\\dto\\uploadfiles\\uploadmatarieldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\dto\\uploadfiles\\uploadmatarieldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\moataz\\desktop\\gradproject\\edu_plat_secondterm\\edu_platfinal\\jwt\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,55 +58,76 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UploadVideoDto.cs",
-              "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\DTO\\UploadVideos\\UploadVideoDto.cs",
-              "RelativeDocumentMoniker": "JWT\\DTO\\UploadVideos\\UploadVideoDto.cs",
-              "ToolTip": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\DTO\\UploadVideos\\UploadVideoDto.cs",
-              "RelativeToolTip": "JWT\\DTO\\UploadVideos\\UploadVideoDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\DATA\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "JWT\\DATA\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\DATA\\ApplicationDbContext.cs",
+              "RelativeToolTip": "JWT\\DATA\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T13:16:17.414Z",
+              "WhenOpened": "2025-02-27T16:21:24.864Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UploadMatarielDto.cs",
-              "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\DTO\\UploadFiles\\UploadMatarielDto.cs",
-              "RelativeDocumentMoniker": "JWT\\DTO\\UploadFiles\\UploadMatarielDto.cs",
-              "ToolTip": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\DTO\\UploadFiles\\UploadMatarielDto.cs",
-              "RelativeToolTip": "JWT\\DTO\\UploadFiles\\UploadMatarielDto.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwA4AAAAoAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Program.cs",
+              "RelativeDocumentMoniker": "JWT\\Program.cs",
+              "ToolTip": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Program.cs",
+              "RelativeToolTip": "JWT\\Program.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAwwDkAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T13:15:42.638Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T15:56:04.809Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CourseMaterialRequest.cs",
-              "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Requests\\CourseMaterialRequest.cs",
-              "RelativeDocumentMoniker": "JWT\\Requests\\CourseMaterialRequest.cs",
-              "ToolTip": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Requests\\CourseMaterialRequest.cs",
-              "RelativeToolTip": "JWT\\Requests\\CourseMaterialRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T12:19:03.344Z",
-              "EditorCaption": ""
+              "Title": "Edu_plat.csproj",
+              "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Edu_plat.csproj",
+              "RelativeDocumentMoniker": "JWT\\Edu_plat.csproj",
+              "ToolTip": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Edu_plat.csproj",
+              "RelativeToolTip": "JWT\\Edu_plat.csproj",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-27T16:07:57.655Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "JWT\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Properties\\launchSettings.json",
+              "RelativeToolTip": "JWT\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-27T16:06:55.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\appsettings.json",
+              "RelativeDocumentMoniker": "JWT\\appsettings.json",
+              "ToolTip": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\appsettings.json",
+              "RelativeToolTip": "JWT\\appsettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-27T15:56:13.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MaterialsController.cs",
               "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Controllers\\MaterialsController.cs",
               "RelativeDocumentMoniker": "JWT\\Controllers\\MaterialsController.cs",
               "ToolTip": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Controllers\\MaterialsController.cs",
               "RelativeToolTip": "JWT\\Controllers\\MaterialsController.cs",
-              "ViewState": "AgIAAGwCAAAAAAAAAAAQwHkCAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAwwKYAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T08:02:58.088Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T08:02:58.088Z"
             }
           ]
         }
