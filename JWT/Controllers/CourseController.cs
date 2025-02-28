@@ -86,7 +86,8 @@ namespace Edu_plat.Controllers
         #region Getting-courses-by-semster
 
         [HttpGet("Courses-semster/{sem}")]
-        [Authorize(Roles = "Doctor")]
+        [Authorize(Roles = "Doctor,Student")]
+        
         public async Task<IActionResult> CoursesBySemster(int sem)
         {
 
@@ -179,7 +180,7 @@ namespace Edu_plat.Controllers
 		[Authorize(Roles = "Doctor")]
 		public async Task<IActionResult> CouresRegister(CourseRegistrationDto courseRegistrationDto)
 		{
-			var userId = User.FindFirstValue("AppicationUserId"); // 🔹 الحصول على UserId من التوكن
+			var userId = User.FindFirstValue("ApplicationUserId"); 
 			var user = await _userManager.FindByIdAsync(userId);
 
 			if (user == null)
@@ -212,7 +213,7 @@ namespace Edu_plat.Controllers
 					continue;
 				}
 
-				// 🔹 التأكد إن الدكتور لم يضف نفس الكورس قبل كده
+				
 				var existingRelation = await _context.CourseDoctors
 					.AnyAsync(cd => cd.CourseId == course.Id && cd.DoctorId == doctor.DoctorId);
 
@@ -222,110 +223,119 @@ namespace Edu_plat.Controllers
 					continue;
 				}
 
-				// 🔹 إضافة العلاقة بين الدكتور والكورس
 				var courseDoctor = new CourseDoctor
 				{
-					CourseId = course.Id,  // ID الكورس
-					DoctorId = doctor.DoctorId  // ID الدكتور
+					CourseId = course.Id,  
+					DoctorId = doctor.DoctorId  
 				};
 
 				await _context.CourseDoctors.AddAsync(courseDoctor);
 				successCourses.Add(courseCode);
 			}
 
-			await _context.SaveChangesAsync(); // 🔹 حفظ التعديلات
+			await _context.SaveChangesAsync();
 
 			return Ok(new
 			{
 				success = true,
-				message = "Course registration process completed",
-				registeredCourses = successCourses,
-				alreadyRegisteredCourses = alreadyRegisteredCourses,
-				failedCourses = failureCourses
+				message = "Course registration process completed"	
 			});
 		}
 
 
-		#endregion
+        #endregion
 
-		#region Getting-courses-assigned-to-doctor [Doctor-only] 
-		[HttpGet("Get-doctor-courses")]
+        #region Getting-courses-assigned-to-doctor [Doctor-only] 
+        [HttpGet("Get-doctor-courses")]
         [Authorize(Roles = "Doctor")]
         public async Task<IActionResult> GetMyCourses()
         {
-            var userId = User.FindFirstValue("AppicationUserId");
-            var user = await _userManager.FindByIdAsync(userId);
-            if (user == null)
+         
+            var userId = User.FindFirstValue("ApplicationUserId");
+
+            if (string.IsNullOrEmpty(userId))
             {
-                return Ok(new { success = false, message = "user not found" });
+                return Unauthorized(new { success = false, message = "Invalid token or user not found." });
             }
-            else
+
+            
+            var doctor = await _context.Doctors
+                .Include(d => d.CourseDoctors)
+                .ThenInclude(cd => cd.Course)  
+                .FirstOrDefaultAsync(d => d.UserId == userId);
+
+            if (doctor == null)
             {
-                if (_context.Courses != null)
-                {
-                    var courses = await _context.Courses.Where(c => c.ApplicationUserId == userId).ToListAsync();
-                   // return Ok(courses);
-                   List<string>Course =new List<string>();
-                    foreach (var course in courses) {
-                        Course.Add(course.CourseCode);
-                    }
-                    return Ok(Course);
-
-                }
-
-                return Ok(new { success = false, message = "No courses are registered to you" });
-
+                return NotFound(new { success = false, message = "No doctor profile found for this user." });
             }
+
+           
+            var doctorCourses = doctor.CourseDoctors.Select(cd => cd.Course).ToList();
+            List<string>Courses = new List<string>();
+            foreach(var course in doctorCourses)
+            {
+                Courses.Add(course.CourseCode);
+            }
+
+           
+                return Ok(Courses);
+            
         }
         #endregion
 
+
         #region Deleting Courses [Doctor only]
 
-        
+
+        #region Deleting Courses [Doctor only]
         [Authorize(Roles = "Doctor")]
         [HttpDelete("Delete-Course")]
-        public async Task<IActionResult> DeleteCourse([FromBody]CourseDeletion courseDeletion)
+        public async Task<IActionResult> DeleteCourse([FromBody] CourseDeletion courseDeletion)
         {
-            if (courseDeletion.CourseCode == null)
+            if (string.IsNullOrEmpty(courseDeletion.CourseCode))
             {
-                return Ok(new { success = false, message = "invalid course Code" });
+                return BadRequest(new { success = false, message = "Invalid course code." });
             }
 
-            //check iff the sent course is registered to delete and any user cannot delete to another doctor
-            var userId = User.FindFirstValue("AppicationUserId");
-            var user = await _userManager.FindByIdAsync(userId);
+            var userId = User.FindFirstValue("ApplicationUserId");
 
-            if (user == null)
+            if (string.IsNullOrEmpty(userId))
             {
-                return Ok(new { success = false, message = "No doctor found" });
-            }
-            else
-            {
-                var course_required = _context.Courses.FirstOrDefault(x=>x.CourseCode==courseDeletion.CourseCode && x.ApplicationUserId==userId);
-                if (course_required == null)
-                {
-                    return Ok(new { success = false, message = "No Course found" });
-                }
-
-                else
-                {
-                    if (course_required.isRegistered = false || course_required.ApplicationUserId == null) {
-                        return Ok(new { success = false, message = "Can not delete Course already deleted" });
-                    }
-
-                    course_required.ApplicationUserId = null;
-                    course_required.isRegistered = false;
-                    _context.Courses.Update(course_required);
-                    _context.SaveChanges();
-                    return Ok(new { success = true, message = "course Deleted sucessfully" });
-
-                }
+                return Unauthorized(new { success = false, message = "Invalid token or user not found." });
             }
 
+            var doctor = await _context.Doctors
+                .Include(d => d.CourseDoctors)
+                .ThenInclude(cd => cd.Course)  
+                .FirstOrDefaultAsync(d => d.UserId == userId);
 
+            if (doctor == null)
+            {
+                return NotFound(new { success = false, message = "Doctor profile not found." });
+            }
 
+            if (doctor.CourseDoctors == null || !doctor.CourseDoctors.Any())
+            {
+                return NotFound(new { success = false, message = "Doctor is not assigned to any course." });
+            }
 
+            var doctorCourse = doctor.CourseDoctors
+                .FirstOrDefault(cd => cd.Course != null && cd.Course.CourseCode == courseDeletion.CourseCode);
+
+            if (doctorCourse == null)
+            {
+                return NotFound(new { success = false, message = "Course not assigned to you." });
+            }
+
+            _context.CourseDoctors.Remove(doctorCourse);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { success = true, message = "Course removed successfully." });
         }
+
+
+        #endregion
+
         #endregion
 
         #region Removing a Course From Database 

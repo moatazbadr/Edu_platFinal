@@ -4,7 +4,7 @@ namespace JWT.DTO
 {
 	public class RegisterUserDTO
 	{
-        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Username must contain letters only.")]
+        //[RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Username must contain letters only.")]
 
         public string UserName { get; set; }
 

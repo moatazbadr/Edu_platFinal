@@ -27,7 +27,7 @@ namespace Edu_plat.Controllers
         [Authorize(Roles = "Doctor,Student, SuperAdmin,Admin")]
         public async Task<IActionResult> GetProfile()
         {
-            var userId = User.FindFirstValue("AppicationUserId");
+            var userId = User.FindFirstValue("ApplicationUserId");
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
@@ -52,7 +52,7 @@ namespace Edu_plat.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userId = User.FindFirstValue("AppicationUserId");
+                var userId = User.FindFirstValue("ApplicationUserId");
                 var user = await _userManager.FindByIdAsync(userId);
                 if (user == null)
                 {
@@ -78,7 +78,7 @@ namespace Edu_plat.Controllers
         [Authorize(Roles = "Doctor, Student")]
         public async Task<IActionResult> UpdateProfilePic([FromForm] profilePic profilePicDto)
         {
-            var userId = User.FindFirstValue("AppicationUserId");
+            var userId = User.FindFirstValue("ApplicationUserId");
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
@@ -130,7 +130,7 @@ namespace Edu_plat.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userId = User.FindFirstValue("AppicationUserId");
+                var userId = User.FindFirstValue("ApplicationUserId");
                 var user = await _userManager.FindByIdAsync(userId);
                 if (user == null)
                 {
@@ -159,7 +159,7 @@ namespace Edu_plat.Controllers
         [Authorize(Roles = "Doctor , Student")]
         public async Task<IActionResult> GetProfilePic()
         {
-            var userId = User.FindFirstValue("AppicationUserId");
+            var userId = User.FindFirstValue("ApplicationUserId");
             var user = await _userManager.FindByIdAsync(userId);
             if (user.profilePicture == null)
             {
@@ -179,7 +179,7 @@ namespace Edu_plat.Controllers
         [Authorize(Roles = "Doctor,Student")]
         public async Task<IActionResult> GetPhoneNumber()
         {
-            var userId = User.FindFirstValue("AppicationUserId");
+            var userId = User.FindFirstValue("ApplicationUserId");
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {

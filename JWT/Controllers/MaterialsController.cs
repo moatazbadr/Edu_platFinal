@@ -70,11 +70,6 @@ namespace Edu_plat.Controllers
 			{
 				return BadRequest(new { success = false, message = "Only PDF, Word, and PowerPoint files are allowed." });
 			}
-			// Check content type for better security
-			//if (allowedContentTypes[fileExtension] != uploadMaterialDto.File.ContentType.ToLower())
-			//{
-			//	return BadRequest(new { success = false, message = "File type does not match its extension." });
-			//}
 
 			// Check if the course exists
 			var course = await _context.Courses
@@ -87,7 +82,7 @@ namespace Edu_plat.Controllers
 			}
 
 			// Get UserId from token
-			var userId = User.FindFirstValue("AppicationUserId");
+			var userId = User.FindFirstValue("ApplicationUserId");
 			var user = await _userManager.FindByIdAsync(userId);
 			if (user == null)
 			{
@@ -460,7 +455,7 @@ namespace Edu_plat.Controllers
 		public async Task<IActionResult> GetDoctorMaterials()
 		{
 			// 🔹 Get the UserId from the token
-			var userId = User.FindFirstValue("AppicationUserId");
+			var userId = User.FindFirstValue("ApplicationUserId");
 
 			// 🔹 Check if the user exists
 			var user = await _userManager.FindByIdAsync(userId);
@@ -630,7 +625,7 @@ namespace Edu_plat.Controllers
 		public async Task<IActionResult> GetDoctorMaterialsByTypeAndCourse(string courseCode,string typeFile)
 		{
 			// Get the UserId from the token
-			var userId = User.FindFirstValue("AppicationUserId");
+			var userId = User.FindFirstValue("ApplicationUserId");
 
 			// Check if the user exists
 			var user = await _userManager.FindByIdAsync(userId);
@@ -1024,7 +1019,7 @@ namespace Edu_plat.Controllers
 			//}
 
 			// Get UserId from the token
-			var userId = User.FindFirstValue("AppicationUserId");
+			var userId = User.FindFirstValue("ApplicationUserId");
 
 			// Check if the user exists
 			var user = await _userManager.FindByIdAsync(userId);
@@ -1144,7 +1139,7 @@ namespace Edu_plat.Controllers
 		[Authorize(Roles = "Doctor")]
 		public async Task<IActionResult> DeleteAllMaterials()
 		{
-			var userId = User.FindFirstValue("AppicationUserId"); 
+			var userId = User.FindFirstValue("ApplicationUserId"); 
 
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 			if (doctor == null)
@@ -1184,7 +1179,7 @@ namespace Edu_plat.Controllers
 		[Authorize(Roles = "Doctor")]
 		public async Task<IActionResult> DeleteMultipleMaterials([FromQuery] List<int> materialIds)
 		{
-			var userId = User.FindFirstValue("AppicationUserId");
+			var userId = User.FindFirstValue("ApplicationUserId");
 
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 			if (doctor == null)
@@ -1223,7 +1218,7 @@ namespace Edu_plat.Controllers
 		[Authorize(Roles = "Doctor")]
 		public async Task<IActionResult> DeleteMaterial(int materialId)
 		{
-			var userId = User.FindFirstValue("AppicationUserId");  
+			var userId = User.FindFirstValue("ApplicationUserId");  
 
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 			if (doctor == null)
@@ -1260,7 +1255,7 @@ namespace Edu_plat.Controllers
 		public async Task<IActionResult> DeleteAllLecMaterialsOfDoctor()
 		{
 			// Get the UserId from the token
-			var userId = User.FindFirstValue("AppicationUserId");
+			var userId = User.FindFirstValue("ApplicationUserId");
 
 			// Search for the doctor using the UserId
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
@@ -1306,7 +1301,7 @@ namespace Edu_plat.Controllers
 		public async Task<IActionResult> DeleteAllLabMaterialsOfDoctor()
 		{
 			// Get the UserId from the token
-			var userId = User.FindFirstValue("AppicationUserId");
+			var userId = User.FindFirstValue("ApplicationUserId");
 
 			// Search for the doctor using the UserId
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
@@ -1352,7 +1347,7 @@ namespace Edu_plat.Controllers
 		public async Task<IActionResult> DeleteAllExamMaterialsOfDoctor()
 		{
 			// Get the UserId from the token
-			var userId = User.FindFirstValue("AppicationUserId");
+			var userId = User.FindFirstValue("ApplicationUserId");
 
 			// Search for the doctor using the UserId
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
@@ -1403,7 +1398,7 @@ namespace Edu_plat.Controllers
 			}
 
 			// Get the UserId from the token
-			var userId = User.FindFirstValue("AppicationUserId");
+			var userId = User.FindFirstValue("ApplicationUserId");
 
 			// Search for the doctor using the UserId
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
@@ -1574,6 +1569,7 @@ namespace Edu_plat.Controllers
 
 		#endregion
 
+		
 		// For Student
 
 		#region GetDoctorMaterialsForCourse

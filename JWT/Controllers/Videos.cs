@@ -92,8 +92,8 @@ namespace Edu_plat.Controllers
 				return NotFound(new { success = false, message = "Course not found." });
 			}
 
-			// Get the doctor details from the token
-			var userId = User.FindFirstValue("AppicationUserId");
+			// Get the doctor details from the token	
+			var userId = User.FindFirstValue("ApplicationUserId");
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 			if (doctor == null)
 			{
@@ -212,7 +212,7 @@ namespace Edu_plat.Controllers
 			}
 
 			// Get user ID from token
-			var userId = User.FindFirstValue("AppicationUserId");
+			var userId = User.FindFirstValue("ApplicationUserId");
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 			if (doctor == null)
 			{
@@ -343,7 +343,7 @@ namespace Edu_plat.Controllers
 		[Authorize(Roles = "Doctor")]
 		public async Task<IActionResult> DeleteAllDoctorVideos()
 		{
-			var userId = User.FindFirstValue("AppicationUserId");
+			var userId = User.FindFirstValue("ApplicationUserId");
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 			if (doctor == null)
 			{
@@ -416,7 +416,7 @@ namespace Edu_plat.Controllers
 			{
 				return BadRequest(new { success = false, message = "VideoId is required." });
 			}
-			var userId = User.FindFirstValue("AppicationUserId");
+			var userId = User.FindFirstValue("ApplicationUserId");
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 			if (doctor == null)
 			{
@@ -453,7 +453,7 @@ namespace Edu_plat.Controllers
 			{
 				return BadRequest(new { success = false, message = "At least one VideoId is required." });
 			}
-			var userId = User.FindFirstValue("AppicationUserId");
+			var userId = User.FindFirstValue("ApplicationUserId");
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 			if (doctor == null)
 			{

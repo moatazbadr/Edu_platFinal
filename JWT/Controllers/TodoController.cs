@@ -35,7 +35,7 @@ namespace Edu_plat.Controllers
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAllItems()
         {
-            var userId = User.FindFirstValue("AppicationUserId");
+            var userId = User.FindFirstValue("ApplicationUserId");
             var user = await GetUserByIdAsync(userId);
 
             if (user == null)
@@ -76,7 +76,7 @@ namespace Edu_plat.Controllers
         [HttpPost("Add-new-todo")]
         public async Task<IActionResult> AddItem([FromBody] ToDoDto itemFromUser)
         {
-            var userId = User.FindFirstValue("AppicationUserId");
+            var userId = User.FindFirstValue("ApplicationUserId");
             var user = await GetUserByIdAsync(userId);
 
             if (user == null)
@@ -115,7 +115,7 @@ namespace Edu_plat.Controllers
         [HttpDelete("Delete/{todoId}")]
         public async Task<IActionResult> DeleteItem(int todoId)
         {
-            var userId = User.FindFirstValue("AppicationUserId");
+            var userId = User.FindFirstValue("ApplicationUserId");
             var user = await GetUserByIdAsync(userId);
 
             if (user == null)
@@ -148,7 +148,7 @@ namespace Edu_plat.Controllers
         [HttpGet("sort-by-date")]
         public async Task<IActionResult> SortedItems()
         {
-            var userId = User.FindFirstValue("AppicationUserId");
+            var userId = User.FindFirstValue("ApplicationUserId");
             var user = await GetUserByIdAsync(userId);
 
             if (user == null)
@@ -181,7 +181,7 @@ namespace Edu_plat.Controllers
         [HttpPut("Update/{id}")]
         public async Task<IActionResult> UpdateItem(int id, [FromBody] ToDoConfirm toDoConfirm)
         {
-            var userId = User.FindFirstValue("AppicationUserId");
+            var userId = User.FindFirstValue("ApplicationUserId");
             var user = await GetUserByIdAsync(userId);
 
             if (user == null)

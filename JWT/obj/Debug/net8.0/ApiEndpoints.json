@@ -729,12 +729,18 @@
   },
   {
     "ContainingType": "Edu_plat.Controllers.StudentCourseController",
-    "Method": "DeleteCourses",
-    "RelativePath": "api/StudentCourse/DeleteCourses",
+    "Method": "DeleteCourse",
+    "RelativePath": "api/StudentCourse/DeleteCourse",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "courseDeletion",
+        "Type": "Edu_plat.DTO.Course_Registration.CourseDeletion",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

@@ -250,7 +250,7 @@ namespace JWT.Controllers
                     #region claims
                     var UserClaims = new List<Claim>();
                     UserClaims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
-                    UserClaims.Add(new Claim("AppicationUserId", account.Id));
+                    UserClaims.Add(new Claim("ApplicationUserId", account.Id));
                     UserClaims.Add(new Claim("ApplicationUserName", account.UserName));
 
                     var Roles = await _userManager.GetRolesAsync(account);

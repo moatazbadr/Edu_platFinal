@@ -35,7 +35,7 @@ namespace Edu_plat.Controllers
         {
 
 
-            var userId = User.FindFirstValue("AppicationUserId");
+            var userId = User.FindFirstValue("ApplicationUserId");
             if (string.IsNullOrEmpty(userId))
             {
                 return Ok(new { success = false, message = "Invalid Token: User not found" });
@@ -92,7 +92,7 @@ namespace Edu_plat.Controllers
 
         public async Task<IActionResult> MyCourses()
         {
-            var UserId = User.FindFirstValue("AppicationUserId");
+            var UserId = User.FindFirstValue("ApplicationUserId");
             StudentRegisterResponse response = new StudentRegisterResponse();
             if (string.IsNullOrEmpty(UserId))
             {
@@ -132,9 +132,40 @@ namespace Edu_plat.Controllers
 
         [HttpDelete]
         [Authorize(Roles ="Student")]
-        public async Task<IActionResult> DeleteCourses()
+        public async Task<IActionResult> DeleteCourse(CourseDeletion courseDeletion)
         {
-            return null;
+            if (courseDeletion.CourseCode == null)
+            {
+                return Ok(new { success = false, message = "invalid course Code" });
+            }
+
+            var userId = User.FindFirstValue("ApplicationUserId");
+            
+            if (userId == null) {
+                return Ok(new { success = false, message = "Couldn't Find User" });
+            }
+            
+            var user= await _userManager.FindByIdAsync(userId);
+
+            var CourseRequired =await _context.Courses.FirstOrDefaultAsync(x=>x.CourseCode==courseDeletion.CourseCode );
+
+            if (CourseRequired == null) {
+                return Ok(new { success = false, message = "Couldn't Delete the Course" });
+            }
+
+            var student = await _context.Students.Include(s => s.courses).FirstOrDefaultAsync(s => s.UserId == userId);
+            
+            if (student == null) {
+                return Ok(new { success = false, message = "Couldn't Delete the Course" });
+
+            }
+            
+            student.courses.Remove(CourseRequired);
+            _context.Update(student);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { success = true, message = "Course Deleted Successfully" });
+
         }
 
         #endregion
