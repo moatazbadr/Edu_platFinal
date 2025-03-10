@@ -1,4 +1,5 @@
 ﻿using Edu_plat.DTO.GPA;
+using Edu_plat.Requests;
 using JWT;
 using JWT.DATA;
 using Microsoft.AspNetCore.Authorization;
@@ -57,7 +58,7 @@ namespace Edu_plat.Controllers
                     }
                     else
                     {
-                        return BadRequest("Invalid grade value.");
+                        return Ok(new { success = false, message = "Invalid grade value." });
                     }
                 }
 
@@ -67,11 +68,11 @@ namespace Edu_plat.Controllers
 
             if (totalCreditHours == 0)
             {
-                return BadRequest("Total credit hours cannot be zero.");
+                return Ok(new { success = false, message = "Total credit hours cannot be zero." });
             }
 
             double gpa = totalPoints / (totalCreditHours * 1000);
-            return Ok(gpa);
+            return Ok(new {success=true ,message=gpa});
         }
         #endregion
 
@@ -79,12 +80,15 @@ namespace Edu_plat.Controllers
         #region Update GPA
         [HttpPost("UpdateGPA")]
         [Authorize(Roles = "Student")]
-        public async Task<IActionResult> UpdateGPA([FromBody] double gpa)
+        public async Task<IActionResult> UpdateGPA([FromBody] StudentUpdateGpa gpa)
         {
 
             // Get the UserId from the token
             var userId = User.FindFirstValue("ApplicationUserId");
-
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Ok(new { success = false, message = "Invalid User credentials" });
+            }
             // Check if the user exists
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
@@ -100,7 +104,7 @@ namespace Edu_plat.Controllers
             }
 
             // Update the GPA
-            student.GPA = gpa;
+            student.GPA = gpa.GPA;
             _context.Students.Update(student);
             await _context.SaveChangesAsync();
 
@@ -117,7 +121,10 @@ namespace Edu_plat.Controllers
         {
             // Get the UserId from the token
             var userId = User.FindFirstValue("ApplicationUserId");
-
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Ok(new { success = false, message = "Invalid User credentials" });
+            }
             // Check if the user exists
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
@@ -136,7 +143,7 @@ namespace Edu_plat.Controllers
                 return NotFound(new { success = false, message = "Student not found." });
             }
 
-            return Ok(new { success = true, student });
+            return Ok(new { success = true, message=student.GPA });
         }
         #endregion
     }

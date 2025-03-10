@@ -10,6 +10,7 @@ using static System.String;
 
 using Microsoft.EntityFrameworkCore;
 using Edu_plat.Responses;
+using Edu_plat.Requests;
 namespace Edu_plat.Controllers
 {
     [Route("api/[controller]/[action]")]
@@ -18,15 +19,17 @@ namespace Edu_plat.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
-        
+        private readonly IWebHostEnvironment _hostingEnvironment;
+
         #region Dependancy Injection
-        public StudentCourseController(UserManager<ApplicationUser> userManager, ApplicationDbContext context)
+        public StudentCourseController(UserManager<ApplicationUser> userManager, ApplicationDbContext context, IWebHostEnvironment hostingEnvironment)
         {
             _userManager = userManager;
             _context = context;
-        } 
+            _hostingEnvironment = hostingEnvironment;
+        }
         #endregion
-        
+
         #region Student-Registeration 
 
         [HttpPost]
@@ -110,14 +113,22 @@ namespace Edu_plat.Controllers
 
             var StudentCourses= student.courses.Select(
                 c => new
-                ViewCourseDto{
+                {
                     CourseCode=c.CourseCode,
-                    CourseDescription=c.CourseDescription,
-                    Course_degree=c.Course_degree,
-                    Course_hours = c.Course_hours,
-                    Course_level=c.Course_level,
-                    Course_semster = c.Course_semster
+                     has_Lab=c.has_Lab, 
                 }).ToList();
+
+            List<string>CoursesCodes=new List<string>();
+
+            foreach (var code in StudentCourses)
+            {
+                if (!string.IsNullOrEmpty(code.CourseCode))
+                {
+                    CoursesCodes.Add(code.CourseCode);
+
+                }
+            }
+
 
             return Ok(StudentCourses);
     
@@ -169,7 +180,6 @@ namespace Edu_plat.Controllers
         }
 
         #endregion
-
 
 
 

@@ -4,6 +4,7 @@ using JWT.DATA;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JWT.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250304195515_Cearting Date")]
+    partial class CeartingDate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,6 +74,9 @@ namespace JWT.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Course_degree")
+                        .HasColumnType("int");
+
                     b.Property<int>("Course_hours")
                         .HasColumnType("int");
 
@@ -79,24 +85,6 @@ namespace JWT.Migrations
 
                     b.Property<int>("Course_semster")
                         .HasColumnType("int");
-
-                    b.Property<int>("FinalExam")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Lab")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MidTerm")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Oral")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TotalMark")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("has_Lab")
-                        .HasColumnType("bit");
 
                     b.Property<bool>("isRegistered")
                         .HasColumnType("bit");

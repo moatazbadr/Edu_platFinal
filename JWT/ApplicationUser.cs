@@ -17,8 +17,8 @@ namespace JWT
 		public Doctor Doctor { get; set; }
 
       public ICollection<TodoItems> todoItems { get; set; } = new List<TodoItems>();
-
-		// public ICollection<Course> Courses { get; set; } =new List<Course>();
+        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
+        // public ICollection<Course> Courses { get; set; } =new List<Course>();
 
     }
 }

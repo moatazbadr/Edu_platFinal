@@ -11,6 +11,7 @@ using System.Security.Claims;
 using Edu_plat.DTO.Course_Registration;
 using Edu_plat.Model;
 using Edu_plat.Responses;
+using Edu_plat.Requests;
 
 namespace Edu_plat.Controllers
 {
@@ -32,21 +33,29 @@ namespace Edu_plat.Controllers
         #region Adding Course [Admin-only]
 
         [HttpPost("Add-course")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
 
-        public async Task<IActionResult> AddCourse([FromBody] CourseRegisteration courseFromBody)
+        public async Task<IActionResult> AddCourse([FromQuery] CourseRegisteration courseFromBody)
         {
             if (!ModelState.IsValid)
             {
                 return Ok(new { success = false, message = "Error adding course" });
             }
+
             var course = new Course()
             {
                 CourseCode = courseFromBody.CourseCode,
                 CourseDescription = courseFromBody.CourseDescription,
                 Course_hours = courseFromBody.Course_hours,
-                Course_degree = courseFromBody.Course_degree,
-                isRegistered = false,
+                
+                has_Lab = courseFromBody.has_Lab,
+                
+                TotalMark = courseFromBody.TotalMark,
+                FinalExam = courseFromBody.FinalExam,
+                Oral = courseFromBody.Oral,
+                Lab = courseFromBody.Lab,
+                MidTerm = courseFromBody.MidTerm,
+
                 Course_level = courseFromBody.Course_level,
                 Course_semster = courseFromBody.Course_semster,
             };
@@ -64,6 +73,10 @@ namespace Edu_plat.Controllers
        
         public async Task<IActionResult> GetAllCourses()
         {
+            if (!_context.Courses.Any())
+            {
+                return BadRequest("No courses available");
+            }
             var courses = await _context.Courses
                 .Include(c => c.CourseDoctors)
                 .ThenInclude(cd => cd.Doctor)
@@ -71,9 +84,19 @@ namespace Edu_plat.Controllers
                 .Select(c => new
                 {
                     CourseCode = c.CourseCode,
-                    Doctors = c.CourseDoctors.Select(cd => cd.Doctor.applicationUser.UserName).ToList(),
+                    // Doctors = c.CourseDoctors.Select(cd => cd.Doctor.applicationUser.UserName).ToList(),
                     CourseDescription = c.CourseDescription,
-                    courseHours= c.Course_hours,
+                    courseHours = c.Course_hours,
+                    
+                    c.has_Lab,
+                    c.FinalExam,
+                    c.Oral,
+                    c.Lab,
+                    c.TotalMark,
+                    c.MidTerm,
+                    c.Course_level,
+                    c.Course_semster,
+                    
                 })
                 .ToListAsync();
 
@@ -159,13 +182,24 @@ namespace Edu_plat.Controllers
                 return Ok(new { success = false, message = "Invalid Level" });
             }
 
-            if (semester != 1 || semester != 2)
-            {
-                return Ok(new { success = false, message = "Invalid Semester" });
-            }
+            //if (semester != 1 || semester != 2)
+            //{
+            //    return Ok(new { success = false, message = "Invalid Semester" });
+            //}
             
             var coursesBySemesterAndLevel = await _context.Courses
-                .Where(x => x.Course_level == level && x.Course_semster == semester && x.isRegistered == false)
+                .Where(x => x.Course_level == level && x.Course_semster == semester && x.isRegistered == false).Select(x=>new
+                {
+                    x.CourseCode,
+                    
+                    x.MidTerm,
+                    x.FinalExam,
+                    x.Oral,
+                    x.TotalMark,
+                    x.has_Lab,
+                    
+                    
+                })
                 .ToListAsync();
 
             return Ok(coursesBySemesterAndLevel);
@@ -175,72 +209,91 @@ namespace Edu_plat.Controllers
         #endregion
 
         #region Doctor-course-Registration [Doctor-only]
-    
-		[HttpPost("Add-Doctor-Course")]
-		[Authorize(Roles = "Doctor")]
-		public async Task<IActionResult> CouresRegister(CourseRegistrationDto courseRegistrationDto)
-		{
-			var userId = User.FindFirstValue("ApplicationUserId"); 
-			var user = await _userManager.FindByIdAsync(userId);
+        [HttpPost("Add-Doctor-Course")]
+        [Authorize(Roles = "Doctor")]
+        public async Task<IActionResult> CouresRegister(CourseRegistrationDto courseRegistrationDto)
+        {
+            var userId = User.FindFirstValue("ApplicationUserId");
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Ok(new { success = false, message = "Unable to find user" });
+            }
 
-			if (user == null)
-			{
-				return Ok(new { success = false, message = "User not found" });
-			}
+            var user = await _userManager.FindByIdAsync(userId);
 
-			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
-			if (doctor == null)
-			{
-				return BadRequest(new { success = false, message = "Doctor not found" });
-			}
+            if (user == null)
+            {
+                return Ok(new { success = false, message = "User not found" });
+            }
 
-			if (courseRegistrationDto.CoursesCodes == null || !courseRegistrationDto.CoursesCodes.Any())
-			{
-				return BadRequest(new { success = false, message = "Course list is empty" });
-			}
+            var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
+            if (doctor == null)
+            {
+                return BadRequest(new { success = false, message = "Doctor not found" });
+            }
 
-			List<string> successCourses = new List<string>();
-			List<string> alreadyRegisteredCourses = new List<string>();
-			List<string> failureCourses = new List<string>();
+            if (courseRegistrationDto.CoursesCodes == null || !courseRegistrationDto.CoursesCodes.Any())
+            {
+                return BadRequest(new { success = false, message = "Course list is empty" });
+            }
 
-			foreach (string courseCode in courseRegistrationDto.CoursesCodes)
-			{
-				var course = await _context.Courses.FirstOrDefaultAsync(x => x.CourseCode == courseCode);
+            List<string> successCourses = new List<string>();
+            List<string> alreadyRegisteredCourses = new List<string>();
+            List<string> fullCourses = new List<string>();
+            List<string> failureCourses = new List<string>();
 
-				if (course == null)
-				{
-					failureCourses.Add(courseCode);
-					continue;
-				}
+            foreach (string courseCode in courseRegistrationDto.CoursesCodes)
+            {
+                var course = await _context.Courses.FirstOrDefaultAsync(x => x.CourseCode == courseCode);
 
-				
-				var existingRelation = await _context.CourseDoctors
-					.AnyAsync(cd => cd.CourseId == course.Id && cd.DoctorId == doctor.DoctorId);
+                if (course == null)
+                {
+                    failureCourses.Add(courseCode);
+                    continue;
+                }
 
-				if (existingRelation)
-				{
-					alreadyRegisteredCourses.Add(courseCode);
-					continue;
-				}
+                // Count how many doctors are already registered for this course
+                int registeredDoctors = await _context.CourseDoctors
+                    .CountAsync(cd => cd.CourseId == course.Id);
 
-				var courseDoctor = new CourseDoctor
-				{
-					CourseId = course.Id,  
-					DoctorId = doctor.DoctorId  
-				};
+                if (registeredDoctors >= 2)
+                {
+                    fullCourses.Add(courseCode); // Course is full
+                    continue;
+                }
 
-				await _context.CourseDoctors.AddAsync(courseDoctor);
-				successCourses.Add(courseCode);
-			}
+                var existingRelation = await _context.CourseDoctors
+                    .AnyAsync(cd => cd.CourseId == course.Id && cd.DoctorId == doctor.DoctorId);
 
-			await _context.SaveChangesAsync();
+                if (existingRelation)
+                {
+                    alreadyRegisteredCourses.Add(courseCode);
+                    continue;
+                }
 
-			return Ok(new
-			{
-				success = true,
-				message = "Course registration process completed"	
-			});
-		}
+                var courseDoctor = new CourseDoctor
+                {
+                    CourseId = course.Id,
+                    DoctorId = doctor.DoctorId
+                };
+
+                await _context.CourseDoctors.AddAsync(courseDoctor);
+                successCourses.Add(courseCode);
+            }
+            if (fullCourses.Any())
+            {
+                return Ok(new { success = false, message = "this course is already registered by two doctors" });
+            }
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new
+            {
+                success = true,
+                message = "Course registration process completed",
+            });
+        }
+
 
 
         #endregion
@@ -269,20 +322,24 @@ namespace Edu_plat.Controllers
                 return NotFound(new { success = false, message = "No doctor profile found for this user." });
             }
 
-           
-            var doctorCourses = doctor.CourseDoctors.Select(cd => cd.Course).ToList();
-            List<string>Courses = new List<string>();
-            foreach(var course in doctorCourses)
-            {
-                Courses.Add(course.CourseCode);
-            }
+
+            var doctorCourses = doctor.CourseDoctors.Select(cd => cd.Course)
+                .Select(cd => new { 
+                    cd.CourseCode,
+                    cd.has_Lab
+                }).ToList();
+                
+            //List<string>Courses = new List<string>();
+            //foreach(var course in doctorCourses)
+            //{
+            //    Courses.Add(course.CourseCode);
+            //}
 
            
-                return Ok(Courses);
+                return Ok( doctorCourses );
             
         }
         #endregion
-
 
         #region Deleting Courses [Doctor only]
 
@@ -367,6 +424,116 @@ namespace Edu_plat.Controllers
 
         #endregion
 
+        #region getting course details [For student] 
+        [HttpGet("Details/{CourseCode}/{DoctorId}")]
+      //  [Authorize(Roles ="Doctor,Student")]
+        public async Task<IActionResult> getCourseDetails(string CourseCode,string DoctorId)
+        {
+            if (!ModelState.IsValid) {
+                return Ok(new { success = false, message = "Invalid Information" });
+            }
+
+            if (string.IsNullOrEmpty(CourseCode))
+            {
+                return Ok(new { success = false, message = "Invaild Course code " });
+            }
+
+            var CourseRequired = await _context.Courses.Include(c=>c.CourseDoctors).
+                FirstOrDefaultAsync(c=>c.CourseCode == CourseCode) 
+                ;
+            if (CourseRequired == null)
+            {
+                return Ok(new { success = false, message = "no courses have been found" });
+            }
+
+           var Doctor = await _userManager.FindByIdAsync(DoctorId);
+            if (Doctor == null)
+            {
+                return Ok(new { success = false, message = "no doctor found " });
+
+            }
+            CourseDetailsResponse course = new CourseDetailsResponse()
+            {
+                CourseCode = CourseRequired.CourseCode,
+                CourseCreditHours = CourseRequired.Course_hours,
+                TotalMark = CourseRequired.TotalMark,
+                FinalExam=CourseRequired.FinalExam,
+                Lab=CourseRequired.Lab,
+                MidTerm=CourseRequired.MidTerm, 
+                Oral=CourseRequired.Oral,
+                CourseDescription = CourseRequired.CourseDescription,
+               // doctorCount = CourseRequired.CourseDoctors.Count(),
+              doctorName=Doctor.UserName,
+            };
+
+
+            return Ok(
+                new
+                {
+                    success = true,
+                    message = "fetched successfully",
+                    courseDetails = new
+                    {
+                        course.CourseCode,
+                        course.doctorName,
+                        course.CourseCreditHours,
+                        course.CourseDescription,
+
+                        Grading =new
+                                {
+                                 course.MidTerm,
+                                 course.Oral,
+                                 course.TotalMark,
+                                 course.Lab,
+                                 course.FinalExam
+                                 }
+                    }
+                }
+                );
+        }
+
+
+        #endregion
+
+        #region Getting Course Doctor Details
+        [HttpGet("Details/{CourseCode}")]
+        public async Task<IActionResult> GetDetails(string CourseCode)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(new { success = false, message = "Invalid Information" });
+
+            if (string.IsNullOrEmpty(CourseCode))
+                return BadRequest(new { success = false, message = "Invalid course code" });
+
+            var courseRequired = await _context.Courses
+                                        .Include(c => c.CourseDoctors)
+                                        .ThenInclude(cd => cd.Doctor)  // Load doctor details in one query
+                                        .FirstOrDefaultAsync(c => c.CourseCode == CourseCode);
+
+            if (courseRequired == null)
+                return NotFound(new { success = false, message = "No course with that code was found" });
+
+            // Fetch user details for doctors in one query instead of looping
+            var doctorUserIds = courseRequired.CourseDoctors
+                                              .Select(cd => cd.Doctor.UserId)
+                                              .Where(userId => !string.IsNullOrEmpty(userId))
+                                              .ToList();
+
+            var doctorUsers = await _userManager.Users
+                                               .Where(u => doctorUserIds.Contains(u.Id))
+                                               .Select(
+                                         u => new DoctorDetailsResponse
+                                               {
+                                                   DoctorId = u.Id,
+                                                   Name = u.UserName
+                                               }).ToListAsync();
+
+            return Ok(new { success = true, courseDoctors = doctorUsers });
+        }
+
+
+
+        #endregion
 
     }
 }

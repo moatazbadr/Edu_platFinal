@@ -1135,82 +1135,82 @@ namespace Edu_plat.Controllers
 
         #region DeleteAllFilesOfCertainDoctor [Gets The Axe]
 
-        [HttpDelete("Delete-All-Doctor-Materials")]
-		[Authorize(Roles = "Doctor")]
-		public async Task<IActionResult> DeleteAllMaterials()
-		{
-			var userId = User.FindFirstValue("ApplicationUserId"); 
+  //      [HttpDelete("Delete-All-Doctor-Materials")]
+		//[Authorize(Roles = "Doctor")]
+		//public async Task<IActionResult> DeleteAllMaterials()
+		//{
+		//	var userId = User.FindFirstValue("ApplicationUserId"); 
 
-			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
-			if (doctor == null)
-			{
-				return NotFound(new { success = false, message = "Doctor not found." });
-			}
+		//	var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
+		//	if (doctor == null)
+		//	{
+		//		return NotFound(new { success = false, message = "Doctor not found." });
+		//	}
 
-			var materials = await _context.Materials.Where(m => m.DoctorId == doctor.DoctorId).ToListAsync();
+		//	var materials = await _context.Materials.Where(m => m.DoctorId == doctor.DoctorId).ToListAsync();
 
-			if (!materials.Any())
-			{
-				return NotFound(new { success = false, message = "No materials found for this doctor." });
-			}
-			foreach (var material in materials)
-			{
-				var filePath = Path.Combine(_hostingEnvironment.WebRootPath, material.FilePath.TrimStart('/'));
-				if (System.IO.File.Exists(filePath))
-				{
-					System.IO.File.Delete(filePath);
-				}
-			}
-            _context.Materials.RemoveRange(materials);
-			await _context.SaveChangesAsync();
+		//	if (!materials.Any())
+		//	{
+		//		return NotFound(new { success = false, message = "No materials found for this doctor." });
+		//	}
+		//	foreach (var material in materials)
+		//	{
+		//		var filePath = Path.Combine(_hostingEnvironment.WebRootPath, material.FilePath.TrimStart('/'));
+		//		if (System.IO.File.Exists(filePath))
+		//		{
+		//			System.IO.File.Delete(filePath);
+		//		}
+		//	}
+  //          _context.Materials.RemoveRange(materials);
+		//	await _context.SaveChangesAsync();
 
-			// .net 7
-			//await _context.Materials
-			//      .Where(m => m.DoctorId == doctor.DoctorId)
-			//.ExecuteDeleteAsync();
+		//	// .net 7
+		//	//await _context.Materials
+		//	//      .Where(m => m.DoctorId == doctor.DoctorId)
+		//	//.ExecuteDeleteAsync();
 
 
-			return Ok(new { success = true, message = "All materials deleted successfully." });
-		}
+		//	return Ok(new { success = true, message = "All materials deleted successfully." });
+		//}
 		#endregion
 
 		#region DeleteSomeMaterialOfSpeceficDoctor
-		[HttpDelete("deleteMultipleMaterialOfSpeceficDoctor")]
-		[Authorize(Roles = "Doctor")]
-		public async Task<IActionResult> DeleteMultipleMaterials([FromQuery] List<int> materialIds)
-		{
-			var userId = User.FindFirstValue("ApplicationUserId");
+		//[HttpDelete("deleteMultipleMaterialOfSpeceficDoctor")]
+		//[Authorize(Roles = "Doctor")]
+		//public async Task<IActionResult> DeleteMultipleMaterials([FromQuery] List<int> materialIds)
+		//{
+		//	var userId = User.FindFirstValue("ApplicationUserId");
 
-			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
-			if (doctor == null)
-			{
-				return NotFound(new { success = false, message = "Doctor not found." });
-			}
+		//	var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
+		//	if (doctor == null)
+		//	{
+		//		return NotFound(new { success = false, message = "Doctor not found." });
+		//	}
 
-			var materials = await _context.Materials
-				.Where(m => m.DoctorId == doctor.DoctorId && materialIds.Contains(m.Id))
-				.ToListAsync();
+		//	var materials = await _context.Materials
+		//		.Where(m => m.DoctorId == doctor.DoctorId && materialIds.Contains(m.Id))
+		//		.ToListAsync();
 
-			if (!materials.Any())
-			{
-				return NotFound(new { success = false, message = "Some materials were not found or do not belong to the current doctor." });
-			}
+		//	if (!materials.Any())
+		//	{
+		//		return NotFound(new { success = false, message = "Some materials were not found or do not belong to the current doctor." });
+		//	}
 
-			// delete files from Server
-			foreach (var material in materials)
-			{
-				var filePath = Path.Combine(_hostingEnvironment.WebRootPath, material.FilePath.TrimStart('/'));
-				if (System.IO.File.Exists(filePath))
-				{
-					System.IO.File.Delete(filePath);
-				}
-			}
+		//	// delete files from Server
+		//	foreach (var material in materials)
+		//	{
+		//		var filePath = Path.Combine(_hostingEnvironment.WebRootPath, material.FilePath.TrimStart('/'));
+		//		if (System.IO.File.Exists(filePath))
+		//		{
+		//			System.IO.File.Delete(filePath);
+		//		}
+		//	}
 
-			_context.Materials.RemoveRange(materials);
-			await _context.SaveChangesAsync();
+		//	_context.Materials.RemoveRange(materials);
+		//	await _context.SaveChangesAsync();
 
-			return Ok(new { success = true, message = "Selected materials deleted successfully." });
-		}
+		//	return Ok(new { success = true, message = "Selected materials deleted successfully." });
+		//}
 		#endregion
 
 		#region DeleteOnlyMaterialIdOfDoctor
@@ -1250,190 +1250,190 @@ namespace Edu_plat.Controllers
 
 		#region DeleteAllLecMaterialsOfDoctorFromToken
 
-		[HttpDelete("deleteAllLec/Doctor")]
-		[Authorize(Roles = "Doctor")]
-		public async Task<IActionResult> DeleteAllLecMaterialsOfDoctor()
-		{
-			// Get the UserId from the token
-			var userId = User.FindFirstValue("ApplicationUserId");
+		//[HttpDelete("deleteAllLec/Doctor")]
+		//[Authorize(Roles = "Doctor")]
+		//public async Task<IActionResult> DeleteAllLecMaterialsOfDoctor()
+		//{
+		//	// Get the UserId from the token
+		//	var userId = User.FindFirstValue("ApplicationUserId");
 
-			// Search for the doctor using the UserId
-			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
+		//	// Search for the doctor using the UserId
+		//	var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 
-			if (doctor == null)
-			{
-				return NotFound(new { success = false, message = "Doctor not found." });
-			}
+		//	if (doctor == null)
+		//	{
+		//		return NotFound(new { success = false, message = "Doctor not found." });
+		//	}
 
-			// Get all "Lec" type materials related to the doctor
-			var lecMaterials = await _context.Materials
-				.Where(m => m.DoctorId == doctor.DoctorId && m.TypeFile == "Material") // Specify "Lec" material type
-				.ToListAsync();
+		//	// Get all "Lec" type materials related to the doctor
+		//	var lecMaterials = await _context.Materials
+		//		.Where(m => m.DoctorId == doctor.DoctorId && m.TypeFile == "Material") // Specify "Lec" material type
+		//		.ToListAsync();
 
-			if (!lecMaterials.Any())
-			{
-				return NotFound(new { success = false, message = "No Lec materials found for this doctor." });
-			}
+		//	if (!lecMaterials.Any())
+		//	{
+		//		return NotFound(new { success = false, message = "No Lec materials found for this doctor." });
+		//	}
 
-			// Delete the files from the server
-			foreach (var material in lecMaterials)
-			{
-				var filePath = Path.Combine(_hostingEnvironment.WebRootPath, material.FilePath.TrimStart('/'));
-				if (System.IO.File.Exists(filePath))
-				{
-					System.IO.File.Delete(filePath);
-				}
-			}
+		//	// Delete the files from the server
+		//	foreach (var material in lecMaterials)
+		//	{
+		//		var filePath = Path.Combine(_hostingEnvironment.WebRootPath, material.FilePath.TrimStart('/'));
+		//		if (System.IO.File.Exists(filePath))
+		//		{
+		//			System.IO.File.Delete(filePath);
+		//		}
+		//	}
 
-			// Remove materials from the database
-			_context.Materials.RemoveRange(lecMaterials);
-			await _context.SaveChangesAsync();
+		//	// Remove materials from the database
+		//	_context.Materials.RemoveRange(lecMaterials);
+		//	await _context.SaveChangesAsync();
 
-			return Ok(new { success = true, message = "All Lec materials deleted successfully." });
-		}
+		//	return Ok(new { success = true, message = "All Lec materials deleted successfully." });
+		//}
 
 		#endregion
 
         #region DeleteAllLabMaterialsOfDoctorFromToken
 
-		[HttpDelete("deleteAllLab/Doctor")]
-		[Authorize(Roles = "Doctor")]
-		public async Task<IActionResult> DeleteAllLabMaterialsOfDoctor()
-		{
-			// Get the UserId from the token
-			var userId = User.FindFirstValue("ApplicationUserId");
+		//[HttpDelete("deleteAllLab/Doctor")]
+		//[Authorize(Roles = "Doctor")]
+		//public async Task<IActionResult> DeleteAllLabMaterialsOfDoctor()
+		//{
+		//	// Get the UserId from the token
+		//	var userId = User.FindFirstValue("ApplicationUserId");
 
-			// Search for the doctor using the UserId
-			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
+		//	// Search for the doctor using the UserId
+		//	var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 
-			if (doctor == null)
-			{
-				return NotFound(new { success = false, message = "Doctor not found." });
-			}
+		//	if (doctor == null)
+		//	{
+		//		return NotFound(new { success = false, message = "Doctor not found." });
+		//	}
 
-			// Get all "lab" type materials related to the doctor
-			var labMaterials = await _context.Materials
-				.Where(m => m.DoctorId == doctor.DoctorId && m.TypeFile == "Labs") // Specify "lab" material type
-				.ToListAsync();
+		//	// Get all "lab" type materials related to the doctor
+		//	var labMaterials = await _context.Materials
+		//		.Where(m => m.DoctorId == doctor.DoctorId && m.TypeFile == "Labs") // Specify "lab" material type
+		//		.ToListAsync();
 
-			if (!labMaterials.Any())
-			{
-				return NotFound(new { success = false, message = "No lab materials found for this doctor." });
-			}
+		//	if (!labMaterials.Any())
+		//	{
+		//		return NotFound(new { success = false, message = "No lab materials found for this doctor." });
+		//	}
 
-			// Delete the files from the server
-			foreach (var material in labMaterials)
-			{
-				var filePath = Path.Combine(_hostingEnvironment.WebRootPath, material.FilePath.TrimStart('/'));
-				if (System.IO.File.Exists(filePath))
-				{
-					System.IO.File.Delete(filePath);
-				}
-			}
+		//	// Delete the files from the server
+		//	foreach (var material in labMaterials)
+		//	{
+		//		var filePath = Path.Combine(_hostingEnvironment.WebRootPath, material.FilePath.TrimStart('/'));
+		//		if (System.IO.File.Exists(filePath))
+		//		{
+		//			System.IO.File.Delete(filePath);
+		//		}
+		//	}
 
-			// Remove materials from the database
-			_context.Materials.RemoveRange(labMaterials);
-			await _context.SaveChangesAsync();
+		//	// Remove materials from the database
+		//	_context.Materials.RemoveRange(labMaterials);
+		//	await _context.SaveChangesAsync();
 
-			return Ok(new { success = true, message = "All lab materials deleted successfully." });
-		}
+		//	return Ok(new { success = true, message = "All lab materials deleted successfully." });
+		//}
 
 		#endregion
 
         #region DeleteAllExamMaterialsOfDoctorFromToken
 
-		[HttpDelete("deleteAllExam/Doctor")]
-		[Authorize(Roles = "Doctor")]
-		public async Task<IActionResult> DeleteAllExamMaterialsOfDoctor()
-		{
-			// Get the UserId from the token
-			var userId = User.FindFirstValue("ApplicationUserId");
+		//[HttpDelete("deleteAllExam/Doctor")]
+		//[Authorize(Roles = "Doctor")]
+		//public async Task<IActionResult> DeleteAllExamMaterialsOfDoctor()
+		//{
+		//	// Get the UserId from the token
+		//	var userId = User.FindFirstValue("ApplicationUserId");
 
-			// Search for the doctor using the UserId
-			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
+		//	// Search for the doctor using the UserId
+		//	var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 
-			if (doctor == null)
-			{
-				return NotFound(new { success = false, message = "Doctor not found." });
-			}
+		//	if (doctor == null)
+		//	{
+		//		return NotFound(new { success = false, message = "Doctor not found." });
+		//	}
 
-			// Get all "exam" type materials related to the doctor
-			var examMaterials = await _context.Materials
-				.Where(m => m.DoctorId == doctor.DoctorId && m.TypeFile == "Exams") // Specify "exam" material type
-				.ToListAsync();
+		//	// Get all "exam" type materials related to the doctor
+		//	var examMaterials = await _context.Materials
+		//		.Where(m => m.DoctorId == doctor.DoctorId && m.TypeFile == "Exams") // Specify "exam" material type
+		//		.ToListAsync();
 
-			if (!examMaterials.Any())
-			{
-				return NotFound(new { success = false, message = "No Exam materials found for this doctor." });
-			}
+		//	if (!examMaterials.Any())
+		//	{
+		//		return NotFound(new { success = false, message = "No Exam materials found for this doctor." });
+		//	}
 
-			// Delete the files from the server
-			foreach (var material in examMaterials)
-			{
-				var filePath = Path.Combine(_hostingEnvironment.WebRootPath, material.FilePath.TrimStart('/'));
-				if (System.IO.File.Exists(filePath))
-				{
-					System.IO.File.Delete(filePath);
-				}
-			}
+		//	// Delete the files from the server
+		//	foreach (var material in examMaterials)
+		//	{
+		//		var filePath = Path.Combine(_hostingEnvironment.WebRootPath, material.FilePath.TrimStart('/'));
+		//		if (System.IO.File.Exists(filePath))
+		//		{
+		//			System.IO.File.Delete(filePath);
+		//		}
+		//	}
 
-			// Remove materials from the database
-			_context.Materials.RemoveRange(examMaterials);
-			await _context.SaveChangesAsync();
+		//	// Remove materials from the database
+		//	_context.Materials.RemoveRange(examMaterials);
+		//	await _context.SaveChangesAsync();
 
-			return Ok(new { success = true, message = "All exam materials deleted successfully." });
-		}
+		//	return Ok(new { success = true, message = "All exam materials deleted successfully." });
+		//}
 
 		#endregion
 
         #region DeleteAllMaterialsOfTypeForDoctor
 
-		[HttpDelete("deleteMaterialsByType/Doctor")]
-		[Authorize(Roles = "Doctor")]
-		public async Task<IActionResult> DeleteAllMaterialsOfTypeForDoctor([FromQuery] string typeFile)
-		{
-			if (string.IsNullOrEmpty(typeFile))
-			{
-				return BadRequest(new { success = false, message = "TypeFile is required." });
-			}
+		//[HttpDelete("deleteMaterialsByType/Doctor")]
+		//[Authorize(Roles = "Doctor")]
+		//public async Task<IActionResult> DeleteAllMaterialsOfTypeForDoctor([FromQuery] string typeFile)
+		//{
+		//	if (string.IsNullOrEmpty(typeFile))
+		//	{
+		//		return BadRequest(new { success = false, message = "TypeFile is required." });
+		//	}
 
-			// Get the UserId from the token
-			var userId = User.FindFirstValue("ApplicationUserId");
+		//	// Get the UserId from the token
+		//	var userId = User.FindFirstValue("ApplicationUserId");
 
-			// Search for the doctor using the UserId
-			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
+		//	// Search for the doctor using the UserId
+		//	var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 
-			if (doctor == null)
-			{
-				return NotFound(new { success = false, message = "Doctor not found." });
-			}
+		//	if (doctor == null)
+		//	{
+		//		return NotFound(new { success = false, message = "Doctor not found." });
+		//	}
 
-			// Get all materials of the specified type related to the doctor
-			var materials = await _context.Materials
-				.Where(m => m.DoctorId == doctor.DoctorId && m.TypeFile == typeFile)
-				.ToListAsync();
+		//	// Get all materials of the specified type related to the doctor
+		//	var materials = await _context.Materials
+		//		.Where(m => m.DoctorId == doctor.DoctorId && m.TypeFile == typeFile)
+		//		.ToListAsync();
 
-			if (!materials.Any())
-			{
-				return NotFound(new { success = false, message = $"No materials of type '{typeFile}' found for this doctor." });
-			}
+		//	if (!materials.Any())
+		//	{
+		//		return NotFound(new { success = false, message = $"No materials of type '{typeFile}' found for this doctor." });
+		//	}
 
-			// Delete the files from the server
-			foreach (var material in materials)
-			{
-				var filePath = Path.Combine(_hostingEnvironment.WebRootPath, material.FilePath.TrimStart('/'));
-				if (System.IO.File.Exists(filePath))
-				{
-					System.IO.File.Delete(filePath);
-				}
-			}
+		//	// Delete the files from the server
+		//	foreach (var material in materials)
+		//	{
+		//		var filePath = Path.Combine(_hostingEnvironment.WebRootPath, material.FilePath.TrimStart('/'));
+		//		if (System.IO.File.Exists(filePath))
+		//		{
+		//			System.IO.File.Delete(filePath);
+		//		}
+		//	}
 
-			// Remove materials from the database
-			_context.Materials.RemoveRange(materials);
-			await _context.SaveChangesAsync();
+		//	// Remove materials from the database
+		//	_context.Materials.RemoveRange(materials);
+		//	await _context.SaveChangesAsync();
 
-			return Ok(new { success = true, message = $"All {typeFile} materials deleted successfully." });
-		}
+		//	return Ok(new { success = true, message = $"All {typeFile} materials deleted successfully." });
+		//}
 
 		#endregion
  

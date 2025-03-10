@@ -154,6 +154,122 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Edu_plat.Controllers.AdminDashBoardController",
+    "Method": "DeleteAdmin",
+    "RelativePath": "api/AdminDashBoard/DeleteAdmin",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.AdminDashBoardController",
+    "Method": "DeleteDoctor",
+    "RelativePath": "api/AdminDashBoard/DeleteDoctor",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.AdminDashBoardController",
+    "Method": "DeleteStudent",
+    "RelativePath": "api/AdminDashBoard/DeleteStudent",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.AdminDashBoardController",
+    "Method": "GetUsersByType",
+    "RelativePath": "api/AdminDashBoard/GetUsersByType/{type}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.AdminDashBoardController",
+    "Method": "RegisterAdmin",
+    "RelativePath": "api/AdminDashBoard/RegisterAdmin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JWT.DTO.RegisterUserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.AdminDashBoardController",
+    "Method": "RegisterDoctor",
+    "RelativePath": "api/AdminDashBoard/RegisterDoctor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JWT.DTO.RegisterDoctorDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.ChatController",
+    "Method": "GetDoctorsForStudent",
+    "RelativePath": "api/Chat/GetDoctorsForStudent/doctors",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.ChatController",
+    "Method": "GetStudentsForDoctor",
+    "RelativePath": "api/Chat/GetStudentsForDoctor/students",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Edu_plat.Controllers.CourseController",
     "Method": "AddCourse",
     "RelativePath": "api/Course/Add-course",
@@ -162,9 +278,59 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "courseFromBody",
-        "Type": "Edu_plat.DTO.Course_Registration.CourseRegisteration",
-        "IsRequired": true
+        "Name": "CourseCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CourseDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Course_hours",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Course_level",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Course_semster",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "has_Lab",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "MidTerm",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Oral",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "FinalExam",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Lab",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TotalMark",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -256,6 +422,43 @@
   },
   {
     "ContainingType": "Edu_plat.Controllers.CourseController",
+    "Method": "GetDetails",
+    "RelativePath": "api/Course/Details/{CourseCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CourseCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.CourseController",
+    "Method": "getCourseDetails",
+    "RelativePath": "api/Course/Details/{CourseCode}/{DoctorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CourseCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "DoctorId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.CourseController",
     "Method": "GetAllCourses",
     "RelativePath": "api/Course/Get-all-courses",
     "HttpMethod": "GET",
@@ -336,7 +539,7 @@
     "Parameters": [
       {
         "Name": "gpa",
-        "Type": "System.Double",
+        "Type": "Edu_plat.Requests.StudentUpdateGpa",
         "IsRequired": true
       }
     ],
@@ -354,16 +557,6 @@
   },
   {
     "ContainingType": "Edu_plat.Controllers.MaterialsController",
-    "Method": "DeleteAllMaterials",
-    "RelativePath": "api/Materials/Delete-All-Doctor-Materials",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Edu_plat.Controllers.MaterialsController",
     "Method": "DeleteMaterial",
     "RelativePath": "api/Materials/delete/{materialId}",
     "HttpMethod": "DELETE",
@@ -374,68 +567,6 @@
         "Name": "materialId",
         "Type": "System.Int32",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Edu_plat.Controllers.MaterialsController",
-    "Method": "DeleteAllExamMaterialsOfDoctor",
-    "RelativePath": "api/Materials/deleteAllExam/Doctor",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Edu_plat.Controllers.MaterialsController",
-    "Method": "DeleteAllLabMaterialsOfDoctor",
-    "RelativePath": "api/Materials/deleteAllLab/Doctor",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Edu_plat.Controllers.MaterialsController",
-    "Method": "DeleteAllLecMaterialsOfDoctor",
-    "RelativePath": "api/Materials/deleteAllLec/Doctor",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Edu_plat.Controllers.MaterialsController",
-    "Method": "DeleteAllMaterialsOfTypeForDoctor",
-    "RelativePath": "api/Materials/deleteMaterialsByType/Doctor",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "typeFile",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Edu_plat.Controllers.MaterialsController",
-    "Method": "DeleteMultipleMaterials",
-    "RelativePath": "api/Materials/deleteMultipleMaterialOfSpeceficDoctor",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "materialIds",
-        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []

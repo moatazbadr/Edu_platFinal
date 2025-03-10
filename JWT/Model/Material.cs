@@ -17,7 +17,6 @@ namespace Edu_plat.Model
 		[JsonIgnore]
 		public Doctor Doctor { get; set; }
 
-		// Foreign Key لكورس واحد
 		public string CourseCode { get; set; }
 		public int CourseId { get; set; }
 		[JsonIgnore]
