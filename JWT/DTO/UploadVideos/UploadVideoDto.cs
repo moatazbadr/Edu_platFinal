@@ -11,9 +11,9 @@ namespace Edu_plat.DTO.UploadVideos
 		    [StringLength(10, ErrorMessage = "CourseCode cannot exceed 10 characters.")]
 		    public string CourseCode { get; set; } // The course code where the video will be stored
 
-		    [Required(ErrorMessage = "Description is required.")]
-		    [StringLength(500, ErrorMessage = "Description cannot exceed 500 characters.")]
-		   public string? Description { get; set; } // Optional: Video description
+		   // [Required(ErrorMessage = "Description is required.")]
+		   // [StringLength(500, ErrorMessage = "Description cannot exceed 500 characters.")]
+		   //public string? Description { get; set; } // Optional: Video description
 
 		   [Required(ErrorMessage = "Type is required.")]
 		   [RegularExpression("^(Video)$", ErrorMessage = "Type must be 'Video'")]

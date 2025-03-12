@@ -438,7 +438,7 @@ namespace Edu_plat.Controllers
                 return Ok(new { success = false, message = "Invaild Course code " });
             }
 
-            var CourseRequired = await _context.Courses.Include(c=>c.CourseDoctors).
+            var CourseRequired = await _context.Courses.Include(c=>c.CourseDoctors).Include(cm=>cm.Materials).
                 FirstOrDefaultAsync(c=>c.CourseCode == CourseCode) 
                 ;
             if (CourseRequired == null)
@@ -452,18 +452,20 @@ namespace Edu_plat.Controllers
                 return Ok(new { success = false, message = "no doctor found " });
 
             }
+            var LectureCount = CourseRequired.Materials.Where(cm => cm.TypeFile == "Lectures").ToList().Count();
             CourseDetailsResponse course = new CourseDetailsResponse()
             {
                 CourseCode = CourseRequired.CourseCode,
                 CourseCreditHours = CourseRequired.Course_hours,
                 TotalMark = CourseRequired.TotalMark,
-                FinalExam=CourseRequired.FinalExam,
-                Lab=CourseRequired.Lab,
-                MidTerm=CourseRequired.MidTerm, 
-                Oral=CourseRequired.Oral,
+                FinalExam = CourseRequired.FinalExam,
+                Lab = CourseRequired.Lab,
+                MidTerm = CourseRequired.MidTerm,
+                Oral = CourseRequired.Oral,
                 CourseDescription = CourseRequired.CourseDescription,
-               // doctorCount = CourseRequired.CourseDoctors.Count(),
-              doctorName=Doctor.UserName,
+                // doctorCount = CourseRequired.CourseDoctors.Count(),
+                LectureCount = LectureCount,
+                doctorName = Doctor.UserName
             };
 
 
@@ -478,15 +480,19 @@ namespace Edu_plat.Controllers
                         course.doctorName,
                         course.CourseCreditHours,
                         course.CourseDescription,
+                        course.LectureCount,
 
-                        Grading =new
+                        Grading =
+                                new
                                 {
-                                 course.MidTerm,
-                                 course.Oral,
-                                 course.TotalMark,
-                                 course.Lab,
-                                 course.FinalExam
-                                 }
+                                
+                                 MidTerm= course.MidTerm,
+                                 Oral= course.Oral,
+                                 TotalMark = course.TotalMark,
+                                 Lab = course.Lab,
+                                 FinalExam = course.FinalExam
+                                
+                                }
                     }
                 }
                 );
@@ -528,7 +534,7 @@ namespace Edu_plat.Controllers
                                                    Name = u.UserName
                                                }).ToListAsync();
 
-            return Ok(new { success = true, courseDoctors = doctorUsers });
+            return Ok(new { success = true,message="fetched Successfully", courseDoctors = doctorUsers });
         }
 
 
