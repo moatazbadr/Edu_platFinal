@@ -3,6 +3,7 @@ using Edu_plat.DTO.UploadFiles;
 using Edu_plat.Model;
 using Edu_plat.Model.Course_registeration;
 using Edu_plat.Requests;
+using Edu_plat.Responses;
 using JWT;
 using JWT.DATA;
 using JWT.Migrations;
@@ -575,47 +576,7 @@ namespace Edu_plat.Controllers
         #endregion
 
         // Not Used
-        #region GetDoctorExam [Gets The Axe]
-
-        //[HttpGet("GetDoctorExamss/Doctor")]
-        //[Authorize(Roles = "Doctor")]
-        //public async Task<IActionResult> GetDoctorExams()
-        //{
-        //	// 🔹 Get the UserId from the token
-        //	var userId = User.FindFirstValue("AppicationUserId");
-
-        //	// 🔹 Check if the user exists
-        //	var user = await _userManager.FindByIdAsync(userId);
-        //	if (user == null)
-        //	{
-        //		return Unauthorized(new { success = false, message = "User not found." });
-        //	}
-
-        //	// 🔹 Retrieve only materials where TypeFile is "lec"
-        //	var doctorLectures = await _context.Materials
-        //		.Where(m => m.Doctor.UserId == userId && m.TypeFile.ToLower() == "Exams")
-        //		.Select(m => new
-        //		{
-        //			m.Id,
-        //			m.FileName,
-        //			m.FilePath,
-        //			m.CourseCode,
-        //			m.Description,
-        //			m.UploadDate,
-        //			m.TypeFile
-        //		})
-        //		.ToListAsync();
-
-        //	// 🔹 Check if there are any lecture materials
-        //	if (!doctorLectures.Any())
-        //	{
-        //		return Ok(new { success = true, message = "No exam materials found for this doctor.", materials = new List<object>() });
-        //	}
-
-        //	// 🔹 Return the lectures in JSON format
-        //	return Ok(new { success = true, materials = doctorLectures });
-        //}
-        #endregion
+        
 
 
         #region Get Doctor Material by type
@@ -1654,11 +1615,39 @@ namespace Edu_plat.Controllers
 				return NotFound(new { success = false, message = "No materials found for this doctor in the specified course." });
 			}
 
+			List<StudentMaterialResponse> studentMaterials= new List<StudentMaterialResponse>();
+
+			foreach (var mat in materials)
+			{
+				StudentMaterialResponse studentMaterialResponse = new StudentMaterialResponse()
+				{
+					Id = mat.Id,
+					FilePath = mat.FilePath,
+					FileName = mat.FileName,
+					TypeFile = mat.TypeFile,
+					UploadDate = mat.UploadDate,
+					Size = mat.Size,
+					DoctorId = mat.DoctorId,
+					CourseCode = mat.CourseCode,
+					CourseId = mat.CourseId,
+					FileExtension = Path.GetExtension(mat.FileName).ToLower()
+
+				};
+
+
+                studentMaterials.Add(studentMaterialResponse);
+
+
+
+            }
+
+
+
 			return Ok(new
 			{
 				success = true,
 				message = "Materials retrieved successfully.",
-				materials = materials
+				materials = studentMaterials.ToArray()
 			});
 		}
 

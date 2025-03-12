@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Edu_plat")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04db531e0b35ea49901d3688f96131254b7e7478")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93d56a3d89471b7659a02c7aac4507587c1778d4")]
 [assembly: System.Reflection.AssemblyProductAttribute("Edu_plat")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Edu_plat")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

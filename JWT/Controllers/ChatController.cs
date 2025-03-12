@@ -36,9 +36,9 @@ namespace Edu_plat.Controllers
           
             var doctor = await _context.Doctors
                 .Include(d => d.CourseDoctors)
-                    .ThenInclude(cd => cd.Course)
-                        .ThenInclude(c => c.Students)
-                            .ThenInclude(s => s.applicationUser)  
+                .ThenInclude(cd => cd.Course)
+                .ThenInclude(c => c.Students)
+                .ThenInclude(s => s.applicationUser)  
                 .FirstOrDefaultAsync(d => d.UserId == UserId);
 
             if (doctor == null)
@@ -53,7 +53,8 @@ namespace Edu_plat.Controllers
                 {
                     s.StudentId,
                     Name = s.applicationUser.UserName ?? "Unknown Student",
-                    profilePicture = s.applicationUser.profilePicture
+                    profilePicture = s.applicationUser.profilePicture,
+                    StudentEmail=s.applicationUser.Email
                 })
                 .Distinct()
                 .ToList();
@@ -93,7 +94,8 @@ namespace Edu_plat.Controllers
                 {
                     cd.Doctor.DoctorId,
                     Name = cd.Doctor.applicationUser.UserName ?? "Unknown Doctor",
-                    ProfilePicture=cd.Doctor.applicationUser.profilePicture
+                    ProfilePicture=cd.Doctor.applicationUser.profilePicture,
+                    DoctorEmail=cd.Doctor.applicationUser.Email
                 })
                 .Distinct()
                 .ToList();

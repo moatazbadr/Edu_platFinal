@@ -53,6 +53,8 @@ namespace Edu_plat.Controllers
 				return BadRequest(new { success = false, message = "Video size exceeds the maximum limit (100MB)." });
 			}
 
+			if (string.IsNullOrEmpty(uploadVideoDto.))
+
 			//// Allowed video file extensions
 			//var allowedExtensions = new[] { ".mp4", ".avi", ".mov", ".mkv" };
 			//var fileExtension = Path.GetExtension(uploadVideoDto.Video.FileName).ToLower();
@@ -149,7 +151,7 @@ namespace Edu_plat.Controllers
 				DoctorId = doctor.DoctorId, // Doctor ID
 				FilePath = $"/Videos/{course.CourseCode}/{fileName}", // File path in the server
 				FileName = fileName, // File name
-				Description = uploadVideoDto.Description, // Video description
+				//Description = uploadVideoDto.Description, // Video description
 				UploadDate = DateTime.Now, // Upload timestamp
 				TypeFile = "Video",
 				Size = fileSize

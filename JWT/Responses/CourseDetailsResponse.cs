@@ -13,5 +13,6 @@ namespace Edu_plat.Responses
         public int TotalMark { get; set; }
         public int CourseCreditHours { get; set; }
         public string doctorName { get; set; }
+       public int LectureCount { get; set; }
     }
 }

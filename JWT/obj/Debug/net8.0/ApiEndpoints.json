@@ -1181,11 +1181,6 @@
         "IsRequired": false
       },
       {
-        "Name": "Description",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "TypeFile",
         "Type": "System.String",
         "IsRequired": false
