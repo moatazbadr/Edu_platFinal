@@ -245,23 +245,25 @@ namespace JWT.Controllers
                 var checkPass = await _userManager.CheckPasswordAsync(account, dto.Password);
                 if (checkPass)
                 {
-
-                    //adding claims to Jwt 
-                    #region claims
-                    var UserClaims = new List<Claim>();
+                   // adding claims to Jwt 
+					#region claims
+					var UserClaims = new List<Claim>();
                     UserClaims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
                     UserClaims.Add(new Claim("ApplicationUserId", account.Id));
-                    UserClaims.Add(new Claim("ApplicationUserName", account.UserName));
+					UserClaims.Add(new Claim("ApplicationUserName", account.UserName));
 
                     var Roles = await _userManager.GetRolesAsync(account);
-                    foreach (var RoleName in Roles)
+					var role = Roles.FirstOrDefault();
+					foreach (var RoleName in Roles)
                         UserClaims.Add(new Claim(ClaimTypes.Role, RoleName));
+                   
                     var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:SecretKey"]));
 
-                    SigningCredentials signingCred = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256); 
-                    #endregion
+                    SigningCredentials signingCred = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+					#endregion
+                   
 
-                    JwtSecurityToken jwtSecurityToken = new JwtSecurityToken
+					JwtSecurityToken jwtSecurityToken = new JwtSecurityToken
                     (
                          issuer: _configuration["JWT:IssuerIP"],
                         audience: _configuration["JWT:audienceIP"],
@@ -272,7 +274,7 @@ namespace JWT.Controllers
                     );
                     var roles = await _userManager.GetRolesAsync(account);
 
-                    string userRole = roles.FirstOrDefault();
+       
                     return Ok(new
                     {
                         token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken),

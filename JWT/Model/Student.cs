@@ -1,4 +1,5 @@
 ﻿using Edu_plat.Model.Course_registeration;
+using Edu_plat.Model.Exams;
 using JWT;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -18,6 +19,8 @@ namespace Edu_plat.Model
 
 		//Navigational property for the Course Many side
 		public ICollection<Course> courses { get; set; } = new List<Course>();
+		// 🔹 العلاقة Many-to-Many مع Exam من خلال الجدول الوسيط
+		public List<ExamStudent> ExamStudents { get; set; } = new List<ExamStudent>();
 
 	}
 }

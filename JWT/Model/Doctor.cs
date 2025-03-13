@@ -1,4 +1,5 @@
-﻿using JWT;
+﻿using Edu_plat.Model.Exams;
+using JWT;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Edu_plat.Model
@@ -15,5 +16,7 @@ namespace Edu_plat.Model
 
 		// العلاقة One-to-Many مع Material
 		public List<Material> Materials { get; set; } = new List<Material>();
+		// 🔹 العلاقة One-to-Many مع الامتحانات
+		public List<Exam> Exams { get; set; } = new List<Exam>();
 	}
 }
