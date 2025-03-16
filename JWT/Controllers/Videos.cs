@@ -30,139 +30,139 @@ namespace Edu_plat.Controllers
 		}
 
 		#region UploadVideo 
-		[HttpPost("UploadVideo")]
-		[Authorize(Roles = "Doctor")]
-		public async Task<IActionResult> UploadVideo([FromForm] UploadVideoDto uploadVideoDto)
-		{
-			// Validate the request data
-			if (!ModelState.IsValid)
-			{
-				return BadRequest(new { success = false, message = "Invalid data provided." });
-			}
+		//[HttpPost("UploadVideo")]
+		//[Authorize(Roles = "Doctor")]
+		//public async Task<IActionResult> UploadVideo([FromForm] UploadVideoDto uploadVideoDto)
+		//{
+		//	// Validate the request data
+		//	if (!ModelState.IsValid)
+		//	{
+		//		return BadRequest(new { success = false, message = "Invalid data provided." });
+		//	}
 
-			// Check if a video file is provided
-			if (uploadVideoDto.Video == null || uploadVideoDto.Video.Length == 0)
-			{
-				return BadRequest(new { success = false, message = "No video uploaded." });
-			}
+		//	// Check if a video file is provided
+		//	if (uploadVideoDto.Video == null || uploadVideoDto.Video.Length == 0)
+		//	{
+		//		return BadRequest(new { success = false, message = "No video uploaded." });
+		//	}
 
-			// Set maximum allowed video file size (e.g., 100MB)
-			var maxFileSize = 100 * 1024 * 1024; // 100MB
-			if (uploadVideoDto.Video.Length > maxFileSize)
-			{
-				return BadRequest(new { success = false, message = "Video size exceeds the maximum limit (100MB)." });
-			}
+		//	// Set maximum allowed video file size (e.g., 100MB)
+		//	var maxFileSize = 100 * 1024 * 1024; // 100MB
+		//	if (uploadVideoDto.Video.Length > maxFileSize)
+		//	{
+		//		return BadRequest(new { success = false, message = "Video size exceeds the maximum limit (100MB)." });
+		//	}
 
-			if (string.IsNullOrEmpty(uploadVideoDto.))
+		//	if (string.IsNullOrEmpty(uploadVideoDto.))
 
-			//// Allowed video file extensions
-			//var allowedExtensions = new[] { ".mp4", ".avi", ".mov", ".mkv" };
-			//var fileExtension = Path.GetExtension(uploadVideoDto.Video.FileName).ToLower();
-			//if (!allowedExtensions.Contains(fileExtension))
-			//{
-			//	return BadRequest(new { success = false, message = "Only MP4, AVI, MOV, and MKV videos are allowed." });
-			//}
-			// Allowed video file extensions and MIME types
-			var allowedMimeTypes = new Dictionary<string, string>
-			{
-					{ ".mp4", "video/mp4" },
-					{ ".avi", "video/x-msvideo" },
-					{ ".mov", "video/quicktime" },
-					{ ".mkv", "video/x-matroska" }
-			};
+		//	//// Allowed video file extensions
+		//	//var allowedExtensions = new[] { ".mp4", ".avi", ".mov", ".mkv" };
+		//	//var fileExtension = Path.GetExtension(uploadVideoDto.Video.FileName).ToLower();
+		//	//if (!allowedExtensions.Contains(fileExtension))
+		//	//{
+		//	//	return BadRequest(new { success = false, message = "Only MP4, AVI, MOV, and MKV videos are allowed." });
+		//	//}
+		//	// Allowed video file extensions and MIME types
+		//	var allowedMimeTypes = new Dictionary<string, string>
+		//	{
+		//			{ ".mp4", "video/mp4" },
+		//			{ ".avi", "video/x-msvideo" },
+		//			{ ".mov", "video/quicktime" },
+		//			{ ".mkv", "video/x-matroska" }
+		//	};
 
-			var fileExtension = Path.GetExtension(uploadVideoDto.Video.FileName).ToLower();
-			var contentType = uploadVideoDto.Video.ContentType.ToLower();
+		//	var fileExtension = Path.GetExtension(uploadVideoDto.Video.FileName).ToLower();
+		//	var contentType = uploadVideoDto.Video.ContentType.ToLower();
 
-			// Check if the file extension is allowed
-			if (!allowedMimeTypes.ContainsKey(fileExtension))
-			{
-				return BadRequest(new { success = false, message = "Only MP4, AVI, MOV, and MKV videos are allowed." });
-			}
+		//	// Check if the file extension is allowed
+		//	if (!allowedMimeTypes.ContainsKey(fileExtension))
+		//	{
+		//		return BadRequest(new { success = false, message = "Only MP4, AVI, MOV, and MKV videos are allowed." });
+		//	}
 
-			// Check if the content type matches the expected MIME type
-			if (allowedMimeTypes[fileExtension] != contentType)
-			{
-				return BadRequest(new { success = false, message = "Invalid video file format." });
-			}
-
-
-			// Check if the course exists
-			var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == uploadVideoDto.CourseCode);
-			if (course == null)
-			{
-				return NotFound(new { success = false, message = "Course not found." });
-			}
-
-			// Get the doctor details from the token	
-			var userId = User.FindFirstValue("ApplicationUserId");
-			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
-			if (doctor == null)
-			{
-				return NotFound(new { success = false, message = "Doctor not found." });
-			}
-
-			// Check if the doctor is enrolled in the course 
-			bool isDoctorEnrolled = await _context.CourseDoctors.AnyAsync(cd => cd.DoctorId == doctor.DoctorId && cd.CourseId == course.Id);
-			if (!isDoctorEnrolled)
-			{
-				return StatusCode(403, new { success = false, message = "Doctor is not enrolled in this course." });
-			}
-
-			// Define the directory path for storing videos
-			var videoDirectory = Path.Combine(_hostingEnvironment.WebRootPath, "Videos", course.CourseCode);
-			if (!Directory.Exists(videoDirectory))
-			{
-				Directory.CreateDirectory(videoDirectory);
-			}
-
-			// Generate the video file name
-			//var fileName = string.IsNullOrWhiteSpace(uploadVideoDto.FileName)
-			//	? Path.GetFileName(uploadVideoDto.Video.FileName)
-			//	: uploadVideoDto.FileName + Path.GetExtension(uploadVideoDto.Video.FileName); ;
+		//	// Check if the content type matches the expected MIME type
+		//	if (allowedMimeTypes[fileExtension] != contentType)
+		//	{
+		//		return BadRequest(new { success = false, message = "Invalid video file format." });
+		//	}
 
 
-			var fileName = Path.GetFileName(uploadVideoDto.Video.FileName);
+		//	// Check if the course exists
+		//	var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == uploadVideoDto.CourseCode);
+		//	if (course == null)
+		//	{
+		//		return NotFound(new { success = false, message = "Course not found." });
+		//	}
+
+		//	// Get the doctor details from the token	
+		//	var userId = User.FindFirstValue("ApplicationUserId");
+		//	var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
+		//	if (doctor == null)
+		//	{
+		//		return NotFound(new { success = false, message = "Doctor not found." });
+		//	}
+
+		//	// Check if the doctor is enrolled in the course 
+		//	bool isDoctorEnrolled = await _context.CourseDoctors.AnyAsync(cd => cd.DoctorId == doctor.DoctorId && cd.CourseId == course.Id);
+		//	if (!isDoctorEnrolled)
+		//	{
+		//		return StatusCode(403, new { success = false, message = "Doctor is not enrolled in this course." });
+		//	}
+
+		//	// Define the directory path for storing videos
+		//	var videoDirectory = Path.Combine(_hostingEnvironment.WebRootPath, "Videos", course.CourseCode);
+		//	if (!Directory.Exists(videoDirectory))
+		//	{
+		//		Directory.CreateDirectory(videoDirectory);
+		//	}
+
+		//	// Generate the video file name
+		//	//var fileName = string.IsNullOrWhiteSpace(uploadVideoDto.FileName)
+		//	//	? Path.GetFileName(uploadVideoDto.Video.FileName)
+		//	//	: uploadVideoDto.FileName + Path.GetExtension(uploadVideoDto.Video.FileName); ;
 
 
-			var filePath = Path.Combine(videoDirectory, fileName);
+		//	var fileName = Path.GetFileName(uploadVideoDto.Video.FileName);
 
-			// Save the video file to the server
-			using (var stream = new FileStream(filePath, FileMode.Create))
-			{
-				await uploadVideoDto.Video.CopyToAsync(stream);
-			}
 
-			//Initialize file size variable
-			string fileSize = "Unknown";
+		//	var filePath = Path.Combine(videoDirectory, fileName);
 
-			// Check if file exists before calculating its size
-			if (System.IO.File.Exists(filePath))
-			{
-				long fileSizeBytes = new FileInfo(filePath).Length;
-				fileSize = (fileSizeBytes / (1024.0 * 1024.0)).ToString("F2") + " MB"; // Convert to MB
-			}
+		//	// Save the video file to the server
+		//	using (var stream = new FileStream(filePath, FileMode.Create))
+		//	{
+		//		await uploadVideoDto.Video.CopyToAsync(stream);
+		//	}
 
-			// Save video details in the database
-			var videoMaterial = new Material
-			{
-				CourseId = course.Id, // Course ID
-				CourseCode = course.CourseCode, // Course Code
-				DoctorId = doctor.DoctorId, // Doctor ID
-				FilePath = $"/Videos/{course.CourseCode}/{fileName}", // File path in the server
-				FileName = fileName, // File name
-				//Description = uploadVideoDto.Description, // Video description
-				UploadDate = DateTime.Now, // Upload timestamp
-				TypeFile = "Video",
-				Size = fileSize
+		//	//Initialize file size variable
+		//	string fileSize = "Unknown";
 
-			};
+		//	// Check if file exists before calculating its size
+		//	if (System.IO.File.Exists(filePath))
+		//	{
+		//		long fileSizeBytes = new FileInfo(filePath).Length;
+		//		fileSize = (fileSizeBytes / (1024.0 * 1024.0)).ToString("F2") + " MB"; // Convert to MB
+		//	}
 
-			_context.Materials.Add(videoMaterial);
-			await _context.SaveChangesAsync();
+		//	// Save video details in the database
+		//	var videoMaterial = new Material
+		//	{
+		//		CourseId = course.Id, // Course ID
+		//		CourseCode = course.CourseCode, // Course Code
+		//		DoctorId = doctor.DoctorId, // Doctor ID
+		//		FilePath = $"/Videos/{course.CourseCode}/{fileName}", // File path in the server
+		//		FileName = fileName, // File name
+		//		//Description = uploadVideoDto.Description, // Video description
+		//		UploadDate = DateTime.Now, // Upload timestamp
+		//		TypeFile = "Video",
+		//		Size = fileSize
 
-			return Ok(new { success = true, message = "Video uploaded successfully.", filePath = videoMaterial.FilePath, videoMaterial.Id });
-		}
+		//	};
+
+		//	_context.Materials.Add(videoMaterial);
+		//	await _context.SaveChangesAsync();
+
+		//	return Ok(new { success = true, message = "Video uploaded successfully.", filePath = videoMaterial.FilePath, videoMaterial.Id });
+		//}
 		#endregion
 
 		#region UpdateVideo

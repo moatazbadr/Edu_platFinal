@@ -1304,31 +1304,5 @@
       }
     ],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Edu_plat.Controllers.Videos",
-    "Method": "UploadVideo",
-    "RelativePath": "api/Videos/UploadVideo",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Video",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      },
-      {
-        "Name": "CourseCode",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "TypeFile",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
   }
 ]

@@ -1,10 +1,6 @@
 {
   "Version": 1,
-<<<<<<< HEAD
-  "Hash": "ZWVcqCVSLRAr6kkHdZejgsFCU+INg7uXrono3MZr33M=",
-=======
-  "Hash": "WIs/T9xljRkyDSK70cY9d/i9QMgE1PcuiBGl3J5xiNo=",
->>>>>>> 6a654c2 (AddExam)
+  "Hash": "C8HQO+fKY3eZqBOb7AbROioFPfvgTMGLJvFM0QZIB94=",
   "Source": "Edu_plat",
   "BasePath": "_content/Edu_plat",
   "Mode": "Default",
@@ -249,11 +245,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions_2.pdf"
     },
     {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture 4LanguageModel.pdf",
+      "Identity": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture 4LanguageModel.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/COMP203/Lecture 4LanguageModel.pdf",
       "AssetKind": "All",
@@ -269,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP203\\Lecture 4LanguageModel.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture_2_RegExp_TextProcessing.pdf",
+      "Identity": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture_2_RegExp_TextProcessing.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/COMP203/Lecture_2_RegExp_TextProcessing.pdf",
       "AssetKind": "All",
@@ -288,10 +283,7 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP203\\Lecture_2_RegExp_TextProcessing.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Lecture 1Introduction&RegularExpressions.pdf",
-=======
       "Identity": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Lecture 1Introduction&RegularExpressions.pdf",
->>>>>>> 6a654c2 (AddExam)
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\",
@@ -310,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP206\\Lecture 1Introduction&RegularExpressions.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Screen Recording 2025-03-12 214236.mp4",
+      "Identity": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Screen Recording 2025-03-12 214236.mp4",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Videos/COMP203/Screen Recording 2025-03-12 214236.mp4",
       "AssetKind": "All",
