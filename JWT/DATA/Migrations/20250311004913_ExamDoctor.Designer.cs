@@ -4,6 +4,7 @@ using JWT.DATA;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JWT.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250311004913_ExamDoctor")]
+    partial class ExamDoctor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -159,18 +162,14 @@ namespace JWT.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CourseCode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("CourseId")
                         .HasColumnType("int");
 
                     b.Property<int>("DoctorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("DurationInMin")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("EndTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("ExamTitle")
                         .IsRequired()
@@ -178,12 +177,6 @@ namespace JWT.Migrations
 
                     b.Property<bool>("IsOnline")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Location")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("QusetionsNumber")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
@@ -198,30 +191,6 @@ namespace JWT.Migrations
                     b.HasIndex("DoctorId");
 
                     b.ToTable("Exams");
-                });
-
-            modelBuilder.Entity("Edu_plat.Model.Exams.ExamStudent", b =>
-                {
-                    b.Property<int>("StudentId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ExamId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsAbsent")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Score")
-                        .HasColumnType("int");
-
-                    b.Property<int>("precentageExam")
-                        .HasColumnType("int");
-
-                    b.HasKey("StudentId", "ExamId");
-
-                    b.HasIndex("ExamId");
-
-                    b.ToTable("ExamStudents");
                 });
 
             modelBuilder.Entity("Edu_plat.Model.Exams.Question", b =>
@@ -241,9 +210,6 @@ namespace JWT.Migrations
                     b.Property<string>("QuestionText")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TimeInMin")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -694,25 +660,6 @@ namespace JWT.Migrations
                     b.Navigation("Doctor");
                 });
 
-            modelBuilder.Entity("Edu_plat.Model.Exams.ExamStudent", b =>
-                {
-                    b.HasOne("Edu_plat.Model.Exams.Exam", "Exam")
-                        .WithMany("ExamStudents")
-                        .HasForeignKey("ExamId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Edu_plat.Model.Student", "Student")
-                        .WithMany("ExamStudents")
-                        .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Exam");
-
-                    b.Navigation("Student");
-                });
-
             modelBuilder.Entity("Edu_plat.Model.Exams.Question", b =>
                 {
                     b.HasOne("Edu_plat.Model.Exams.Exam", "Exam")
@@ -831,19 +778,12 @@ namespace JWT.Migrations
 
             modelBuilder.Entity("Edu_plat.Model.Exams.Exam", b =>
                 {
-                    b.Navigation("ExamStudents");
-
                     b.Navigation("Questions");
                 });
 
             modelBuilder.Entity("Edu_plat.Model.Exams.Question", b =>
                 {
                     b.Navigation("Choices");
-                });
-
-            modelBuilder.Entity("Edu_plat.Model.Student", b =>
-                {
-                    b.Navigation("ExamStudents");
                 });
 
             modelBuilder.Entity("JWT.ApplicationUser", b =>

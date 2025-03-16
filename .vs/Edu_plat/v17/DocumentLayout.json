@@ -1,8 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\",
+  "WorkspaceRootPath": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\moataz\\desktop\\gradproject\\edu_plat_secondterm\\edu_platfinal\\jwt\\controllers\\videos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\controllers\\videos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,6 +26,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\moataz\\desktop\\gradproject\\edu_plat_secondterm\\edu_platfinal\\jwt\\controllers\\studentcoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\controllers\\studentcoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\eduplatexam\\edu_platfinal\\jwt\\controllers\\examscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\controllers\\examscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\eduplatexam\\edu_platfinal\\jwt\\dto\\examdto\\createexamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\dto\\examdto\\createexamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\eduplatexam\\edu_platfinal\\jwt\\model\\exams\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\model\\exams\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\DATA\\Migrations\\20250312235500_EditNullable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:JWT\\DATA\\Migrations\\20250312235500_EditNullable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 6a654c2 (AddExam)
     }
   ],
   "DocumentGroupContainers": [
@@ -34,12 +51,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 5,
+=======
+          "SelectedChildIndex": 7,
+>>>>>>> 6a654c2 (AddExam)
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
@@ -58,6 +75,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 0,
               "Title": "Videos.cs",
               "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Controllers\\Videos.cs",
@@ -67,10 +85,22 @@
               "ViewState": "AgIAACQAAAAAAAAAAAAYwDcAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-12T23:19:51Z",
+=======
+              "DocumentIndex": 3,
+              "Title": "20250312235500_EditNullable.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\DATA\\Migrations\\20250312235500_EditNullable.cs",
+              "RelativeDocumentMoniker": "JWT\\DATA\\Migrations\\20250312235500_EditNullable.cs",
+              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\DATA\\Migrations\\20250312235500_EditNullable.cs",
+              "RelativeToolTip": "JWT\\DATA\\Migrations\\20250312235500_EditNullable.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBgAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T23:55:00.997Z",
+>>>>>>> 6a654c2 (AddExam)
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 2,
               "Title": "CourseController.cs",
               "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Controllers\\CourseController.cs",
@@ -80,10 +110,22 @@
               "ViewState": "AgIAANkBAAAAAAAAAAAQwLUBAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-12T21:55:03.182Z",
+=======
+              "DocumentIndex": 1,
+              "Title": "CreateExamDto.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\DTO\\ExamDto\\CreateExamDto.cs",
+              "RelativeDocumentMoniker": "JWT\\DTO\\ExamDto\\CreateExamDto.cs",
+              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\DTO\\ExamDto\\CreateExamDto.cs",
+              "RelativeToolTip": "JWT\\DTO\\ExamDto\\CreateExamDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T23:39:43.252Z",
+>>>>>>> 6a654c2 (AddExam)
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 4,
               "Title": "StudentViewingMaterial.cs",
               "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Requests\\StudentViewingMaterial.cs",
@@ -93,10 +135,22 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-12T21:33:53.452Z",
+=======
+              "DocumentIndex": 2,
+              "Title": "Exam.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\Model\\Exams\\Exam.cs",
+              "RelativeDocumentMoniker": "JWT\\Model\\Exams\\Exam.cs",
+              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\Model\\Exams\\Exam.cs",
+              "RelativeToolTip": "JWT\\Model\\Exams\\Exam.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAiwA4AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T23:39:29.271Z",
+>>>>>>> 6a654c2 (AddExam)
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 3,
               "Title": "StudentMaterialResponse.cs",
               "DocumentMoniker": "C:\\Users\\moataz\\Desktop\\GradProject\\Edu_Plat_SecondTerm\\Edu_platFinal\\JWT\\Responses\\StudentMaterialResponse.cs",
@@ -132,6 +186,17 @@
               "ViewState": "AgIAAIgAAAAAAAAAAAAtwGAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-12T20:54:13.243Z",
+=======
+              "DocumentIndex": 0,
+              "Title": "ExamsController.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\Controllers\\ExamsController.cs",
+              "RelativeDocumentMoniker": "JWT\\Controllers\\ExamsController.cs",
+              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\Controllers\\ExamsController.cs",
+              "RelativeToolTip": "JWT\\Controllers\\ExamsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T23:38:23.342Z",
+>>>>>>> 6a654c2 (AddExam)
               "EditorCaption": ""
             }
           ]

@@ -1,4 +1,6 @@
-﻿namespace Edu_plat.Model.Course_registeration
+﻿using Edu_plat.Model.Exams;
+
+namespace Edu_plat.Model.Course_registeration
 {
     public class Course
     {
@@ -31,16 +33,15 @@
         public int Oral {  get; set; }
         public int FinalExam { get; set; }
         public int Lab {  get; set; }
-        public int TotalMark { get; set; } 
-        #endregion
+        public int TotalMark { get; set; }
+		#endregion
+
+
+	     // 🔹 العلاقة One-to-Many مع الامتحانات
+		public List<Exam> Exams { get; set; } = new List<Exam>();
 
 
 
 
-
-
-
-
-
-    }
+	}
 }
