@@ -204,16 +204,16 @@ namespace Edu_plat.Controllers
         public async Task<IActionResult> DeleteDoctor([FromQuery] string userId)
         {
             if (string.IsNullOrEmpty(userId))
-                return BadRequest(new { success = false, message = "UserId is required" });
+                return Ok(new { success = false, message = "UserId is required" });
 
             // Find the user by their ID
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
-                return NotFound(new { success = false, message = "User not found" });
+                return Ok(new { success = false, message = "User not found" });
 
             // Check if the user is in the "Doctor" role
             if (!await _userManager.IsInRoleAsync(user, "Doctor"))
-                return BadRequest(new { success = false, message = "User is not a doctor" });
+                return Ok(new { success = false, message = "User is not a doctor" });
 
             // Remove the associated Doctor record from the database, if it exists
             var doctor = await _context.Set<Doctor>().FirstOrDefaultAsync(d => d.UserId == userId);

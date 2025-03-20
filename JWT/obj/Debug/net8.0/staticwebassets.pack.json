@@ -1,67 +1,71 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions.pdf",
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\student guide.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\AdminFiles\\student guide.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions.pdf",
       "PackagePath": "staticwebassets\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions.pdf"
     },
     {
-      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions_2.pdf",
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions_2.pdf",
       "PackagePath": "staticwebassets\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions_2.pdf"
     },
     {
-      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_13.pdf",
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_13.pdf",
       "PackagePath": "staticwebassets\\Uploads\\COMP201\\dummy-pdf_2_13.pdf"
     },
     {
-      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_14.pdf",
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_14.pdf",
       "PackagePath": "staticwebassets\\Uploads\\COMP201\\dummy-pdf_2_14.pdf"
     },
     {
-      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_15.pdf",
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_15.pdf",
       "PackagePath": "staticwebassets\\Uploads\\COMP201\\dummy-pdf_2_15.pdf"
     },
     {
-      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_17.pdf",
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_17.pdf",
       "PackagePath": "staticwebassets\\Uploads\\COMP201\\dummy-pdf_2_17.pdf"
     },
     {
-      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_18.pdf",
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_18.pdf",
       "PackagePath": "staticwebassets\\Uploads\\COMP201\\dummy-pdf_2_18.pdf"
     },
     {
-      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_5.pdf",
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_5.pdf",
       "PackagePath": "staticwebassets\\Uploads\\COMP201\\dummy-pdf_2_5.pdf"
     },
     {
-      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_6.pdf",
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_6.pdf",
       "PackagePath": "staticwebassets\\Uploads\\COMP201\\dummy-pdf_2_6.pdf"
     },
     {
-      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_8.pdf",
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_8.pdf",
       "PackagePath": "staticwebassets\\Uploads\\COMP201\\dummy-pdf_2_8.pdf"
     },
     {
-      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_9.pdf",
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_9.pdf",
       "PackagePath": "staticwebassets\\Uploads\\COMP201\\dummy-pdf_2_9.pdf"
     },
     {
-      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture 4LanguageModel.pdf",
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture 4LanguageModel.pdf",
       "PackagePath": "staticwebassets\\Uploads\\COMP203\\Lecture 4LanguageModel.pdf"
     },
     {
-      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture_2_RegExp_TextProcessing.pdf",
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture_2_RegExp_TextProcessing.pdf",
       "PackagePath": "staticwebassets\\Uploads\\COMP203\\Lecture_2_RegExp_TextProcessing.pdf"
     },
     {
-      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Lecture 1Introduction&RegularExpressions.pdf",
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Lecture 1Introduction&RegularExpressions.pdf",
       "PackagePath": "staticwebassets\\Uploads\\COMP206\\Lecture 1Introduction&RegularExpressions.pdf"
     },
     {
-      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Screen Recording 2025-03-12 214236.mp4",
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Screen Recording 2025-03-12 214236.mp4",
       "PackagePath": "staticwebassets\\Videos\\COMP203\\Screen Recording 2025-03-12 214236.mp4"
     },
     {
-      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\wwwroot\\materials.zip",
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\wwwroot\\materials.zip",
       "PackagePath": "staticwebassets\\materials.zip"
     },
     {

@@ -148,20 +148,20 @@ namespace Edu_plat.Controllers
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 			if (doctor == null)
 			{
-				return NotFound(new { message = "Doctor profile not found." });
+				return Ok(new { success=false,message = "Doctor profile not found." });
 			}
 
 			var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == examDto.CourseCode);
 			if (course == null)
 			{
-				return NotFound(new { message = "Course not found." });
+				return Ok(new { success=false,message = "Course not found." });
 			}
 
 			// Check if the doctor is assigned to this course
 			var isDoctorAssigned = await _context.CourseDoctors.AnyAsync(cd => cd.DoctorId == doctor.DoctorId && cd.CourseId == course.Id);
 			if (!isDoctorAssigned)
 			{
-				return Unauthorized(new { message = "Doctor is not assigned to this course." });
+				return Ok(new { success=false, message = "Doctor is not assigned to this course." });
 			}
 
 			// 🔹 Create a new exam object
@@ -186,35 +186,35 @@ namespace Edu_plat.Controllers
 			    
 				if (examDto.Questions == null || examDto.Questions.Count == 0 || examDto.QusetionsNumber == null)
 				{
-					return BadRequest("Online exams must have at least one question.");
+					return Ok(new { success = false, message = "Online exams must have at least one question." });
 				}
 				
 				if (examDto.Questions.Count != examDto.QusetionsNumber)
 				{
-					return BadRequest($"Number of questions must be exactly {examDto.QusetionsNumber}.");
+					return Ok(new {  success=false,message=$"Number of questions must be exactly {examDto.QusetionsNumber}." });
 				}
 				int totalTimeFromQuestions = examDto.Questions.Sum(q => q.TimeInMin);
 				if (totalTimeFromQuestions != examDto.DurationInMin)
 				{
-					return BadRequest($"Total exam time should be exactly {examDto.DurationInMin} minutes, but got {totalTimeFromQuestions} minutes.");
+					return Ok(new { success = false, message = $"Total exam time should be exactly {examDto.DurationInMin} minutes, but got {totalTimeFromQuestions} minutes." });
 				}
 
 				int totalMarksFromQuestions = examDto.Questions.Sum(q => q.Marks);
 				if (totalMarksFromQuestions != examDto.TotalMarks)
 				{
-					return BadRequest($"Total marks should be exactly {examDto.TotalMarks}, but got {totalMarksFromQuestions}.");
+					return Ok(new { success=false ,message=$"Total marks should be exactly {examDto.TotalMarks}, but got {totalMarksFromQuestions}." });
 				}
 
 				foreach (var qDto in examDto.Questions)
 				{
 					if (qDto.Choices == null || qDto.Choices.Count < 2 || qDto.Choices.Count > 4)
 					{
-						return BadRequest("Each question must have between 2 to 4 choices.");
+						return Ok(new { success = false, message = "Each question must have between 2 to 4 choices." });
 					}
 
 					if (qDto.Choices.Count(c => c.IsCorrect) != 1)
 					{
-						return BadRequest("Each question must have exactly one correct answer.");
+						return Ok(new { success = false, message = "Each question must have exactly one correct answer." });
 					}
 
 					var question = new Question
@@ -244,7 +244,7 @@ namespace Edu_plat.Controllers
 			{
 				if (string.IsNullOrWhiteSpace(examDto.LocationExam))
 				{
-					return BadRequest("Offline exams must have a location.");
+					return Ok(new { success = false, message = "Offline exams must have a location." });
 				}
 
 				// 
@@ -252,7 +252,7 @@ namespace Edu_plat.Controllers
 				{
 					examDto.Questions = null; // ✅ إزالة الأسئلة للأوفلاين
 					examDto.QusetionsNumber = null; // ✅ جعل عدد الأسئلة null
-					return BadRequest("Offline exams should not have questions.");
+					return Ok(new { success = false, message = "Offline exams should not have questions." });
 				}
 			}
 
@@ -278,7 +278,7 @@ namespace Edu_plat.Controllers
 
 			if (doctor == null)
 			{
-				return Unauthorized(new { message = "Doctor profile not found." });
+				return Ok(new { success=false, message = "Doctor profile not found." });
 			}
 			var exam = await _context.Exams
 				.Include(e => e.Questions)
@@ -287,7 +287,7 @@ namespace Edu_plat.Controllers
 
 			if (exam == null)
 			{
-				return NotFound(new { message = "Exam not found." });
+				return Ok(new {success=false, message = "Exam not found." });
 			}
 
 			bool isDoctorAssigned = await _context.CourseDoctors
@@ -295,17 +295,17 @@ namespace Edu_plat.Controllers
 
 			if (!isDoctorAssigned)
 			{
-				return Unauthorized(new { message = "You are not authorized to delete this exam." });
+				return Ok(new {success=false, message = "You are not authorized to delete this exam." });
 			}
 			if (exam.IsExamFinished())
 			{
-				return BadRequest(new { message = "You cannot delete an exam that has already ended." });
+				return Ok(new {success=false, message = "You cannot delete an exam that has already ended." });
 			}
 
 			_context.Exams.Remove(exam);
 			await _context.SaveChangesAsync();
 
-			return Ok(new { message = "Exam deleted successfully." });
+			return Ok(new { success=true, message = "Exam deleted successfully." });
 		}
 		#endregion  // D
 

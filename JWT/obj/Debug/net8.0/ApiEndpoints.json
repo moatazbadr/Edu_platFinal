@@ -278,59 +278,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "CourseCode",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "CourseDescription",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Course_hours",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Course_level",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Course_semster",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "has_Lab",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "MidTerm",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Oral",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "FinalExam",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Lab",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "TotalMark",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "courseFromBody",
+        "Type": "Edu_plat.DTO.Course_Registration.CourseRegisteration",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -487,7 +437,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Edu_plat.DTO.Course_Registration.CourseRegistrationDto",
+        "Type": "Edu_plat.DTO.Course_Registration.CourseDeletion",
         "IsRequired": true
       }
     ],
@@ -1039,6 +989,69 @@
         "Name": "registrationDto",
         "Type": "Edu_plat.DTO.Course_Registration.CourseRegistrationDto",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.StudentHelpController",
+    "Method": "DeleteFileById",
+    "RelativePath": "api/StudentHelp/DeleteFileById/DeleteFileById/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.StudentHelpController",
+    "Method": "DeleteFileByName",
+    "RelativePath": "api/StudentHelp/DeleteFileByName/DeleteFileByName/{fileName}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.StudentHelpController",
+    "Method": "GetAllFiles",
+    "RelativePath": "api/StudentHelp/GetAllFiles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.StudentHelpController",
+    "Method": "UploadFile",
+    "RelativePath": "api/StudentHelp/UploadFile",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "FileName",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

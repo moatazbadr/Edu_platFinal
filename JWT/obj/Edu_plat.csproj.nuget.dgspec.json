@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\Edu_plat.csproj": {}
+    "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\Edu_plat.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\Edu_plat.csproj": {
+    "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\Edu_plat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\Edu_plat.csproj",
+        "projectUniqueName": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\Edu_plat.csproj",
         "projectName": "Edu_plat",
-        "projectPath": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\Edu_plat.csproj",
-        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\OneDrive\\Desktop\\EduPlatExam\\Edu_platFinal\\JWT\\obj\\",
+        "projectPath": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\Edu_plat.csproj",
+        "packagesPath": "C:\\Users\\moataz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Edu_platFinal\\JWT\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\moataz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -109,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
