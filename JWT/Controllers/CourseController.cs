@@ -12,6 +12,7 @@ using Edu_plat.DTO.Course_Registration;
 using Edu_plat.Model;
 using Edu_plat.Responses;
 using Edu_plat.Requests;
+using Microsoft.VisualBasic;
 
 namespace Edu_plat.Controllers
 {
@@ -33,14 +34,68 @@ namespace Edu_plat.Controllers
         #region Adding Course [Admin-only]
 
         [HttpPost("Add-course")]
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
 
-        public async Task<IActionResult> AddCourse([FromQuery] CourseRegisteration courseFromBody)
+        public async Task<IActionResult> AddCourse([FromBody] CourseRegisteration courseFromBody)
         {
             if (!ModelState.IsValid)
             {
                 return Ok(new { success = false, message = "Error adding course" });
             }
+
+            var alreadyCourse =  _context.Courses.Where(c => c.CourseCode == courseFromBody.CourseCode);
+
+            if (alreadyCourse.Any()) { 
+            return Ok(new { success=false ,message="Course with that code already exists"});
+            
+            }
+
+            if (courseFromBody.Course_hours == 3 &&courseFromBody.has_Lab==false)
+            {
+                int sum = 0;
+                
+                sum += courseFromBody.MidTerm;
+                sum += courseFromBody.Oral;
+                if (sum != 45)
+                {
+                    return Ok(new { success = false, message = "grades are not adding up" });
+                }
+                if (courseFromBody.TotalMark != 150)
+                {
+                    return Ok(new { success = false, message = "grades are not adding up" });
+                }
+
+                if (courseFromBody.FinalExam != 105)
+                {
+                    return Ok(new { success = false, message = "grades are not adding up" });
+
+                }
+            }
+
+            if (courseFromBody.Course_hours == 3 && courseFromBody.has_Lab == true)
+            {
+                int sum = 0;
+
+                sum += courseFromBody.MidTerm;
+                sum += courseFromBody.Oral;
+                sum += courseFromBody.Lab;
+                if (sum != 60)
+                {
+                    return Ok(new { success = false, message = "grades are not adding up" });
+                }
+                if (courseFromBody.FinalExam != 90)
+                {
+                    return Ok(new { success = false, message = "grades are not adding up" });
+
+                }
+                if (courseFromBody.TotalMark != 150)
+                {
+                    return Ok(new { success = false, message = "grades are not adding up" });
+
+                }
+
+            }
+
 
             var course = new Course()
             {
@@ -84,7 +139,7 @@ namespace Edu_plat.Controllers
                 .Select(c => new
                 {
                     CourseCode = c.CourseCode,
-                    // Doctors = c.CourseDoctors.Select(cd => cd.Doctor.applicationUser.UserName).ToList(),
+                     Doctors = c.CourseDoctors.Select(cd => cd.Doctor.applicationUser.UserName).ToList(),
                     CourseDescription = c.CourseDescription,
                     courseHours = c.Course_hours,
                     
@@ -397,24 +452,22 @@ namespace Edu_plat.Controllers
 
         #region Removing a Course From Database 
 
-        [Authorize(Roles = "Admin")]
         [HttpDelete("remove-course")]
-        public async Task<IActionResult> RemoveCourse(CourseRegistrationDto dto)
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> RemoveCourse(CourseDeletion dto)
         {
             if (!ModelState.IsValid) { return BadRequest(); }
-            List<Course> courseFailedToBeDeleted = new List<Course>();
-           if (dto.CoursesCodes != null)
+          if (string.IsNullOrEmpty(dto.CourseCode))
             {
-                foreach (string CourseCode in dto.CoursesCodes)
-                {
-                    var course = await _context.Courses.FirstOrDefaultAsync(x => x.CourseCode == CourseCode);
-                    if (course !=null)
-                    _context.Courses.Remove(course);
-                    await _context.SaveChangesAsync();
-
-                }
-
+                return Ok(new { success = false, message = "Course Code not Entered"});
             }
+
+            var courseRequired = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode.Equals(dto.CourseCode));
+            if (courseRequired==null) {
+                return Ok(new { success = false, message = "couldn't delete the course" });
+            }
+            _context.Courses.Remove(courseRequired);
+            await _context.SaveChangesAsync();
            return Ok(new { success = true,  message ="Course deleted Successfully from the database " });
 
 

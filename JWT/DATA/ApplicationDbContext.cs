@@ -100,6 +100,7 @@ namespace JWT.DATA
 		public DbSet<Choice> Choices { get; set; }
 		public DbSet<CourseDoctor> CourseDoctors { get; set; }
 		public DbSet<ExamStudent> ExamStudents { get; set; }
+		public DbSet<AdminFile> AdminFiles { get; set; }
 		#endregion
 
 	}
