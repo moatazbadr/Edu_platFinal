@@ -446,15 +446,55 @@
   {
     "ContainingType": "Edu_plat.Controllers.ExamsController",
     "Method": "CreateExam",
-    "RelativePath": "api/Exams/CreateExam",
+    "RelativePath": "api/Exams/CreateExamOnline\u0026Offline",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "examDto",
-        "Type": "Edu_plat.DTO.ExamDto.CreateExamDto",
-        "IsRequired": true
+        "Name": "ExamTitle",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "StartTime",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "TotalMarks",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsOnline",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "QuestionsNumber",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "DurationInMin",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "CourseCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LocationExam",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Questions",
+        "Type": "System.Collections.Generic.List\u00601[[Edu_plat.Model.Exams.Question, Edu_plat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -470,6 +510,27 @@
       {
         "Name": "examId",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.ExamsController",
+    "Method": "GetExam",
+    "RelativePath": "api/Exams/GetExam/{examId}/{courseCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "examId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "courseCode",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -579,9 +640,49 @@
         "IsRequired": true
       },
       {
-        "Name": "examDto",
-        "Type": "Edu_plat.DTO.ExamDto.CreateExamDto",
-        "IsRequired": true
+        "Name": "ExamTitle",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "StartTime",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "TotalMarks",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsOnline",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "QuestionsNumber",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "DurationInMin",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "CourseCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LocationExam",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Questions",
+        "Type": "System.Collections.Generic.List\u00601[[Edu_plat.Model.Exams.Question, Edu_plat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
