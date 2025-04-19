@@ -33,6 +33,16 @@
   },
   {
     "ContainingType": "JWT.Controllers.AccountsController",
+    "Method": "Logout",
+    "RelativePath": "api/Accounts/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JWT.Controllers.AccountsController",
     "Method": "Register",
     "RelativePath": "api/Accounts/Register",
     "HttpMethod": "POST",
@@ -278,59 +288,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "CourseCode",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "CourseDescription",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Course_hours",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Course_level",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Course_semster",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "has_Lab",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "MidTerm",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Oral",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "FinalExam",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Lab",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "TotalMark",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "courseFromBody",
+        "Type": "Edu_plat.DTO.Course_Registration.CourseRegisteration",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -422,6 +382,22 @@
   },
   {
     "ContainingType": "Edu_plat.Controllers.CourseController",
+    "Method": "getDetailsForExam",
+    "RelativePath": "api/Course/Details/{coursecode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "coursecode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.CourseController",
     "Method": "GetDetails",
     "RelativePath": "api/Course/Details/{CourseCode}",
     "HttpMethod": "GET",
@@ -487,7 +463,44 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Edu_plat.DTO.Course_Registration.CourseRegistrationDto",
+        "Type": "Edu_plat.DTO.Course_Registration.CourseDeletion",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.CourseController",
+    "Method": "updatecourseDetails",
+    "RelativePath": "api/Course/update/{courseCode}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "newCourse",
+        "Type": "Edu_plat.DTO.Course_Registration.CourseRegisteration",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.ExamsController",
+    "Method": "CheckExamStarted",
+    "RelativePath": "api/Exams/CheckExamStarted/{examId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "examId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -496,7 +509,7 @@
   {
     "ContainingType": "Edu_plat.Controllers.ExamsController",
     "Method": "CreateExam",
-    "RelativePath": "api/Exams/CreateExam",
+    "RelativePath": "api/Exams/CreateExamOnline\u0026Offline",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -519,6 +532,22 @@
     "Parameters": [
       {
         "Name": "examId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.ExamsController",
+    "Method": "getExam",
+    "RelativePath": "api/Exams/get/examToUpdate/{ExamId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ExamId",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -1044,6 +1073,69 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Edu_plat.Controllers.StudentHelpController",
+    "Method": "DeleteFileById",
+    "RelativePath": "api/StudentHelp/DeleteFileById/DeleteFileById/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.StudentHelpController",
+    "Method": "DeleteFileByName",
+    "RelativePath": "api/StudentHelp/DeleteFileByName/DeleteFileByName/{fileName}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.StudentHelpController",
+    "Method": "GetAllFiles",
+    "RelativePath": "api/StudentHelp/GetAllFiles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.StudentHelpController",
+    "Method": "UploadFile",
+    "RelativePath": "api/StudentHelp/UploadFile",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "FileName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Edu_plat.Controllers.TodoController",
     "Method": "AddItem",
     "RelativePath": "api/Todo/Add-new-todo",
@@ -1294,32 +1386,6 @@
       },
       {
         "Name": "Description",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "TypeFile",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Edu_plat.Controllers.Videos",
-    "Method": "UploadVideo",
-    "RelativePath": "api/Videos/UploadVideo",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Video",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      },
-      {
-        "Name": "CourseCode",
         "Type": "System.String",
         "IsRequired": false
       },

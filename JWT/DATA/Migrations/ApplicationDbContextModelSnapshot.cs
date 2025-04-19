@@ -37,6 +37,34 @@ namespace JWT.Migrations
                     b.ToTable("CourseStudent");
                 });
 
+            modelBuilder.Entity("Edu_plat.Model.AdminFile", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FilePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("size")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("uploadeDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AdminFiles");
+                });
+
             modelBuilder.Entity("Edu_plat.Model.CourseDoctor", b =>
                 {
                     b.Property<int>("DoctorId")
