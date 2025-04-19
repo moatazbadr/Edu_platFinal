@@ -54,8 +54,7 @@
               "RelativeToolTip": "JWT\\Model\\Exams\\Exam.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T09:01:56.139Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-19T09:01:56.139Z"
             },
             {
               "$type": "Document",
@@ -67,8 +66,7 @@
               "RelativeToolTip": "JWT\\Controllers\\CourseController.cs",
               "ViewState": "AgIAAGIBAAAAAAAAAAAAwM4CAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T08:38:31.974Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-19T08:38:31.974Z"
             },
             {
               "$type": "Document",
@@ -78,7 +76,7 @@
               "RelativeDocumentMoniker": "JWT\\Controllers\\ExamsController.cs",
               "ToolTip": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\Controllers\\ExamsController.cs",
               "RelativeToolTip": "JWT\\Controllers\\ExamsController.cs",
-              "ViewState": "AgIAAFgBAAAAAAAAAAAowGsBAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAFsBAAAAAAAAAAAYwGUBAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-19T08:38:31.472Z",
               "EditorCaption": ""
