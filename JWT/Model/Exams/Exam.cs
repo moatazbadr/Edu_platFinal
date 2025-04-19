@@ -13,11 +13,11 @@ namespace Edu_plat.Model.Exams
 		public int DurationInMin { get; set; }
 		public string CourseCode { get; set; }
 		public string? Location { get; set; }
-        public bool IsExamFinished()
-        {
-            var endTime = DateTime.SpecifyKind(StartTime, DateTimeKind.Utc).AddMinutes(DurationInMin);
-            return DateTime.UtcNow > endTime;
-        }
+			public bool IsExamFinished()
+			{
+				var endTime = DateTime.SpecifyKind(StartTime, DateTimeKind.Utc).AddMinutes(DurationInMin);
+				return DateTime.UtcNow > endTime;
+			}
 
 
         public TimeSpan GetRemainingTime()

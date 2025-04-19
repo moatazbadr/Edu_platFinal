@@ -305,84 +305,160 @@ namespace Edu_plat.Controllers
 			return Ok(new { success =true,message = "Exam deleted successfully." });
 		}
 		#endregion
-
-		#region GetExamToDoctor
-		[HttpGet("GetExam/{examId}/{courseCode}")]
-		[Authorize(Roles = "Doctor")]
-		public async Task<IActionResult> GetExam(int examId, string courseCode)
+		#region GetExam to Update
+		[HttpGet]
+		[Route("get/examToUpdate/{ExamId}")]
+		[Authorize(Roles ="Doctor")]
+		public async Task<IActionResult>getExam(int ExamId)
 		{
-			if (examId <= 0 || string.IsNullOrWhiteSpace(courseCode))
+			if (ExamId < 0)
 			{
-				return BadRequest(new { success = false, message = "Invalid exam ID or course code." });
+				return Ok(new { success = false, message = "invalid exam id " });
 			}
-
 			var userId = User.FindFirstValue("ApplicationUserId");
-			var user = await _userManager.FindByIdAsync(userId);
-			if (user == null)
+			if (string.IsNullOrEmpty(userId))
 			{
-				return Unauthorized(new { success = false, message = "User not found." });
+				return Ok(new { success = false, message = "invalid user" });
 			}
-
-			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
-			if (doctor == null)
+            var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
+            if (doctor == null)
+            {
+                return NotFound(new { success = false, message = "Doctor profile not found." });
+            }
+			var Exam = await _context.Exams.Include(e => e.Questions!)
+                .ThenInclude(q => q.Choices).FirstOrDefaultAsync(x => x.Id == ExamId);
+			if (Exam == null)
 			{
-				return NotFound(new { success = false, message = "Doctor profile not found." });
+				return Ok(new { success = false, message = "no exam has been found" });
 			}
-			var course = await _context.Courses
-		.FirstOrDefaultAsync(c => c.CourseCode == courseCode);
+			var course = await _context.Courses.FirstOrDefaultAsync(x => x.Id == Exam.CourseId);
 			if (course == null)
 			{
-				return BadRequest("Course Code Not Found");
-			}
-			bool isDoctorAssignedToCourse = await _context.CourseDoctors
-	.AnyAsync(c => c.CourseId == course.Id && c.DoctorId == doctor.DoctorId);
-
-
-			if (!isDoctorAssignedToCourse)
-			{
-				return Forbid();
+				return Ok(new { success = false, message = "No course found" });
 			}
 
-
-			var exam = await _context.Exams
-				.Include(e => e.Questions!)
-				.ThenInclude(q => q.Choices)
-				.FirstOrDefaultAsync(e => e.Id == examId && e.CourseCode == courseCode);
-
-			if (exam == null)
-			{
-				return NotFound(new { success = false, message = "Exam not found for this course." });
+			bool isAssignedToDoctor = await _context.CourseDoctors.AnyAsync(
+				d => d.DoctorId == doctor.DoctorId && d.CourseId == course.Id
+				);
+			if (!isAssignedToDoctor) {
+				return Ok(new { success = false, message = "you cannot view this exam " });
 			}
-
-			var examDetails = new
+			var ExamView = new
 			{
-				exam.Id,
-				exam.ExamTitle,
-				exam.StartTime,
-				exam.TotalMarks,
-				exam.IsOnline,
-				exam.DurationInMin,
-				exam.QusetionsNumber,
-				exam.CourseCode,
-				exam.Location,
-				exam.DoctorId,
-				IsFinished = exam.IsExamFinished(),
-				Questions = exam.Questions?.Select(q => new
-				{
-					q.Id,
-					q.QuestionText,
-					q.Marks,
-					q.TimeInMin,
-					Choices = q.Choices.Select(c => new
-					{
-						c.Id,
-						c.Text
-					})
-				})
-			};
+                examTitle=Exam.ExamTitle,
+                startTime=Exam.StartTime,
+                totalMarks=Exam.TotalMarks,
+                isOnline=Exam.IsOnline,
+                questionsNumber=Exam.QusetionsNumber,
+                durationInMin=Exam.DurationInMin,
+                courseCode=Exam.CourseCode,
+                questions= Exam.Questions?.Select(q => new
+                {
+                    
+                    q.QuestionText,
+                    q.Marks,
+                    q.TimeInMin,
+                    Choices = q.Choices.Select(c => new
+                    {
 
-			return Ok(new { success = true, exam = examDetails });
-		}
+                        choiceText= c.Text,
+						c.IsCorrect
+                    })
+                })
+
+
+
+            };
+
+            return Ok(new { success = true , message = "fetched successfully", ExamView });
+
+
+
+
+
+        }
+
+
+        #endregion
+
+
+        #region GetExamToDoctor
+ //       [HttpGet("GetExam/{examId}/{courseCode}")]
+	//	[Authorize(Roles = "Doctor")]
+	//	public async Task<IActionResult> GetExam(int examId, string courseCode)
+	//	{
+	//		if (examId <= 0 || string.IsNullOrWhiteSpace(courseCode))
+	//		{
+	//			return BadRequest(new { success = false, message = "Invalid exam ID or course code." });
+	//		}
+
+	//		var userId = User.FindFirstValue("ApplicationUserId");
+	//		var user = await _userManager.FindByIdAsync(userId);
+	//		if (user == null)
+	//		{
+	//			return Unauthorized(new { success = false, message = "User not found." });
+	//		}
+
+	//		var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
+	//		if (doctor == null)
+	//		{
+	//			return NotFound(new { success = false, message = "Doctor profile not found." });
+	//		}
+	//		var course = await _context.Courses
+	//	.FirstOrDefaultAsync(c => c.CourseCode == courseCode);
+	//		if (course == null)
+	//		{
+	//			return BadRequest("Course Code Not Found");
+	//		}
+	//		bool isDoctorAssignedToCourse = await _context.CourseDoctors
+	//.AnyAsync(c => c.CourseId == course.Id && c.DoctorId == doctor.DoctorId);
+
+
+	//		if (!isDoctorAssignedToCourse)
+	//		{
+	//			return Forbid();
+	//		}
+
+
+	//		var exam = await _context.Exams
+	//			.Include(e => e.Questions!)
+	//			.ThenInclude(q => q.Choices)
+	//			.FirstOrDefaultAsync(e => e.Id == examId && e.CourseCode == courseCode);
+
+	//		if (exam == null)
+	//		{
+	//			return NotFound(new { success = false, message = "Exam not found for this course." });
+	//		}
+
+	//		var examDetails = new
+	//		{
+	//			exam.Id,
+	//			exam.ExamTitle,
+	//			exam.StartTime,
+	//			exam.TotalMarks,
+	//			exam.IsOnline,
+	//			exam.DurationInMin,
+	//			exam.QusetionsNumber,
+	//			exam.CourseCode,
+	//			exam.Location,
+	//			exam.DoctorId,
+	//			IsFinished = exam.IsExamFinished(),
+	//			Questions = exam.Questions?.Select(q => new
+	//			{
+	//				q.Id,
+	//				q.QuestionText,
+	//				q.Marks,
+	//				q.TimeInMin,
+	//				Choices = q.Choices.Select(c => new
+	//				{
+	//					c.Id,
+	//					c.Text
+	//				})
+	//			})
+	//		};
+
+	//		return Ok(new { success = true, exam = examDetails });
+	//	}
 
 		#endregion
 

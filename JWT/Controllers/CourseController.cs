@@ -596,7 +596,7 @@ namespace Edu_plat.Controllers
 
         #region Getting course Details
         [HttpGet]
-        [Route("Details/{coursecode:required+}")]
+        [Route("Details/{coursecode:required}")]
         public async Task<IActionResult>getDetailsForExam(string coursecode)
         {
             if (string.IsNullOrEmpty(coursecode))
@@ -636,7 +636,7 @@ namespace Edu_plat.Controllers
 
         #region updatecourseDetails
         [HttpPut]
-        [Route("update/{courseCode}")]
+        [Route("update/{courseCode:required}")]
 
         [Authorize(Roles ="Admin")]
         public async Task<IActionResult> updatecourseDetails(string courseCode, CourseRegisteration newCourse)

@@ -473,7 +473,7 @@
     "ContainingType": "Edu_plat.Controllers.CourseController",
     "Method": "updatecourseDetails",
     "RelativePath": "api/Course/update/{courseCode}",
-    "HttpMethod": "POST",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -540,20 +540,15 @@
   },
   {
     "ContainingType": "Edu_plat.Controllers.ExamsController",
-    "Method": "GetExam",
-    "RelativePath": "api/Exams/GetExam/{examId}/{courseCode}",
+    "Method": "getExam",
+    "RelativePath": "api/Exams/get/examToUpdate/{ExamId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "examId",
+        "Name": "ExamId",
         "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "courseCode",
-        "Type": "System.String",
         "IsRequired": true
       }
     ],
