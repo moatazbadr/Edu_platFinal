@@ -119,13 +119,10 @@ namespace Edu_plat.Controllers
 		//}
 		#endregion
 
-
-		// POST: Create a new exam
-
 		#region CreateExamOnline&Offline
 		[HttpPost("CreateExamOnline&Offline")]
 		[Authorize(Roles = "Doctor")]
-		public async Task<IActionResult> CreateExam([FromForm] CreateExamDto examDto)
+		public async Task<IActionResult> CreateExam([FromBody] CreateExamDto examDto)
 		{
 
 			if (!ModelState.IsValid)
@@ -160,10 +157,10 @@ namespace Edu_plat.Controllers
 				return Unauthorized(new { success = false, message = "Doctor is not assigned to this course." });
 			}
 
-			if (examDto.StartTime <= DateTime.UtcNow)
-			{
-				return BadRequest(new { succes = false, message = "Exam start time must be in the future." });
-			}
+			 if (examDto.StartTime.ToUniversalTime() <= DateTime.UtcNow)
+             {
+                    return BadRequest(new { succes = false, message = "Exam start time must be in the future." });
+			 }
 
 			// 🔹 Create a new exam object
 			var exam = new Exam
@@ -232,7 +229,7 @@ namespace Edu_plat.Controllers
 					{
 						var choice = new Choice
 						{
-							Text = cDto.Text,
+							Text = cDto.ChoiceText,
 							IsCorrect = cDto.IsCorrect,
 							Question = question
 						};
@@ -260,12 +257,11 @@ namespace Edu_plat.Controllers
 			_context.Exams.Add(exam);
 			await _context.SaveChangesAsync();
 
-			return Ok(new { succes = true, message = "Exam created successfully.", examId = exam.Id });
+			return Ok(new { success = true, message = "Exam created successfully." });
 		}
 
 		#endregion
-
-		// DELETE: Delete an exam by ID (Done) cannot Delete if StartTime Exam Is Fininsh 
+		
 		#region DeleteExam
 		[HttpDelete("DeleteExam/{examId}")]
 		[Authorize(Roles = "Doctor")]
@@ -278,7 +274,7 @@ namespace Edu_plat.Controllers
 
 			if (doctor == null)
 			{
-				return Unauthorized(new { message = "Doctor profile not found." });
+				return Unauthorized(new { success=false,message = "Doctor profile not found." });
 			}
 			var exam = await _context.Exams
 				.Include(e => e.Questions!)
@@ -287,7 +283,7 @@ namespace Edu_plat.Controllers
 
 			if (exam == null)
 			{
-				return NotFound(new { message = "Exam not found." });
+				return NotFound(new { success=false,message = "Exam not found." });
 			}
 
 			bool isDoctorAssigned = await _context.CourseDoctors
@@ -295,7 +291,7 @@ namespace Edu_plat.Controllers
 
 			if (!isDoctorAssigned)
 			{
-				return Unauthorized(new { message = "You are not authorized to delete this exam." });
+				return Unauthorized(new { success=false,message = "You are not authorized to delete this exam." });
 			}
 			if (exam.StartTime <= DateTime.UtcNow)
 			{
@@ -306,7 +302,7 @@ namespace Edu_plat.Controllers
 			_context.Exams.Remove(exam);
 			await _context.SaveChangesAsync();
 
-			return Ok(new { message = "Exam deleted successfully." });
+			return Ok(new { success =true,message = "Exam deleted successfully." });
 		}
 		#endregion
 
@@ -390,8 +386,6 @@ namespace Edu_plat.Controllers
 
 		#endregion
 
-
-		// GET: Retrieve model answers (Question + Correct Answer)
 		#region ModelAnswer
 		[HttpGet("GetModelAnswer/{examId}")]
 		[Authorize(Roles = "Doctor,Student")]
@@ -425,11 +419,10 @@ namespace Edu_plat.Controllers
 		}
 		#endregion
 
-		// PUT: Update an exam
 		#region UpdateExam
 		[HttpPut("UpdateExam/{examId}")]
 		[Authorize(Roles = "Doctor")]
-		public async Task<IActionResult> UpdateExam(int examId, [FromForm] CreateExamDto examDto)
+		public async Task<IActionResult> UpdateExam(int examId, [FromBody] CreateExamDto examDto)
 		{
 			if (!ModelState.IsValid)
 			{
@@ -528,7 +521,7 @@ namespace Edu_plat.Controllers
 						var existingChoices = oldQuestion.Choices.ToList();
 						foreach (var oldChoice in existingChoices)
 						{
-							var updatedChoice = updatedQuestion.Choices.FirstOrDefault(c => c.Text == oldChoice.Text);
+							var updatedChoice = updatedQuestion.Choices.FirstOrDefault(c => c.ChoiceText == oldChoice.Text);
 							if (updatedChoice == null)
 							{
 								_context.Choices.Remove(oldChoice);
@@ -540,9 +533,19 @@ namespace Edu_plat.Controllers
 						}
 
 
-						var newChoices = updatedQuestion.Choices.Where(c => !existingChoices.Any(ec => ec.Text == c.Text)).ToList();
-						oldQuestion.Choices.AddRange(newChoices);
-					}
+                        var newChoices = updatedQuestion.Choices
+    .Where(c => !existingChoices.Any(ec => ec.Text == c.ChoiceText))
+    .Select(c => new Choice
+    {
+        Text = c.ChoiceText,
+        IsCorrect = c.IsCorrect,
+        QuestionId = oldQuestion.Id
+		
+    })
+    .ToList();
+
+                        oldQuestion.Choices.AddRange(newChoices);
+                    }
 				}
 
 
@@ -557,7 +560,7 @@ namespace Edu_plat.Controllers
 						Exam = exam,
 						Choices = newQuestion.Choices.Select(c => new Choice
 						{
-							Text = c.Text,
+							Text = c.ChoiceText,
 							IsCorrect = c.IsCorrect
 						}).ToList()
 					});
@@ -595,7 +598,7 @@ namespace Edu_plat.Controllers
 		//		}
 
 		//		var exams = await _context.Exams
-		//			.Where(e => _context.CourseDoctors.Any(cd => cd.DoctorId == doctor.DoctorId && cd.CourseId == e.CourseId ))
+		//			.Where(e => _context.CourseDoctors.Any(cd => cd.DoctorId == doctor.DoctorId && cd.CourseId == e.CourseId))
 		//			.Select(e => new
 		//			{
 		//				e.Id,
@@ -613,7 +616,7 @@ namespace Edu_plat.Controllers
 		//			.ToListAsync();
 
 
-		//			exams = exams.Where(e => e.IsFinished == userexamdto.isFinishedExam).ToList();
+		//		exams = exams.Where(e => e.IsFinished == userexamdto.isFinishedExam).ToList();
 
 		//		return Ok(exams);
 		//	}
@@ -641,7 +644,7 @@ namespace Edu_plat.Controllers
 		//			}).ToList();
 
 		//		var exams = await _context.Exams
-		//			.Where(e => Getstudent.courses.Any(c => c.CourseCode == e.CourseCode ))
+		//			.Where(e => Getstudent.courses.Any(c => c.CourseCode == e.CourseCode))
 		//			.Select(e => new
 		//			{
 		//				e.Id,
@@ -653,7 +656,7 @@ namespace Edu_plat.Controllers
 		//				e.QusetionsNumber,
 		//				e.CourseCode,
 		//				e.Location,
-		//				e.DoctorId ,
+		//				e.DoctorId,
 		//				IsFinished = e.IsExamFinished()
 		//			})
 		//			.ToListAsync();
@@ -705,7 +708,7 @@ namespace Edu_plat.Controllers
 
 				exams = exams.Where(e => e.IsFinished == userexamdto.isFinishedExam).ToList();
 
-				return Ok(exams);
+				return Ok(new { success=true,message="fetched successfully", exams });
 			}
 
 			else if (User.IsInRole("Student"))
@@ -716,7 +719,7 @@ namespace Edu_plat.Controllers
 
 				if (student == null)
 				{
-					return NotFound(new { message = "Student profile not found." });
+					return NotFound(new { success=false,message = "Student profile not found." });
 				}
 
 				var studentCourseCodes = student.courses.Select(c => c.CourseCode).ToList();
@@ -774,17 +777,10 @@ namespace Edu_plat.Controllers
 				return Ok(result);
 			}
 
-
-
-
-
-
-
-			return Unauthorized(new { message = "User role not recognized." });
+			return Unauthorized(new { success=false,message = "User role not recognized." });
 		}
 		#endregion
 
-		// Done
 		#region GetExamStudent
 		[HttpGet("GetExamStudent")]
 		[Authorize(Roles = "Student")]
@@ -856,7 +852,6 @@ namespace Edu_plat.Controllers
 
 		#endregion
 
-		// Done 
 		#region SubmitExamScore
 		[HttpPost("SubmitExamScore")]
 		[Authorize(Roles = "Student")]
@@ -927,7 +922,6 @@ namespace Edu_plat.Controllers
 
 		#endregion
 
-		// Done 
 		#region GetExamResults
 		[HttpGet("GetExamResults/{examId}")]
 		[Authorize(Roles = "Doctor")]
@@ -994,7 +988,29 @@ namespace Edu_plat.Controllers
 				students = examResults
 			});
 		}
-		#endregion
+        #endregion
+       
+		#region check if Exam hastarted 
+        [HttpGet]
+        [Route("CheckExamStarted/{examId}")]
+        public async Task<IActionResult> CheckExamStarted(int examId)
+        {
+            var exam = await _context.Exams.FirstOrDefaultAsync(e => e.Id == examId);
+            if (exam == null)
+            {
+                return NotFound(new { success = false, message = "Exam not found." });
+            }
+            if (exam.StartTime <= DateTime.UtcNow)
+            {
+                return Ok(new { success = true, Examstart = 1, message = "Exam has started." });
+            }
+            return Ok(new { success = false, Examstart = 0, message = "Exam has not started yet." });
+        }
 
-	}
+
+
+
+        #endregion
+
+    }
 }

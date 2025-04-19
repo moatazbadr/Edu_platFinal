@@ -1,6 +1,8 @@
 ﻿using Edu_plat.DTO;
 using Edu_plat.Model;
+using Edu_plat.Model.Interfaces;
 using Edu_plat.Model.OTP;
+using Edu_plat.Services;
 using JWT.DATA;
 using JWT.DTO;
 using JWT.Model.OTP;
@@ -27,6 +29,8 @@ namespace JWT.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IConfiguration _configuration;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IblackListService _blacklistService;
+
         private readonly IMailingServices _mailService;
         private readonly ApplicationDbContext _context;
         // Declare a dictionary where key is a string (email), and value is a tuple (OTP, expiration time, TemporaryUserDTO user)
@@ -511,6 +515,31 @@ namespace JWT.Controllers
 
             return Ok(new { success = true, message = "Password reset successful." });
         }
+        #endregion
+
+        #region Logout 
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            var token = HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+
+            if (string.IsNullOrEmpty(token))
+                return BadRequest(new { success = false, message = "Token is required" });
+
+            var handler = new JwtSecurityTokenHandler();
+            var jwtToken = handler.ReadJwtToken(token);
+            var jti = jwtToken.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Jti)?.Value;
+
+            if (string.IsNullOrEmpty(jti))
+                return BadRequest(new { success = false, message = "Invalid token" });
+
+            await _blacklistService.AddTokenToBlackListAsync(jti, jwtToken.ValidTo);
+
+            return Ok(new { success = true, message = "Logged out successfully" });
+
+        }
+
+        #endregion
+
     }
 }
-#endregion

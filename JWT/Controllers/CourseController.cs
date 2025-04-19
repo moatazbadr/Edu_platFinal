@@ -594,5 +594,128 @@ namespace Edu_plat.Controllers
 
         #endregion
 
+        #region Getting course Details
+        [HttpGet]
+        [Route("Details/{coursecode:required+}")]
+        public async Task<IActionResult>getDetailsForExam(string coursecode)
+        {
+            if (string.IsNullOrEmpty(coursecode))
+            {
+                return Ok(new { success = false, message = "course code cannot be empty" });
+            }
+
+            //where returns a list 
+            var courseRequired = await _context.Courses.FirstOrDefaultAsync(x => x.CourseCode==coursecode);
+            if (courseRequired == null)
+            {
+                return Ok(new { success = false, message = "No course with this code has been found" });
+            }
+            courseForExamDetails examDetails = new courseForExamDetails()
+            {
+                courseCode = courseRequired.CourseCode,
+                level = courseRequired.Course_level,
+                program = "Computer science",
+                semester = courseRequired.Course_semster,
+                time = courseRequired.Course_hours,
+                title = courseRequired.CourseDescription,
+                totalMarks = courseRequired.FinalExam
+            };
+
+            if(examDetails != null)
+            {
+                return Ok(new { success = true, message = "fetched successfully", examDetails });
+            }
+
+            return Ok(new { success = false, message = "error in getting exam details" });
+
+
+        }
+
+
+        #endregion
+
+        #region updatecourseDetails
+        [HttpPut]
+        [Route("update/{courseCode}")]
+
+        [Authorize(Roles ="Admin")]
+        public async Task<IActionResult> updatecourseDetails(string courseCode, CourseRegisteration newCourse)
+        {
+            if (string.IsNullOrEmpty(courseCode))
+            {
+                return Ok(new { success = false, message = "course code cannot be empty" });
+            }
+            var requiredCourse = await _context.Courses.FirstOrDefaultAsync(x => x.CourseCode == courseCode);
+            if (requiredCourse == null)
+            {
+                return Ok(new { success = false, message = "couldn't find the course" });
+            }
+
+            if(newCourse==null || string.IsNullOrEmpty(newCourse.CourseCode))
+            {
+                return Ok(new { success = false, message = "cannot update course missing details" });
+            }
+            //Grading validation
+
+            if (newCourse.Course_hours == 3 && newCourse.has_Lab == false)
+            {
+                int sum = 0;
+
+                sum += newCourse.MidTerm;
+                sum += newCourse.Oral;
+                if (sum != 45)
+                {
+                    return Ok(new { success = false, message = "grades are not adding up" });
+                }
+                if (newCourse.TotalMark != 150)
+                {
+                    return Ok(new { success = false, message = "grades are not adding up" });
+                }
+
+                if (newCourse.FinalExam != 105)
+                {
+                    return Ok(new { success = false, message = "grades are not adding up" });
+
+                }
+            }
+
+            if (newCourse.Course_hours == 3 && newCourse.has_Lab == true)
+            {
+                int sum = 0;
+
+                sum += newCourse.MidTerm;
+                sum += newCourse.Oral;
+                sum += newCourse.Lab;
+                if (sum != 60)
+                {
+                    return Ok(new { success = false, message = "grades are not adding up" });
+                }
+                if (newCourse.FinalExam != 90)
+                {
+                    return Ok(new { success = false, message = "grades are not adding up" });
+
+                }
+                if (newCourse.TotalMark != 150)
+                {
+                    return Ok(new { success = false, message = "grades are not adding up" });
+
+                }
+
+            }
+            //mapping
+            requiredCourse.MidTerm = newCourse.MidTerm;
+            requiredCourse.CourseDescription = newCourse.CourseDescription;
+            requiredCourse.Course_level = newCourse.Course_level;
+            requiredCourse.Course_hours = newCourse.Course_hours;
+            requiredCourse.has_Lab = newCourse.has_Lab;
+            requiredCourse.Oral = newCourse.Oral;
+
+            return Ok(new { success = false, message = "updated sucessfully" });
+
+
+
+        }
+
+        #endregion
     }
 }

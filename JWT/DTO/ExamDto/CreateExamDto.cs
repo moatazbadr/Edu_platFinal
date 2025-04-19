@@ -12,17 +12,17 @@ namespace Edu_plat.DTO.ExamDto
 		[Required(ErrorMessage = "Start time is required.")]
 		public DateTime StartTime { get; set; }
 
-		[Range(1, int.MaxValue, ErrorMessage = "Total marks must be greater than 0.")]
+		//[Range(1, int.MaxValue, ErrorMessage = "Total marks must be greater than 0.")]
 		public int TotalMarks { get; set; }
 
 		[Required(ErrorMessage = "Exam type (IsOnline) is required.")]
 		public bool IsOnline { get; set; }
 
-		[Range(1, int.MaxValue, ErrorMessage = "Number of questions must be greater than 0.")]
+		//[Range(1, int.MaxValue, ErrorMessage = "Number of questions must be greater than 0.")]
 		public int? QuestionsNumber { get; set; }
 
-		[Required(ErrorMessage = " DurationInMin is required.")]
-		[Range(1, int.MaxValue, ErrorMessage = "Duration must be greater than 0 minutes.")]
+		//[Required(ErrorMessage = " DurationInMin is required.")]
+		//[Range(1, int.MaxValue, ErrorMessage = "Duration must be greater than 0 minutes.")]
 		public int DurationInMin { get; set; }
 
 		[Required(ErrorMessage = "Course code is required.")]
@@ -32,7 +32,7 @@ namespace Edu_plat.DTO.ExamDto
 		[MaxLength(100, ErrorMessage = "Location Exam must not exceed 100 characters.")]
 		public string? LocationExam { get; set; }
 
-		public List<Question>? Questions { get; set; }
+		public List<QuestionDto>? Questions { get; set; }
 
 	}
 }
