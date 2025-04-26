@@ -57,12 +57,36 @@ namespace JWT.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("uploadeDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
                     b.ToTable("AdminFiles");
+                });
+
+            modelBuilder.Entity("Edu_plat.Model.BlackListTokens", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("ExpiryDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("jti")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BlackListTokens");
                 });
 
             modelBuilder.Entity("Edu_plat.Model.CourseDoctor", b =>

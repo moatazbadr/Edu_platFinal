@@ -45,7 +45,8 @@ namespace JWT.Controllers
             IConfiguration configuration,
             RoleManager<IdentityRole> roleManager,
             IMailingServices mailService,
-             ApplicationDbContext context
+             ApplicationDbContext context,
+             IblackListService iblackListService
 
             )
         {
@@ -54,6 +55,7 @@ namespace JWT.Controllers
             _roleManager = roleManager;
             _mailService = mailService;
             _context = context;
+            _blacklistService = iblackListService;
         }
         #endregion
 

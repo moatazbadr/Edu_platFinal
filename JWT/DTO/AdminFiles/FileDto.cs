@@ -9,5 +9,6 @@ namespace Edu_plat.DTO.AdminFiles
 
         [Required]
         public string FileName { get; set; } // Admin provides the custom file name
+        public string type { get; set; }
     }
 }

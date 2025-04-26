@@ -213,6 +213,16 @@
   },
   {
     "ContainingType": "Edu_plat.Controllers.AdminDashBoardController",
+    "Method": "getStats",
+    "RelativePath": "api/AdminDashBoard/GetStats",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.AdminDashBoardController",
     "Method": "GetUsersByType",
     "RelativePath": "api/AdminDashBoard/GetUsersByType/{type}",
     "HttpMethod": "GET",
@@ -267,6 +277,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.ChatController",
+    "Method": "GetGroupChat",
+    "RelativePath": "api/Chat/GetGroupChat/groupChat/{courseTitle}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseTitle",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -382,22 +408,6 @@
   },
   {
     "ContainingType": "Edu_plat.Controllers.CourseController",
-    "Method": "getDetailsForExam",
-    "RelativePath": "api/Course/Details/{coursecode}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "coursecode",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Edu_plat.Controllers.CourseController",
     "Method": "GetDetails",
     "RelativePath": "api/Course/Details/{CourseCode}",
     "HttpMethod": "GET",
@@ -427,6 +437,22 @@
       },
       {
         "Name": "DoctorId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.CourseController",
+    "Method": "getDetailsForExam",
+    "RelativePath": "api/Course/ExamDetails/{coursecode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "coursecode",
         "Type": "System.String",
         "IsRequired": true
       }
@@ -1116,6 +1142,16 @@
   },
   {
     "ContainingType": "Edu_plat.Controllers.StudentHelpController",
+    "Method": "GetFiles",
+    "RelativePath": "api/StudentHelp/GetFiles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.StudentHelpController",
     "Method": "UploadFile",
     "RelativePath": "api/StudentHelp/UploadFile",
     "HttpMethod": "POST",
@@ -1129,6 +1165,11 @@
       },
       {
         "Name": "FileName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "type",
         "Type": "System.String",
         "IsRequired": false
       }

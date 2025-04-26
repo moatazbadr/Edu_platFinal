@@ -757,10 +757,10 @@ C:\Users\moataz\Desktop\GradProject\WorkingExam\Final\Edu_platFinal\JWT\obj\Debu
 C:\Users\moataz\Desktop\GradProject\WorkingExam\Final\Edu_platFinal\JWT\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Edu_plat.props
 C:\Users\moataz\Desktop\GradProject\WorkingExam\Final\Edu_platFinal\JWT\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Edu_plat.props
 C:\Users\moataz\Desktop\GradProject\WorkingExam\Final\Edu_platFinal\JWT\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\moataz\Desktop\GradProject\WorkingExam\Final\Edu_platFinal\JWT\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\moataz\Desktop\GradProject\WorkingExam\Final\Edu_platFinal\JWT\obj\Debug\net8.0\Edu_plat.csproj.Up2Date
 C:\Users\moataz\Desktop\GradProject\WorkingExam\Final\Edu_platFinal\JWT\obj\Debug\net8.0\Edu_plat.dll
 C:\Users\moataz\Desktop\GradProject\WorkingExam\Final\Edu_platFinal\JWT\obj\Debug\net8.0\refint\Edu_plat.dll
 C:\Users\moataz\Desktop\GradProject\WorkingExam\Final\Edu_platFinal\JWT\obj\Debug\net8.0\Edu_plat.pdb
 C:\Users\moataz\Desktop\GradProject\WorkingExam\Final\Edu_platFinal\JWT\obj\Debug\net8.0\Edu_plat.genruntimeconfig.cache
 C:\Users\moataz\Desktop\GradProject\WorkingExam\Final\Edu_platFinal\JWT\obj\Debug\net8.0\ref\Edu_plat.dll
+C:\Users\moataz\Desktop\GradProject\WorkingExam\Final\Edu_platFinal\JWT\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

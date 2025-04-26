@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Edu_plat.DTO.AdminFiles;
 
 namespace Edu_plat.Controllers
 {
@@ -305,6 +306,31 @@ namespace Edu_plat.Controllers
             }
         }
         #endregion
-    
-}
+
+        #region Get eduPlat stats
+        [HttpGet]
+        [Route("GetStats")]
+        [Authorize(Roles ="Admin")]
+        public async Task<IActionResult> getStats()
+        {
+            EduPlatStats stats = new EduPlatStats();
+            int noOfStudents = _context.Students.Count();
+            int noOfDoctors = _context.Doctors.Count();
+            int noOfCourses = _context.Courses.Count();
+            stats.studentsNum = noOfStudents;
+            stats.doctorNum = noOfDoctors;
+            stats.coursesNum = noOfCourses;
+
+
+            return Ok(new { success=true ,message="fetched Successfully",stats});
+
+
+        }
+
+
+        #endregion
+
+
+
+    }
 }

@@ -1,4 +1,6 @@
-﻿using JWT.DATA;
+﻿using Edu_plat.Model.Interfaces;
+using Edu_plat.Services;
+using JWT.DATA;
 using JWT.Model.Settings;
 using JWT.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -196,6 +198,7 @@ namespace JWT
         });
             });
             #endregion
+            builder.Services.AddScoped<IblackListService, BlacklistService>();
 
             #region Roles For users
             // Build application
@@ -248,14 +251,12 @@ namespace JWT
                         {
                             await userManager.AddToRoleAsync(adminUser2, "Admin");
                         }
-
-                    }
+                }
 
 
                 }
             #endregion
 
-            
 
 
             // Configure the HTTP request pipeline.

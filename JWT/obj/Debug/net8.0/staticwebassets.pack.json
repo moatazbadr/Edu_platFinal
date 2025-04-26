@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\student Guide.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\AdminFiles\\student Guide.pdf"
+    },
+    {
       "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions.pdf",
       "PackagePath": "staticwebassets\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions.pdf"
     },
