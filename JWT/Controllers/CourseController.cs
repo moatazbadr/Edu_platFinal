@@ -596,7 +596,7 @@ namespace Edu_plat.Controllers
 
         #region Getting course Details
         [HttpGet]
-        [Route("Details/{coursecode:required}")]
+        [Route("ExamDetails/{coursecode:required}")]
         public async Task<IActionResult>getDetailsForExam(string coursecode)
         {
             if (string.IsNullOrEmpty(coursecode))

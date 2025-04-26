@@ -61,7 +61,8 @@ namespace Edu_plat.Controllers
                 FileName = fileNameWithExtension, // Store custom filename
                 FilePath = $"/Uploads/AdminFiles/{fileNameWithExtension}",
                 uploadeDate = DateTime.UtcNow,
-                size = $"{(fileDto.File.Length / (1024.0 * 1024.0)):F2} MB"
+                size = $"{(fileDto.File.Length / (1024.0 * 1024.0)):F2} MB",
+                type = fileDto.type
             };
 
             _context.AdminFiles.Add(fileRecord);
@@ -77,7 +78,8 @@ namespace Edu_plat.Controllers
                     fileRecord.FileName,
                     fileRecord.FilePath,
                     fileRecord.uploadeDate,
-                    fileRecord.size
+                    fileRecord.size,
+                    fileRecord.type
                 }
             });
         }
@@ -135,7 +137,8 @@ namespace Edu_plat.Controllers
                     f.FileName,
                     f.FilePath,
                     f.uploadeDate,
-                    f.size
+                    f.size,
+                    f.type
                 })
                 .ToListAsync();
 
@@ -144,6 +147,31 @@ namespace Edu_plat.Controllers
 
             return Ok(new { files });
         }
+        [HttpGet]
+        public async Task<IActionResult>GetFiles()
+        {
+            var files = await _context.AdminFiles
+                .Select(f => new
+                {
+                    f.Id,
+                    f.FileName,
+                    f.FilePath,
+                    f.uploadeDate,
+                    f.size,
+                    f.type
+                })
+                .ToListAsync();
+
+            if (files.Count == 0)
+                return NotFound(new { success = false, message = "No files found." });
+
+            return Ok(new { success=true,message="fetch complete", files });
+
+
+
+        }
+
+
 
 
     }

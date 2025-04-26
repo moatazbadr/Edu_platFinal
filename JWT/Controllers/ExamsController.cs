@@ -305,6 +305,7 @@ namespace Edu_plat.Controllers
 			return Ok(new { success =true,message = "Exam deleted successfully." });
 		}
 		#endregion
+
 		#region GetExam to Update
 		[HttpGet]
 		[Route("get/examToUpdate/{ExamId}")]
@@ -343,7 +344,26 @@ namespace Edu_plat.Controllers
 			if (!isAssignedToDoctor) {
 				return Ok(new { success = false, message = "you cannot view this exam " });
 			}
-			var ExamView = new
+			var ExamView= new object();
+
+
+            if (Exam.IsOnline == false)
+			{
+				ExamView = new
+				{
+					examTitle = Exam.ExamTitle,
+					startTime = Exam.StartTime,
+                    totalMarks=Exam.TotalMarks,
+                    isOnline=Exam.IsOnline,
+                    durationInMin=Exam.DurationInMin,
+                    courseCode=Exam.CourseCode,
+                    locationExam=Exam.Location
+                };
+                return Ok(new { success = true, message = "fetched successfully", ExamView });
+            }
+
+
+			 ExamView = new
 			{
                 examTitle=Exam.ExamTitle,
                 startTime=Exam.StartTime,
@@ -380,7 +400,6 @@ namespace Edu_plat.Controllers
 
 
         #endregion
-
 
         #region GetExamToDoctor
  //       [HttpGet("GetExam/{examId}/{courseCode}")]
@@ -649,216 +668,230 @@ namespace Edu_plat.Controllers
 			}
 
 			await _context.SaveChangesAsync();
-			return Ok(new { message = "Exam updated successfully." });
+			return Ok(new {success=true, message = "Exam updated successfully." });
 		}
-		#endregion
+        #endregion
 
-		#region GetUserExamsComment
-		//[HttpGet("GetUserExams")]
-		//[Authorize(Roles = "Doctor,Student")]
-		//public async Task<IActionResult> GetUserExams([FromQuery] GetUserExamsDto userexamdto)
-		//{
-		//	if (!ModelState.IsValid)
-		//	{
-		//		return BadRequest(ModelState);
-		//	}
+        #region GetUserExamsComment
+        //[HttpGet("GetUserExams")]
+        //[Authorize(Roles = "Doctor,Student")]
+        //public async Task<IActionResult> GetUserExams([FromQuery] GetUserExamsDto userexamdto)
+        //{
+        //	if (!ModelState.IsValid)
+        //	{
+        //		return BadRequest(ModelState);
+        //	}
 
-		//	var userId = User.FindFirstValue("ApplicationUserId");
+        //	var userId = User.FindFirstValue("ApplicationUserId");
 
-		//	if (User.IsInRole("Doctor"))
-		//	{
-		//		var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
-		//		if (doctor == null)
-		//		{
-		//			return NotFound(new { message = "Doctor profile not found." });
-		//		}
+        //	if (User.IsInRole("Doctor"))
+        //	{
+        //		var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
+        //		if (doctor == null)
+        //		{
+        //			return NotFound(new { message = "Doctor profile not found." });
+        //		}
 
-		//		var exams = await _context.Exams
-		//			.Where(e => _context.CourseDoctors.Any(cd => cd.DoctorId == doctor.DoctorId && cd.CourseId == e.CourseId))
-		//			.Select(e => new
-		//			{
-		//				e.Id,
-		//				e.ExamTitle,
-		//				e.StartTime,
-		//				e.TotalMarks,
-		//				e.IsOnline,
-		//				e.DurationInMin,
-		//				e.QusetionsNumber,
-		//				e.CourseCode,
-		//				e.DoctorId,
-		//				e.Location,
-		//				IsFinished = e.IsExamFinished()
-		//			})
-		//			.ToListAsync();
-
-
-		//		exams = exams.Where(e => e.IsFinished == userexamdto.isFinishedExam).ToList();
-
-		//		return Ok(exams);
-		//	}
-		//	else if (User.IsInRole("Student"))
-		//	{
-		//		var student = await _context.Students.FirstOrDefaultAsync(s => s.UserId == userId);
-		//		if (student == null)
-		//		{
-		//			return NotFound(new { message = "Student profile not found." });
-		//		}
-
-		//		// Get student and Get Courses which  Register 
-		//		var Getstudent = await _context.Students.Include(sc => sc.courses)
-		//							  .FirstOrDefaultAsync(s => s.UserId == userId);
-		//		if (Getstudent == null)
-		//		{
-		//			return BadRequest("Student is not in the System");
-		//		}
-		//		// get Courses which student Is Register 
-		//		var StudentCourses = Getstudent.courses.Select(
-		//			c => new
-		//			{
-		//				CourseCode = c.CourseCode
-
-		//			}).ToList();
-
-		//		var exams = await _context.Exams
-		//			.Where(e => Getstudent.courses.Any(c => c.CourseCode == e.CourseCode))
-		//			.Select(e => new
-		//			{
-		//				e.Id,
-		//				e.ExamTitle,
-		//				e.StartTime,
-		//				e.TotalMarks,
-		//				e.IsOnline,
-		//				e.DurationInMin,
-		//				e.QusetionsNumber,
-		//				e.CourseCode,
-		//				e.Location,
-		//				e.DoctorId,
-		//				IsFinished = e.IsExamFinished()
-		//			})
-		//			.ToListAsync();
-		//		exams = exams.Where(e => e.IsFinished == userexamdto.isFinishedExam).ToList();
-		//		return Ok(exams);
-		//	}
-
-		//	return Unauthorized(new { message = "User role not recognized." });
-		//}
-		#endregion
-
-		#region GetUserExams
-		[HttpGet("GetUserExams")]
-		[Authorize(Roles = "Doctor,Student")]
-		public async Task<IActionResult> GetUserExams([FromQuery] GetUserExamsDto userexamdto)
-		{
-			if (!ModelState.IsValid)
-			{
-				return BadRequest(ModelState);
-			}
-
-			var userId = User.FindFirstValue("ApplicationUserId");
-
-			if (User.IsInRole("Doctor"))
-			{
-				var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
-				if (doctor == null)
-				{
-					return NotFound(new { message = "Doctor profile not found." });
-				}
-
-				var exams = await _context.Exams
-					.Where(e => _context.CourseDoctors.Any(cd => cd.DoctorId == doctor.DoctorId && cd.CourseId == e.CourseId))
-					.Select(e => new
-					{
-						e.Id,
-						e.ExamTitle,
-						e.StartTime,
-						e.TotalMarks,
-						e.IsOnline,
-						e.DurationInMin,
-						e.QusetionsNumber,
-						e.CourseCode,
-						e.Location,
-						e.DoctorId,
-						IsFinished = e.IsExamFinished()
-					})
-					.ToListAsync();
-
-				exams = exams.Where(e => e.IsFinished == userexamdto.isFinishedExam).ToList();
-
-				return Ok(new { success=true,message="fetched successfully", exams });
-			}
-
-			else if (User.IsInRole("Student"))
-			{
-				var student = await _context.Students
-					.Include(s => s.courses) // ضروري لتحميل الكورسات
-					.FirstOrDefaultAsync(s => s.UserId == userId);
-
-				if (student == null)
-				{
-					return NotFound(new { success=false,message = "Student profile not found." });
-				}
-
-				var studentCourseCodes = student.courses.Select(c => c.CourseCode).ToList();
-
-				var exams = await _context.Exams
-.Where(e => studentCourseCodes.Contains(e.CourseCode))
-.Select(e => new
-{
-	e.Id,
-	e.ExamTitle,
-	e.StartTime,
-	e.TotalMarks,
-	e.IsOnline,
-	e.DurationInMin,
-	e.QusetionsNumber,
-	e.CourseCode,
-	e.Location,
-	e.DoctorId,
-	IsFinished = e.IsExamFinished(),
-
-	StudentExam = _context.ExamStudents
-		.Where(es => es.StudentId == student.StudentId && es.ExamId == e.Id)
-		.Select(es => new
-		{
-			Score = (int?)es.Score,
-			PercentageExam = (int?)es.precentageExam,
-			IsAbsent = (bool?)es.IsAbsent
-		})
-		.FirstOrDefault()
-})
-// 🔥 هنا بفلتر قبل تحميل البيانات
-.Where(e => e.IsFinished == userexamdto.isFinishedExam)
-.ToListAsync();
+        //		var exams = await _context.Exams
+        //			.Where(e => _context.CourseDoctors.Any(cd => cd.DoctorId == doctor.DoctorId && cd.CourseId == e.CourseId))
+        //			.Select(e => new
+        //			{
+        //				e.Id,
+        //				e.ExamTitle,
+        //				e.StartTime,
+        //				e.TotalMarks,
+        //				e.IsOnline,
+        //				e.DurationInMin,
+        //				e.QusetionsNumber,
+        //				e.CourseCode,
+        //				e.DoctorId,
+        //				e.Location,
+        //				IsFinished = e.IsExamFinished()
+        //			})
+        //			.ToListAsync();
 
 
-				var result = exams.Select(e => new
-				{
-					e.Id,
-					e.ExamTitle,
-					e.StartTime,
-					e.TotalMarks,
-					e.IsOnline,
-					e.DurationInMin,
-					e.QusetionsNumber,
-					e.CourseCode,
-					e.Location,
-					e.DoctorId,
-					e.IsFinished,
+        //		exams = exams.Where(e => e.IsFinished == userexamdto.isFinishedExam).ToList();
 
-					Score = e.IsFinished ? e.StudentExam?.Score : null,
-					PercentageExam = e.IsFinished ? e.StudentExam?.PercentageExam : null,
-					IsAbsent = e.IsFinished ? e.StudentExam?.IsAbsent : null
-				}).ToList();
+        //		return Ok(exams);
+        //	}
+        //	else if (User.IsInRole("Student"))
+        //	{
+        //		var student = await _context.Students.FirstOrDefaultAsync(s => s.UserId == userId);
+        //		if (student == null)
+        //		{
+        //			return NotFound(new { message = "Student profile not found." });
+        //		}
 
-				return Ok(result);
-			}
+        //		// Get student and Get Courses which  Register 
+        //		var Getstudent = await _context.Students.Include(sc => sc.courses)
+        //							  .FirstOrDefaultAsync(s => s.UserId == userId);
+        //		if (Getstudent == null)
+        //		{
+        //			return BadRequest("Student is not in the System");
+        //		}
+        //		// get Courses which student Is Register 
+        //		var StudentCourses = Getstudent.courses.Select(
+        //			c => new
+        //			{
+        //				CourseCode = c.CourseCode
 
-			return Unauthorized(new { success=false,message = "User role not recognized." });
-		}
-		#endregion
+        //			}).ToList();
 
-		#region GetExamStudent
-		[HttpGet("GetExamStudent")]
+        //		var exams = await _context.Exams
+        //			.Where(e => Getstudent.courses.Any(c => c.CourseCode == e.CourseCode))
+        //			.Select(e => new
+        //			{
+        //				e.Id,
+        //				e.ExamTitle,
+        //				e.StartTime,
+        //				e.TotalMarks,
+        //				e.IsOnline,
+        //				e.DurationInMin,
+        //				e.QusetionsNumber,
+        //				e.CourseCode,
+        //				e.Location,
+        //				e.DoctorId,
+        //				IsFinished = e.IsExamFinished()
+        //			})
+        //			.ToListAsync();
+        //		exams = exams.Where(e => e.IsFinished == userexamdto.isFinishedExam).ToList();
+        //		return Ok(exams);
+        //	}
+
+        //	return Unauthorized(new { message = "User role not recognized." });
+        //}
+        #endregion
+
+        #region GetUserExams
+        [HttpGet("GetUserExams")]
+        [Authorize(Roles = "Doctor,Student")]
+        public async Task<IActionResult> GetUserExams([FromQuery] GetUserExamsDto userexamdto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var userId = User.FindFirstValue("ApplicationUserId");
+
+            if (User.IsInRole("Doctor"))
+            {
+                var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
+                if (doctor == null)
+                {
+                    return NotFound(new { message = "Doctor profile not found." });
+                }
+
+                var exams = await _context.Exams
+                    .Where(e => _context.CourseDoctors.Any(cd => cd.DoctorId == doctor.DoctorId && cd.CourseId == e.CourseId))
+                    .Select(e => new
+                    {
+                        e.Id,
+                        e.ExamTitle,
+                        e.StartTime,
+                        e.TotalMarks,
+                        e.IsOnline,
+                        e.DurationInMin,
+                        QusetionsNumber = e.IsOnline ? e.QusetionsNumber : 0,
+                        e.CourseCode,
+                        e.Location,
+                        e.DoctorId,
+                        HasEnded = e.StartTime.AddMinutes(e.DurationInMin) < DateTime.Now
+                    })
+                    .ToListAsync();
+
+                var filteredExams = exams
+                    .Where(e => e.HasEnded == userexamdto.isFinishedExam)
+                    .Select(e => new
+                    {
+                        e.Id,
+                        e.ExamTitle,
+                        e.StartTime,
+                        e.TotalMarks,
+                        e.IsOnline,
+                        e.DurationInMin,
+                        e.QusetionsNumber,
+                        e.CourseCode,
+                        e.Location,
+                        e.DoctorId,
+                        IsFinished = e.HasEnded
+                    })
+                    .ToList();
+
+                return Ok(new { success = true, message = "fetched successfully", exams = filteredExams });
+            }
+            else if (User.IsInRole("Student"))
+            {
+                var student = await _context.Students
+                    .Include(s => s.courses)
+                    .FirstOrDefaultAsync(s => s.UserId == userId);
+
+                if (student == null)
+                {
+                    return Ok(new { success = false, message = "Student profile not found." });
+                }
+
+                var studentCourseCodes = student.courses.Select(c => c.CourseCode).ToList();
+
+                var exams = await _context.Exams
+                    .Where(e => studentCourseCodes.Contains(e.CourseCode))
+                    .Select(e => new
+                    {
+                        e.Id,
+                        e.ExamTitle,
+                        e.StartTime,
+                        e.TotalMarks,
+                        e.IsOnline,
+                        e.DurationInMin,
+                        QusetionsNumber = e.IsOnline ? e.QusetionsNumber : 0,
+                        e.CourseCode,
+                        e.Location,
+                        e.DoctorId,
+                        HasEnded = e.StartTime.AddMinutes(e.DurationInMin) < DateTime.Now,
+                        StudentExam = e.IsOnline ? _context.ExamStudents
+                            .Where(es => es.StudentId == student.StudentId && es.ExamId == e.Id)
+                            .Select(es => new
+                            {
+                                Score = (int?)es.Score,
+                                PercentageExam = (int?)es.precentageExam,
+                                IsAbsent = (bool?)es.IsAbsent
+                            })
+                            .FirstOrDefault() : null
+                    })
+                    .ToListAsync();
+
+                var result = exams
+                    .Where(e => e.HasEnded == userexamdto.isFinishedExam)
+                    .Select(e => new
+                    {
+                        e.Id,
+                        e.ExamTitle,
+                        e.StartTime,
+                        e.TotalMarks,
+                        e.IsOnline,
+                        e.DurationInMin,
+                        e.QusetionsNumber,
+                        e.CourseCode,
+                        e.Location,
+                      //  e.DoctorId,
+                        IsFinished = e.HasEnded,
+                        // Only include exam results for online exams
+                        Score = e.IsOnline ? (e.HasEnded ? e.StudentExam?.Score : null) : null,
+                        PercentageExam = e.IsOnline ? (e.HasEnded ? e.StudentExam?.PercentageExam : null) : null,
+                        IsAbsent = e.IsOnline ? (e.HasEnded ? e.StudentExam?.IsAbsent : null) : null
+                    })
+                    .ToList();
+
+                return Ok(new { success = true, message = "fetched successfully", exams = result });
+            }
+
+            return Ok(new { success = false, message = "User role not recognized." });
+        }
+        #endregion
+
+        #region GetExamStudent
+        [HttpGet("GetExamStudent")]
 		[Authorize(Roles = "Student")]
 		public async Task<IActionResult> GetExamToStudent(int examId, int doctorId, string courseCode)
 		{
@@ -893,7 +926,7 @@ namespace Edu_plat.Controllers
 					StartTime = e.StartTime.ToString("yyyy-MM-dd HH:mm:ss"),
 					e.TotalMarks,
 					e.IsOnline,
-					e.QusetionsNumber,
+                    QusetionsNumber=e.IsOnline ? e.QusetionsNumber :0,
 					e.DurationInMin,
 					e.CourseCode,
 					e.Location,
@@ -1074,7 +1107,7 @@ namespace Edu_plat.Controllers
             var exam = await _context.Exams.FirstOrDefaultAsync(e => e.Id == examId);
             if (exam == null)
             {
-                return NotFound(new { success = false, message = "Exam not found." });
+                return Ok(new { success = false, message = "Exam not found." });
             }
             if (exam.StartTime <= DateTime.UtcNow)
             {

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAzY3QFEF/aUOHHAP3dmVAHwAAAAACAAAAAAAQZgAAAAEAACAAAABBCI52DHJx9qFKP4tU+HYNL7Qw3xeO47AgoKgOX6BDjQAAAAAOgAAAAAIAACAAAABn/RXJyxibqlv7BK1KIxF9/hs5kdPr0936XX8b0UIRTSAAAAAnfc6NVBrFrYooBjWmbDB6/2TaRK6mqUJyFGCV2nXQQ0AAAACCGXmgS5+NPwwdx3ltKcqzizwebNG3ZItJopaE7F8mUTdgQ1dL2A+wmYZKBtnusWjzY/9igR+NS/bMtCP21Ed4</EncryptedPassword>
+    <History>True|2025-04-24T06:49:08.4299746Z||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <EFMigrations Include="JWT.DATA.ApplicationDbContext">
+      <Value>Server=db14626.public.databaseasp.net%3b Database=db14626%3b User Id=db14626%3b Password=3m%25X%3f4Ya7x_F%3b Encrypt=True%3b TrustServerCertificate=True%3b MultipleActiveResultSets=True%3b </Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

@@ -456,6 +456,18 @@
         }
       }
     },
+    "/api/AdminDashBoard/GetStats": {
+      "get": {
+        "tags": [
+          "AdminDashBoard"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Chat/GetStudentsForDoctor/students": {
       "get": {
         "tags": [
@@ -472,6 +484,28 @@
       "get": {
         "tags": [
           "Chat"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Chat/GetGroupChat/groupChat/{courseTitle}": {
+      "get": {
+        "tags": [
+          "Chat"
+        ],
+        "parameters": [
+          {
+            "name": "courseTitle",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -758,7 +792,7 @@
         }
       }
     },
-    "/api/Course/Details/{coursecode}": {
+    "/api/Course/ExamDetails/{coursecode}": {
       "get": {
         "tags": [
           "Course"
@@ -1790,6 +1824,9 @@
                   },
                   "FileName": {
                     "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
                   }
                 }
               },
@@ -1798,6 +1835,9 @@
                   "style": "form"
                 },
                 "FileName": {
+                  "style": "form"
+                },
+                "type": {
                   "style": "form"
                 }
               }
@@ -1857,6 +1897,18 @@
       }
     },
     "/api/StudentHelp/GetAllFiles": {
+      "get": {
+        "tags": [
+          "StudentHelp"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/StudentHelp/GetFiles": {
       "get": {
         "tags": [
           "StudentHelp"

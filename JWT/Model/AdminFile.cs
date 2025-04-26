@@ -8,5 +8,6 @@
         public string FilePath { get; set; }
         public string size { get; set; }
         public DateTime uploadeDate { get; set; }
+        public string type { get; set; }
     }
 }

@@ -3,6 +3,88 @@
   "ManifestType": "Build",
   "Endpoints": [
     {
+      "Route": "Uploads/AdminFiles/student Guide.g2g8tu3e5e.pdf",
+      "AssetFile": "Uploads/AdminFiles/student Guide.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "924594"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WChOP1iPn1grZTjc7UWk+6pZ7RCWIRj8WuJRGYANjjM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 08:15:20 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "g2g8tu3e5e"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WChOP1iPn1grZTjc7UWk+6pZ7RCWIRj8WuJRGYANjjM="
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/AdminFiles/student Guide.pdf"
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/AdminFiles/student Guide.pdf",
+      "AssetFile": "Uploads/AdminFiles/student Guide.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "924594"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WChOP1iPn1grZTjc7UWk+6pZ7RCWIRj8WuJRGYANjjM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 08:15:20 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WChOP1iPn1grZTjc7UWk+6pZ7RCWIRj8WuJRGYANjjM="
+        }
+      ]
+    },
+    {
       "Route": "Uploads/COMP201/Lecture 1Introduction&RegularExpressions.f3olc56krp.pdf",
       "AssetFile": "Uploads/COMP201/Lecture 1Introduction&RegularExpressions.pdf",
       "Selectors": [],

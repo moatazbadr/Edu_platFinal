@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="site18925" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\obj\\Release\\net8\.0\\win-x86\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="JWT.DATA.ApplicationDbContext" description="" value="Server=db14626.public.databaseasp.net; Database=db14626; User Id=db14626; Password=3m%X?4Ya7x_F; Encrypt=True; TrustServerCertificate=True; MultipleActiveResultSets=True; " tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\obj\\Release\\net8\.0\\win-x86\\PubTmp\\EFSQLScripts\\JWT\.DATA\.ApplicationDbContext\.sql$" />
+  </parameter>
+</parameters>
