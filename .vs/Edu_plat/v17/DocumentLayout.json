@@ -7,24 +7,28 @@
       "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\controllers\\examscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\ediplat\\edu_platfinal\\jwt\\dto\\examdto\\choicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\dto\\examdto\\choicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\ediplat\\edu_platfinal\\jwt\\dto\\examdto\\submitexamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\dto\\examdto\\submitexamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\ediplat\\edu_platfinal\\jwt\\dto\\examdto\\createexamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\ediplat\\edu_platfinal\\jwt\\dto\\examdto\\answerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\dto\\examdto\\answerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\jwt\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\jwt\\controllers\\admindashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\controllers\\admindashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\jwt\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\jwt\\dto\\examdto\\createexamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\dto\\examdto\\createexamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\ediplat\\edu_platfinal\\jwt\\model\\adminfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\model\\adminfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\ediplat\\edu_platfinal\\jwt\\controllers\\studenthelpcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\controllers\\studenthelpcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|c:\\users\\acer\\onedrive\\desktop\\ediplat\\edu_platfinal\\jwt\\dto\\adminfiles\\filedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59C0C43E-791F-4003-8860-9FC62FC3ECAC}|JWT\\Edu_plat.csproj|solutionrelative:jwt\\dto\\adminfiles\\filedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,10 +46,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:1337924956:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
             },
             {
@@ -53,29 +53,33 @@
               "Name": "ST:1449176975:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ChoiceDto.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\DTO\\ExamDto\\ChoiceDto.cs",
-              "RelativeDocumentMoniker": "JWT\\DTO\\ExamDto\\ChoiceDto.cs",
-              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\DTO\\ExamDto\\ChoiceDto.cs",
-              "RelativeToolTip": "JWT\\DTO\\ExamDto\\ChoiceDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T12:55:12.38Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CreateExamDto.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\DTO\\ExamDto\\CreateExamDto.cs",
-              "RelativeDocumentMoniker": "JWT\\DTO\\ExamDto\\CreateExamDto.cs",
-              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\DTO\\ExamDto\\CreateExamDto.cs",
-              "RelativeToolTip": "JWT\\DTO\\ExamDto\\CreateExamDto.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAzwCYAAAAAAAAA",
+              "Title": "AnswerDto.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\DTO\\ExamDto\\AnswerDto.cs",
+              "RelativeDocumentMoniker": "JWT\\DTO\\ExamDto\\AnswerDto.cs",
+              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\DTO\\ExamDto\\AnswerDto.cs",
+              "RelativeToolTip": "JWT\\DTO\\ExamDto\\AnswerDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T12:55:06.661Z",
+              "WhenOpened": "2025-04-27T10:56:48.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SubmitExamDto.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\DTO\\ExamDto\\SubmitExamDto.cs",
+              "RelativeDocumentMoniker": "JWT\\DTO\\ExamDto\\SubmitExamDto.cs",
+              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\DTO\\ExamDto\\SubmitExamDto.cs",
+              "RelativeToolTip": "JWT\\DTO\\ExamDto\\SubmitExamDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T10:55:51.665Z",
               "EditorCaption": ""
             },
             {
@@ -86,47 +90,59 @@
               "RelativeDocumentMoniker": "JWT\\Controllers\\ExamsController.cs",
               "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\Controllers\\ExamsController.cs",
               "RelativeToolTip": "JWT\\Controllers\\ExamsController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAaAAAA",
+              "ViewState": "AQIAAHsDAAAAAAAAAAAYwIADAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T12:54:12.215Z",
+              "WhenOpened": "2025-04-24T14:32:30.472Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FileDto.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\DTO\\AdminFiles\\FileDto.cs",
-              "RelativeDocumentMoniker": "JWT\\DTO\\AdminFiles\\FileDto.cs",
-              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\DTO\\AdminFiles\\FileDto.cs",
-              "RelativeToolTip": "JWT\\DTO\\AdminFiles\\FileDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T09:06:38.812Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AdminFile.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\Model\\AdminFile.cs",
-              "RelativeDocumentMoniker": "JWT\\Model\\AdminFile.cs",
-              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\Model\\AdminFile.cs",
-              "RelativeToolTip": "JWT\\Model\\AdminFile.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAQAAAA",
+              "Title": "ChatController.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\Controllers\\ChatController.cs",
+              "RelativeDocumentMoniker": "JWT\\Controllers\\ChatController.cs",
+              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\Controllers\\ChatController.cs",
+              "RelativeToolTip": "JWT\\Controllers\\ChatController.cs",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAgwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T08:56:53.825Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T14:32:12.522Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "StudentHelpController.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\Controllers\\StudentHelpController.cs",
-              "RelativeDocumentMoniker": "JWT\\Controllers\\StudentHelpController.cs",
-              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\Controllers\\StudentHelpController.cs",
-              "RelativeToolTip": "JWT\\Controllers\\StudentHelpController.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAIwJAAAAAbAAAAAAAAAA==",
+              "Title": "AdminDashBoardController.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\Controllers\\AdminDashBoardController.cs",
+              "RelativeDocumentMoniker": "JWT\\Controllers\\AdminDashBoardController.cs",
+              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\Controllers\\AdminDashBoardController.cs",
+              "RelativeToolTip": "JWT\\Controllers\\AdminDashBoardController.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T08:50:41.35Z"
+              "WhenOpened": "2025-04-24T14:32:05.758Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AccountsController.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\Controllers\\AccountsController.cs",
+              "RelativeDocumentMoniker": "JWT\\Controllers\\AccountsController.cs",
+              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\Controllers\\AccountsController.cs",
+              "RelativeToolTip": "JWT\\Controllers\\AccountsController.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAADcAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T14:31:45.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CreateExamDto.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\DTO\\ExamDto\\CreateExamDto.cs",
+              "RelativeDocumentMoniker": "JWT\\DTO\\ExamDto\\CreateExamDto.cs",
+              "ToolTip": "C:\\Users\\Acer\\OneDrive\\Desktop\\EdiPlat\\Edu_platFinal\\JWT\\DTO\\ExamDto\\CreateExamDto.cs",
+              "RelativeToolTip": "JWT\\DTO\\ExamDto\\CreateExamDto.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAA9wCkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T12:55:06.661Z"
             }
           ]
         }

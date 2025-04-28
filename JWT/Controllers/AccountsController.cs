@@ -51,116 +51,196 @@ namespace JWT.Controllers
             _mailService = mailService;
             _context = context;
         }
-        #endregion
+		#endregion
 
+		   #region Register comment
+		//    [HttpPost("Register")]
+		//    public async Task<IActionResult> Register([FromBody] RegisterUserDTO dto)
+		//    {
+		//        // check all Data Entire is True or False 
+		//        if (!ModelState.IsValid)
+		//            return Ok(new {success=false ,message="Invalid inputs" });
+		//        // cjeck exmail Exist or Not if exist not can Register the same Email  
+		//        var existingUser = await _userManager.Users.AnyAsync(u => u.Email == dto.Email);
+		//        if (existingUser)
+		//            return Ok(new { success = false, message = "Email Or password invalid" });
+
+		//        // check Email store in TemporaryUser or Not 
+		//        var existingTempUser = await _context.TemporaryUsers
+		//            .FirstOrDefaultAsync(u => u.Email == dto.Email);
+
+		//        // if email exist in tempUser
+		//        if (existingTempUser != null)
+		//        {
+		//            // check Otp which existingTemp if otp exist and not expire send same otp again 
+		//            var existingOtp = await _context.OtpVerification
+		//                .FirstOrDefaultAsync(o => o.Email == dto.Email && DateTime.UtcNow < o.ExpirationTime);
+
+		//            if (existingOtp != null)
+		//            {
+		//                await _mailService.SendEmailAsync(dto.Email, "Your OTP Is On Its Way!",
+		//                $@"
+		//               <p>Hello {dto.UserName},</p>
+		//              <p>We noticed that you requested an OTP again. Don't worry, your previous code is still valid!</p>
+		//              <p>Here is your One-Time Password (OTP):</p>
+		//              <h1 style='color: #00bfff;'>{existingOtp.Otp}</h1>
+		//              <p><strong>Note:</strong> This code is valid for the next <strong>5 minutes</strong>.</p>
+		//               <p>If you did not request this, please ignore this email. Your account is secure.</p>
+		//                <p>Take care,</p>
+		//              <p><strong>The EduPlat Team</strong></p>");
+
+		//                return Ok(new { success = true, message = "OTP has been resent to your email." });
+		//            }
+		//            else
+		//            {
+		//                // if otp finished expire 
+		//                string otp = GenerateOTP.GenerateOtp();
+		//                DateTime expirationTime = DateTime.UtcNow.AddMinutes(5);
+
+		//                var otpVerification = new OtpVerification
+		//                {
+		//                    Email = dto.Email,
+		//                    Otp = otp,
+		//                    ExpirationTime = expirationTime
+		//                };
+		//                await _context.OtpVerification.AddAsync(otpVerification);
+		//                await _context.SaveChangesAsync();
+
+		//                await _mailService.SendEmailAsync(dto.Email, "Your OTP for Registration",
+		//              $"<p>Dear {dto.UserName},</p>" +
+		//             $"<p>Welcome! We're excited to have you join us.</p>" +
+		//             $"<p>Your One-Time Password (OTP) for email verification is:</p>" +
+		//            $"<h2 style='color: #00bfff;'>{otp}</h2>" +
+		//             $"<p>This code is valid for the next 5 minutes, so please use it promptly.</p>" +
+		//              $"<p>If you have any questions, feel free to reach out to us.</p>" +
+		//                $"<p>Best wishes,</p>" +
+		//                $"<p>EduPlat</p>");
+
+		//                return Ok(new { success = true, message = "OTP has been resent to your email." });
+		//            }
+		//        }
+
+		//        // if not Exist User => Register User 
+		//        var tempUser = new TemporaryUser
+		//        {
+		//            UserName = dto.UserName,
+		//            Email = dto.Email,
+		//            PasswordHash = dto.Password
+
+		//        };
+		//        await _context.TemporaryUsers.AddAsync(tempUser);
+
+		//        // Generate OTP
+		//        string newOtp = GenerateOTP.GenerateOtp();
+		//        DateTime newExpirationTime = DateTime.UtcNow.AddMinutes(5);
+
+		//        // save data in table otp 
+		//        var otpVerificationNew = new OtpVerification
+		//        {
+		//            Email = dto.Email,
+		//            Otp = newOtp,
+		//            ExpirationTime = newExpirationTime
+		//        };
+		//        await _context.OtpVerification.AddAsync(otpVerificationNew);
+		//        await _context.SaveChangesAsync();
+		//        await _mailService.SendEmailAsync(dto.Email, "Welcome to Our Platform!",
+		//$"<p>Hi {dto.UserName},</p>" +
+		//$"<p>We’re thrilled to have you here! To complete your registration, please verify your email using the code below:</p>" +
+		//$"<h2 style='color: #00bfff;'>{newOtp}</h2>" +
+		//$"<p>This code is valid for the next 5 minutes, so make sure to use it soon.</p>" +
+		//$"<p>Need help? Feel free to reach out—we’re here for you!</p>" +
+		//$"<p>Warm regards,</p>" +
+		//$"<p>The EduPlat Team</p>");
+
+
+		//        return Ok(new { success = true, message = "Registration successful. A verification code has been sent to your email." });
+		//    }
+
+		  #endregion
+		
         #region Register 
-        [HttpPost("Register")]
-        public async Task<IActionResult> Register([FromBody] RegisterUserDTO dto)
-        {
-            // check all Data Entire is True or False 
-            if (!ModelState.IsValid)
-                return Ok(new {success=false ,message="Invalid inputs" });
-            // cjeck exmail Exist or Not if exist not can Register the same Email  
-            var existingUser = await _userManager.Users.AnyAsync(u => u.Email == dto.Email);
-            if (existingUser)
-                return Ok(new { success = false, message = "Email Or password invalid" });
+		[HttpPost("Register")]
+		public async Task<IActionResult> Register([FromBody] RegisterUserDTO dto)
+		{
+			if (!ModelState.IsValid)
+				return Ok(new { success = false, message = "Invalid inputs" });
 
-            // check Email store in TemporaryUser or Not 
-            var existingTempUser = await _context.TemporaryUsers
-                .FirstOrDefaultAsync(u => u.Email == dto.Email);
+			// ✅ 1- التأكد إن الإيميل غير مسجل بالفعل في الحسابات المؤكدة
+			var existingUser = await _userManager.Users.AnyAsync(u => u.Email == dto.Email);
+			if (existingUser)
+				return Ok(new { success = false, message = "Email already registered." });
 
-            // if email exist in tempUser
-            if (existingTempUser != null)
-            {
-                // check Otp which existingTemp if otp exist and not expire send same otp again 
-                var existingOtp = await _context.OtpVerification
-                    .FirstOrDefaultAsync(o => o.Email == dto.Email && DateTime.UtcNow < o.ExpirationTime);
+			// ✅ 2- البحث عن مستخدم مؤقت بنفس الإيميل
+			var existingTempUser = await _context.TemporaryUsers.FirstOrDefaultAsync(u => u.Email == dto.Email);
 
-                if (existingOtp != null)
-                {
-                    await _mailService.SendEmailAsync(dto.Email, "Your OTP Is On Its Way!",
-                    $@"
-                   <p>Hello {dto.UserName},</p>
-                  <p>We noticed that you requested an OTP again. Don't worry, your previous code is still valid!</p>
-                  <p>Here is your One-Time Password (OTP):</p>
-                  <h1 style='color: #00bfff;'>{existingOtp.Otp}</h1>
-                  <p><strong>Note:</strong> This code is valid for the next <strong>5 minutes</strong>.</p>
-                   <p>If you did not request this, please ignore this email. Your account is secure.</p>
-                    <p>Take care,</p>
-                  <p><strong>The EduPlat Team</strong></p>");
+			// ✅ 3- لو المستخدم موجود مؤقتًا، نتحقق من الـ OTP
+			if (existingTempUser != null)
+			{
+				var existingOtp = await _context.OtpVerification
+					.FirstOrDefaultAsync(o => o.Email == dto.Email && DateTime.UtcNow < o.ExpirationTime);
 
-                    return Ok(new { success = true, message = "OTP has been resent to your email." });
-                }
-                else
-                {
-                    // if otp finished expire 
-                    string otp = GenerateOTP.GenerateOtp();
-                    DateTime expirationTime = DateTime.UtcNow.AddMinutes(5);
+				if (existingOtp != null)
+				{
+					// 🔄 الـ OTP مازال صالحًا، يتم إرساله مرة أخرى
+					await _mailService.SendEmailAsync(dto.Email, "Your OTP Is On Its Way!",
+					$@"
+               <p>Hello {dto.UserName},</p>
+              <p>We noticed that you requested an OTP again. Don't worry, your previous code is still valid!</p>
+              <p>Here is your One-Time Password (OTP):</p>
+              <h1 style='color: #00bfff;'>{existingOtp.Otp}</h1>
+              <p><strong>Note:</strong> This code is valid for the next <strong>5 minutes</strong>.</p>
+               <p>If you did not request this, please ignore this email. Your account is secure.</p>
+                <p>Take care,</p>
+              <p><strong>The EduPlat Team</strong></p>");
 
-                    var otpVerification = new OtpVerification
-                    {
-                        Email = dto.Email,
-                        Otp = otp,
-                        ExpirationTime = expirationTime
-                    };
-                    await _context.OtpVerification.AddAsync(otpVerification);
-                    await _context.SaveChangesAsync();
+					return Ok(new { success = true, message = "OTP has been resent to your email." });
+				}
+				else
+				{
+					// ✅ 4- إذا انتهت صلاحية OTP، يتم حذف `TemporaryUser` المرتبط به وإنشاء OTP جديد
+					_context.TemporaryUsers.Remove(existingTempUser);
+					await _context.SaveChangesAsync();
+				}
+			}
 
-                    await _mailService.SendEmailAsync(dto.Email, "Your OTP for Registration",
-                  $"<p>Dear {dto.UserName},</p>" +
-                 $"<p>Welcome! We're excited to have you join us.</p>" +
-                 $"<p>Your One-Time Password (OTP) for email verification is:</p>" +
-                $"<h2 style='color: #00bfff;'>{otp}</h2>" +
-                 $"<p>This code is valid for the next 5 minutes, so please use it promptly.</p>" +
-                  $"<p>If you have any questions, feel free to reach out to us.</p>" +
-                    $"<p>Best wishes,</p>" +
-                    $"<p>EduPlat</p>");
+			// ✅ 5- إضافة المستخدم المؤقت الجديد (بعد حذف القديم لو كان موجود)
+			var tempUser = new TemporaryUser
+			{
+				UserName = dto.UserName,
+				Email = dto.Email,
+				PasswordHash = dto.Password
+			};
+			await _context.TemporaryUsers.AddAsync(tempUser);
 
-                    return Ok(new { success = true, message = "OTP has been resent to your email." });
-                }
-            }
+			// ✅ 6- إنشاء OTP جديد
+			string newOtp = GenerateOTP.GenerateOtp();
+			var otpVerificationNew = new OtpVerification
+			{
+				Email = dto.Email,
+				Otp = newOtp,
+				ExpirationTime = DateTime.UtcNow.AddMinutes(5)
+			};
+			await _context.OtpVerification.AddAsync(otpVerificationNew);
+			await _context.SaveChangesAsync();
 
-            // if not Exist User => Register User 
-            var tempUser = new TemporaryUser
-            {
-                UserName = dto.UserName,
-                Email = dto.Email,
-                PasswordHash = dto.Password
+			// ✅ 7- إرسال الإيميل بالـ OTP الجديد
+			await _mailService.SendEmailAsync(dto.Email, "Welcome to Our Platform!",
+				$"<p>Hi {dto.UserName},</p>" +
+				$"<p>We’re thrilled to have you here! To complete your registration, please verify your email using the code below:</p>" +
+				$"<h2 style='color: #00bfff;'>{newOtp}</h2>" +
+				$"<p>This code is valid for the next 5 minutes, so make sure to use it soon.</p>" +
+				$"<p>Need help? Feel free to reach out—we’re here for you!</p>" +
+				$"<p>Warm regards,</p>" +
+				$"<p>The EduPlat Team</p>");
 
-            };
-            await _context.TemporaryUsers.AddAsync(tempUser);
-
-            // Generate OTP
-            string newOtp = GenerateOTP.GenerateOtp();
-            DateTime newExpirationTime = DateTime.UtcNow.AddMinutes(5);
-
-            // save data in table otp 
-            var otpVerificationNew = new OtpVerification
-            {
-                Email = dto.Email,
-                Otp = newOtp,
-                ExpirationTime = newExpirationTime
-            };
-            await _context.OtpVerification.AddAsync(otpVerificationNew);
-            await _context.SaveChangesAsync();
-            await _mailService.SendEmailAsync(dto.Email, "Welcome to Our Platform!",
-    $"<p>Hi {dto.UserName},</p>" +
-    $"<p>We’re thrilled to have you here! To complete your registration, please verify your email using the code below:</p>" +
-    $"<h2 style='color: #00bfff;'>{newOtp}</h2>" +
-    $"<p>This code is valid for the next 5 minutes, so make sure to use it soon.</p>" +
-    $"<p>Need help? Feel free to reach out—we’re here for you!</p>" +
-    $"<p>Warm regards,</p>" +
-    $"<p>The EduPlat Team</p>");
+			return Ok(new { success = true, message = "Registration successful. A verification code has been sent to your email." });
+		}
+		#endregion
 
 
-            return Ok(new { success = true, message = "Registration successful. A verification code has been sent to your email." });
-        }
+		#region VerifyAccount
 
-        #endregion
-
-        #region VerifyAccount
-
-        [HttpPost("VerifyEmail")]
+		[HttpPost("VerifyEmail")]
         public async Task<IActionResult> VerifyEmail([FromBody] VerifyOtpDTO dto)
         {
             // check otp 
@@ -177,23 +257,26 @@ namespace JWT.Controllers
             if (tempUser == null)
                 return Ok(new { success = false, message = "Incorrect Email" });
 
+
             // delete otp 
             _context.OtpVerification.Remove(otpRecord);
             await _context.SaveChangesAsync();
 
 
-            // create new User 
             var newUser = new ApplicationUser
             {
                 UserName = tempUser.UserName,
-                Email = tempUser.Email,
-                EmailConfirmed = true
-            };
+				Email = tempUser.Email,
+				EmailConfirmed = true
+			};
+		
 
-            var result = await _userManager.CreateAsync(newUser, tempUser.PasswordHash);
-            if (!result.Succeeded)
-                return Ok(new { success = false,message =" Failed to create User " });
-            if (result.Succeeded)
+			var result = await _userManager.CreateAsync(newUser, tempUser.PasswordHash);
+			if (!result.Succeeded)
+				return Ok(new { success = false, message = "Failed to create User" });
+
+
+			if (result.Succeeded)
             {
                 newUser.EmailConfirmed = true;
                 await _userManager.UpdateAsync(newUser); // Update the user in the database

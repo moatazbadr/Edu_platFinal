@@ -1,5 +1,7 @@
 ﻿using Edu_plat.Model.Exams;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Edu_plat.DTO.ExamDto
 {
@@ -10,6 +12,7 @@ namespace Edu_plat.DTO.ExamDto
 		public string ExamTitle { get; set; }
 
 		[Required(ErrorMessage = "Start time is required.")]
+		
 		public DateTime StartTime { get; set; }
 
 		[Range(1, int.MaxValue, ErrorMessage = "Total marks must be greater than 0.")]
@@ -32,7 +35,7 @@ namespace Edu_plat.DTO.ExamDto
 		[MaxLength(100, ErrorMessage = "Location Exam must not exceed 100 characters.")]
 		public string? LocationExam { get; set; }
 
-		public List<Question>? Questions { get; set; }
+		public List<QuestionDto>? Questions { get; set; }
 
 	}
 }

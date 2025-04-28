@@ -452,49 +452,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "ExamTitle",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "StartTime",
-        "Type": "System.DateTime",
-        "IsRequired": false
-      },
-      {
-        "Name": "TotalMarks",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "IsOnline",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "QuestionsNumber",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "DurationInMin",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "CourseCode",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "LocationExam",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Questions",
-        "Type": "System.Collections.Generic.List\u00601[[Edu_plat.Model.Exams.Question, Edu_plat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": false
+        "Name": "examDto",
+        "Type": "Edu_plat.DTO.ExamDto.CreateExamDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -538,8 +498,8 @@
   },
   {
     "ContainingType": "Edu_plat.Controllers.ExamsController",
-    "Method": "GetExamResults",
-    "RelativePath": "api/Exams/GetExamResults/{examId}",
+    "Method": "GetExamForStudent",
+    "RelativePath": "api/Exams/GetExamForStudent/{examId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -554,8 +514,8 @@
   },
   {
     "ContainingType": "Edu_plat.Controllers.ExamsController",
-    "Method": "GetExamToStudent",
-    "RelativePath": "api/Exams/GetExamStudent",
+    "Method": "GetExamResults",
+    "RelativePath": "api/Exams/GetExamResults/{examId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -563,17 +523,7 @@
       {
         "Name": "examId",
         "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "doctorId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "courseCode",
-        "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -606,6 +556,22 @@
         "Name": "isFinishedExam",
         "Type": "System.Boolean",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.ExamsController",
+    "Method": "SubmitExam",
+    "RelativePath": "api/Exams/SubmitExam",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Edu_plat.DTO.ExamDto.SubmitExamDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -681,7 +647,7 @@
       },
       {
         "Name": "Questions",
-        "Type": "System.Collections.Generic.List\u00601[[Edu_plat.Model.Exams.Question, Edu_plat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Edu_plat.DTO.ExamDto.QuestionDto, Edu_plat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       }
     ],

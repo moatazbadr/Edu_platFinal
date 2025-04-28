@@ -45,18 +45,21 @@ namespace JWT
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 {
                     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-                }); 
+                });
             #endregion
 
 
-            // Identity
+            //// Identity
             #region UserName handling
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
                 options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+ ";
             })
                   .AddEntityFrameworkStores<ApplicationDbContext>()
-                  .AddDefaultTokenProviders(); 
+                  .AddDefaultTokenProviders();
+
+
+
             #endregion
 
             // Send Email
