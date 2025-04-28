@@ -1566,7 +1566,7 @@ namespace Edu_plat.Controllers
 
 			if (!materials.Any())
 			{
-				return NotFound(new { success = false, message = "No materials found for this doctor in the specified course." });
+				return Ok(new { success = false, message = "No materials found for this doctor in the specified course.",materials });
 			}
 			
 			return Ok(new
@@ -1610,11 +1610,6 @@ namespace Edu_plat.Controllers
 				.Where(m => m.CourseCode == courseCode && m.DoctorId == doctor.DoctorId && m.TypeFile==typeFile)
 				.ToListAsync();
 
-			if (!materials.Any())
-			{
-				return NotFound(new { success = false, message = "No materials found for this doctor in the specified course." });
-			}
-
 			List<StudentMaterialResponse> studentMaterials= new List<StudentMaterialResponse>();
 
 			foreach (var mat in materials)
@@ -1641,6 +1636,11 @@ namespace Edu_plat.Controllers
 
             }
 
+
+			if (!materials.Any())
+			{
+				return Ok(new { success = true , message = "No materials found for this doctor in the specified course." , materials = studentMaterials.ToArray() });
+			}
 
 
 			return Ok(new
